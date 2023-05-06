@@ -1,4 +1,64 @@
-<header class="fixed top-4 left-1/2 w-11/12 backdrop-blur-md transform -translate-x-1/2 px-10 py-2.5 rounded-full flex items-center justify-between custom-box-shadow-1">
+<script>
+  // 獲取基本 URL
+  var baseUrl = window.location.pathname.startsWith('/Mika_Portfolio') ? '/Mika_Portfolio' : '';
+
+  // 創建連結的陣列
+  var links = [
+    {
+      text: 'Home',
+      url: '/'
+    },
+    {
+      text: 'About',
+      url: '/about'
+    },
+    {
+      text: 'Contact',
+      url: '/contact'
+    }
+  ];
+
+  // 生成連結
+  var linkHtml = '';
+  links.forEach(function(link) {
+    var url = baseUrl + link.url; // 使用絕對路徑
+
+    linkHtml += `
+      <li class="mx-3 my-5 px-1 custom-font-color1">
+        <a href="${url}">
+          ${link.text}
+        </a>
+      </li>
+    `;
+  });
+
+  // 更新 header 的 HTML
+  var headerHtml = `
+    <header class="fixed top-4 left-1/2 w-11/12 backdrop-blur-md transform -translate-x-1/2 px-10 py-2.5 rounded-full flex items-center justify-between custom-box-shadow-1">
+      <div>
+        logo
+      </div>
+      <ul class="flex items-center gap-4">
+        ${linkHtml}
+        <li>
+          <a class="inline-flex items-center px-7 py-4 font-medium leading-tight border border-solid border-black rounded-full capitalize"
+            style="letter-spacing: 0.125rem;"
+            href="link-to-resume.pdf"
+            download
+          >
+            <img class="custom-w-5_5 custom-h-5_5 object-contain me-2" src="https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/63837ea016814d1c2fbdd8bb_download.svg" alt="Download Icon">
+            Resume
+          </a>
+        </li>
+      </ul>
+    </header>
+  `;
+
+  // 更新 header 的內容
+  $('#header').html(headerHtml);
+</script>
+
+<!-- <header class="fixed top-4 left-1/2 w-11/12 backdrop-blur-md transform -translate-x-1/2 px-10 py-2.5 rounded-full flex items-center justify-between custom-box-shadow-1">
     <div>
       logo
     </div>
@@ -29,4 +89,4 @@
         </a>
       </li>
     </ul>
-</header>
+</header> -->

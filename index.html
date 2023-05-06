@@ -59,8 +59,17 @@
     };
 
     var firstLoad = true;
+    var baseUrl = '';
 
-    page.base('/Mika_Portfolio');
+    // 條件語句：判斷是否在本地開發環境
+    if (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') {
+      // 本地開發環境下的路徑設置
+      baseUrl = ''; // 可以根據你的本地伺服器設定做調整，例如 '/Mika_Portfolio'
+    } else {
+      // 部署到 GitHub Pages 上的路徑設置
+      baseUrl = '/Mika_Portfolio';
+    }
+    page.base(baseUrl);
     
     // 設定路由
     page('/', function() {
