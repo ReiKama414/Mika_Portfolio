@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Inknut+Antiqua:wght@500&display=swap')
+$header-height: 6.75rem
+$header-top: 1rem
+
+$text-color: #151515
+
+body
+    font-family: 'DM Sans', sans-serif, Arial, Helvetica
+    display: flex
+    flex-direction: column
+    padding-top: calc($header-height + $header-top + 1rem)
+    font-weight: 400
+    font-size: 1rem
+    line-height: 1.5rem
+    min-height: 100vh
+    color: $text-color
+    
+#app
+    flex: 1
+    padding-left: 10%
+    padding-right: 10%
+
+#header header
+    min-height: $header-height
+
+/***------------ Custom css ------------***/
+
+/** font **/
+.custom-font-family1
+    font-family: 'Inknut Antiqua', sans-serif, Arial, Helvetica
+.custom-font-color1
+    color: #222222
+
+/** margin **/
+@function calculate-margin($x)
+    @return calc(($x / 4) * 1rem)
+@mixin generate-margin($x)
+    $margin: calculate-margin($x)
+    .m-#{$x}
+        margin: $margin
+    .mt-#{$x}
+        margin-top: $margin
+    .mb-#{$x}
+        margin-bottom: $margin
+    .my-#{$x}
+        margin-top: $margin
+        margin-bottom: $margin
+    .ms-#{$x}
+        margin-left: $margin
+    .me-#{$x}
+        margin-right: $margin
+    .mx-#{$x}
+        margin-left: $margin
+        margin-right: $margin
+
+@include generate-margin(30)
+
+/** width **/
+.custom-w-5_5
+    width: 1.375rem
+
+/** height **/
+.custom-h-5_5
+    height: 1.375rem
+
+/** border **/
+.custom-border-t-1
+    border-top: 1px
+.custom-border-color-1
+    border-color: #c9c9c9
+
+/** box shadow **/
+.custom-box-shadow-1
+    box-shadow: 3px 3px 7px 3px #f6f6f6
+
+/** gap **/
+.custom-gap-1
+    gap: 25vw
+
+/*****************************************/
+@media (max-width: 991.98px)
+    .custom-gap-1 
+        gap: 15vw
+    

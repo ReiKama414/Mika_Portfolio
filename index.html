@@ -4,26 +4,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>專案名稱</title>
-  <!-- 引入外部 CSS 檔案 -->
-  <!-- <link rel="stylesheet" href="scss/styles.css"> -->
-  <!-- 引入外部 JavaScript 檔案 -->
-  <!-- <script src="js/main.js"></script> -->
+  <link href="https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/637dc255a321ea6572681d1e_favicon.png" rel="shortcut icon" type="image/x-icon">
+  <title>Mika's Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link href="src/assets/style/css/style.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <!-- 引入 header 組件 -->
-    <!-- <?php include 'components/header/header.html'; ?> -->
-  </header>
-  <main>
-    <h1>歡迎來到專案名稱</h1>
-    <p>這是一個簡單的範例。</p>
-  </main>
-  <footer>
-    <!-- 引入 footer 組件 -->
-    <!-- <?php include 'components/footer/footer.html'; ?> -->
-  </footer>
+  <div id="header"></div>
+
+  <div id="app"></div>
+
+  <div id="footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/page/page.js"></script>
+
+  <script>
+    // 使用 jQuery 的 AJAX 加載 header.html
+    $.ajax({
+      url: 'src/components/header/header.html',
+      dataType: 'html',
+      success: function(response) {
+        $('#header').html(response);
+      }
+    });
+
+    // 使用 jQuery 的 AJAX 加載 footer.html
+    $.ajax({
+      url: 'src/components/footer/footer.html',
+      dataType: 'html',
+      success: function(response) {
+        $('#footer').html(response);
+      }
+    });
+
+    
+    var routes = {
+      '/': {
+        page: 'index.html',
+        title: "Mika's Portfolio"
+      },
+      '/about': {
+        page: 'about.html',
+        title: 'About | Mika\'s Portfolio'
+      },
+      '/contact': {
+        page: 'contact.html',
+        title: 'Contact | Mika\'s Portfolio'
+      }
+    };
+
+    var firstLoad = true;
+
+    // 設定路由
+    page('/', function() {
+      loadPage(routes['/'].page, routes['/'].title, '/');
+    });
+    page('/about', function() {
+      loadPage(routes['/about'].page, routes['/about'].title, '/about');
+    });
+    page('/contact', function() {
+      loadPage(routes['/contact'].page, routes['/contact'].title, '/contact');
+    });
+    page('*', notFoundPage);
+
+    // 監聽路由變化
+    page();
+
+    // 加載頁面的函式
+    function loadPage(page, title, url) {
+      page = `src/pages/${page.replace('.html', '')}/${page}`;
+      // console.log(page);
+      $.ajax({
+        url: page,
+        dataType: 'html',
+        success: function(response) {
+          $('#app').html(response);
+
+          // 判斷是否為第一次呼叫
+          if (!firstLoad) {
+            // 取得前一個頁面的 CSS 和 JS 文件
+            var prevCss = $('head link[rel="stylesheet"]:last').attr('href');
+            // var prevScript = $('body script:last').attr('src');
+
+            // 删除前一個頁面的 CSS 和 JS 文件
+            $('head link[rel="stylesheet"][href="' + prevCss + '"]').remove();
+            // $('body script[src="' + prevScript + '"]').remove();
+          } else {
+            firstLoad = false;
+          }
+
+          // 加載頁面的 Sass 和 JavaScript
+          loadCss(page.replace('.html', '.css'));
+          // loadScript(page.replace('.html', '.js'));
+      
+          // 滾動到頁面頂部
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+
+          // 修改路由名稱
+          // history.pushState({}, title, url);
+
+          // 修改標題
+          document.title = title;
+        }
+      });
+    }
+
+    // 加載頁面的 Css 檔案
+    function loadCss(cssFile) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cssFile;
+      document.head.appendChild(link);
+    }
+
+    // 加載頁面的 JavaScript 檔案
+    // function loadScript(scriptFile) {
+    //   var script = document.createElement('script');
+    //   script.src = scriptFile;
+    //   document.body.appendChild(script);
+    // }
+
+    // 頁面不存在的處理
+    function notFoundPage() {
+      // loadPage('not-found.html', 'Not Found | Mika\'s Portfolio', '/not-found');
+      document.getElementById('content').innerHTML = '<h1>頁面未找到</h1>';
+    }
+
+    // 啟動路由監聽
+    page({ hashbang: true });
+  </script>
 </body>
 
 </html>
