@@ -143,11 +143,12 @@
     // 頁面不存在的處理
     function notFoundPage() {
       // loadPage('not-found.html', 'Not Found | Mika\'s Portfolio', '/not-found');
-      document.getElementById('content').innerHTML = '<h1>頁面未找到</h1>';
+      document.getElementById('app').innerHTML = '<h1>頁面未找到</h1>';
     }
 
     // 啟動路由監聽
-    page({ hashbang: true });
+    // page({ hashbang: true });
+    page();
   </script>
 </body>
 
