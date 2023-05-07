@@ -1,5 +1,6 @@
 <div class="lg:container lg:mx-auto lg:px-16 xl:px-20 2xl:px-24">
     <h1>首頁內容</h1>
+    <div class="h-screen"></div>
     <div id="block-container" class="grid grid-cols-2 gap-10 mt-30 px-4 lg:px:6 xl:px-16 2xl:px-28"></div>
 </div>
 
@@ -27,7 +28,7 @@
             var image = blockData.image;
             var link = blockData.link;
 
-            var block = $('<div>').addClass('block aspect-square overflow-hidden');
+            var block = $('<div>').addClass('block aspect-square overflow-hidden opacity-0 transform translate-y-8 transition-all duration-1000 ease-out');
             var content = $('<div>').addClass('content');
 
             if (image !== "") {
@@ -50,5 +51,19 @@
 
             blocksArea.append(block);
         }
+
+        window.addEventListener('scroll', function() {
+        var blocks = document.querySelectorAll('.block');
+        
+        blocks.forEach(function(block) {
+            var blockPosition = block.getBoundingClientRect().top;
+            var windowHeight = window.innerHeight;
+            
+            // 判斷方塊是否進入視窗範圍
+            if (blockPosition < windowHeight) {
+            block.classList.add('opacity-100', 'translate-y-0');
+            }
+        });
+        });
     }
 </script>
