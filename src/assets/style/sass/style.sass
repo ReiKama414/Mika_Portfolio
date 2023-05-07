@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Inknut+Antiqua:wght@500&display=swap')
 $header-height: 6.75rem
 $header-top: 1rem
-
 $text-color: #151515
 
 body
@@ -17,8 +16,6 @@ body
     
 #app
     flex: 1
-    padding-left: 10%
-    padding-right: 10%
 
 #header header
     min-height: $header-height
@@ -55,6 +52,30 @@ body
 
 @include generate-margin(30)
 
+/** padding **/
+// @function calculate-padding($x)
+//     @return calc(($x / 4) * 1rem)
+// @mixin generate-padding($x)
+//     $padding: calculate-padding($x)
+//     .p-#{$x}
+//         padding: $padding
+//     .pt-#{$x}
+//         padding-top: $padding
+//     .pb-#{$x}
+//         padding-bottom: $padding
+//     .py-#{$x}
+//         padding-top: $padding
+//         padding-bottom: $padding
+//     .ps-#{$x}
+//         padding-left: $padding
+//     .pe-#{$x}
+//         padding-right: $padding
+//     .px-#{$x}
+//         padding-left: $padding
+//         padding-right: $padding
+
+// @include generate-padding(30)
+
 /** width **/
 .custom-w-5_5
     width: 1.375rem
@@ -82,7 +103,11 @@ body
     filter: invert(1)
 
 /*****************************************/
+@media (max-width: 1023.98px)
+    #header, #app, #footer
+        display: none
+    
 @media (max-width: 991.98px)
     .custom-gap-1 
         gap: 15vw
-    
+        
