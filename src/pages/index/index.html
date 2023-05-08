@@ -1,5 +1,12 @@
 <div class="lg:container lg:mx-auto lg:px-16 xl:px-20 2xl:px-24">
-    <h1>首頁內容</h1>
+    <!-- <h1>首頁內容</h1> -->
+    <div class="flex justify-between wapper_container_hand">
+        <div id="lottie-container-hand" class="self-start"></div>
+        <div class="text-5xl xl:text-6xl custom-font-family2 self-end pb-24 lg:pb-36" style="letter-spacing: 0.34em; color: #606060;">
+            <h3 class="pb-4"> Hi, there👇</h3>
+            <h3> It’s </h3>
+        </div>
+    </div>
     <div class="h-screen"></div>
     <div id="block-container" class="grid grid-cols-2 gap-10 mt-30 px-4 lg:px:6 xl:px-16 2xl:px-28"></div>
 </div>
@@ -66,4 +73,13 @@
         });
         });
     }
+
+    var lottieContainer = document.getElementById("lottie-container-hand");
+        lottie.loadAnimation({
+        container: lottieContainer,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/63872dd803666f1e3415cc91_hand2.json"
+    });
 </script>

@@ -36,7 +36,8 @@
   var headerHtml = `
     <header class="fixed top-4 left-1/2 w-11/12 backdrop-blur-md transform -translate-x-1/2 px-10 py-2.5 rounded-full flex items-center justify-between custom-box-shadow-1">
       <a href="${baseUrl + '/'}">
-        logo
+        <!-- img id="logo" src="/src/assets/icons/head_color.png" class="" style="width: 80px; height: 90px;" alt="Logo" -->
+        <div id="lottie-container-logo"></div>
       </a>
       <ul class="flex items-center gap-4">
         ${linkHtml}
@@ -59,6 +60,28 @@
 
   // 更新 header 的內容
   $('#header').html(headerHtml);
+
+  var lottieContainer_Logo = document.getElementById("lottie-container-logo");
+
+  var animation_logo = lottie.loadAnimation({
+    container: lottieContainer_Logo,
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: "https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/637e022b9f3c794a5f1dd053_head.json"
+  });
+
+  lottieContainer_Logo.addEventListener("mouseenter", function() {
+    animation_logo.setDirection(1); // 設置播放方向為正向
+    animation_logo.play(); // 播放動畫
+  });
+
+  lottieContainer_Logo.addEventListener("mouseleave", function() {
+    animation_logo.setDirection(-1); // 設置播放方向為倒轉
+    animation_logo.play(); // 播放動畫
+  });
+
+  animation_logo.setSpeed(2);
 </script>
 
 <!-- <header class="fixed top-4 left-1/2 w-11/12 backdrop-blur-md transform -translate-x-1/2 px-10 py-2.5 rounded-full flex items-center justify-between custom-box-shadow-1">
