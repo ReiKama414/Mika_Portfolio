@@ -1,10 +1,16 @@
 <div class="lg:container lg:mx-auto lg:px-16 xl:px-20 2xl:px-24">
     <!-- <h1>首頁內容</h1> -->
     <div class="flex justify-between wapper_container_hand">
-        <div id="lottie-container-hand" class="self-start"></div>
+        <div id="lottie-container-hand" class="self-start flex-1 pt-12"></div>
         <div class="text-5xl xl:text-6xl custom-font-family2 self-end pb-24 lg:pb-36" style="letter-spacing: 0.34em; color: #606060;">
             <h3 class="pb-4"> Hi, there👇</h3>
             <h3> It’s </h3>
+        </div>
+    </div>
+    <div class="flex justify-between">
+        <div id="lottie-container-p" class="self-start"></div>
+        <div class="self-end">
+            <h3>A UI/UX designer foucused on business probability and create solution in a fun way</h3>
         </div>
     </div>
     <div class="h-screen"></div>
@@ -74,12 +80,55 @@
         });
     }
 
-    var lottieContainer = document.getElementById("lottie-container-hand");
-        lottie.loadAnimation({
-        container: lottieContainer,
+    var lottieContainer_hand = document.getElementById("lottie-container-hand");
+    lottie.loadAnimation({
+        container: lottieContainer_hand,
         renderer: "svg",
         loop: true,
         autoplay: true,
         path: "https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/63872dd803666f1e3415cc91_hand2.json"
     });
+
+    var lottieContainer_p = document.getElementById('lottie-container-p');
+    var animation_p = lottie.loadAnimation({
+        container: lottieContainer_p,
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/63846e13ee7073da028730b6_sit.json'
+    });
+
+    // 設置動畫播放進度的函數
+    function setAnimationProgress(progress) {
+        animation_p.goToAndStop(animation_p.getDuration(true) * progress, true);
+    }
+
+    // 計算滑動方向和到中點距離的函數
+    function calculateScrollValues() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var windowHeight = window.innerHeight;
+        var containerOffsetTop = lottieContainer_p.offsetTop;
+        var containerHeight = lottieContainer_p.offsetHeight;
+        var scrollDistance = scrollTop + windowHeight / 2 - (containerOffsetTop + containerHeight / 2);
+        var scrollDirection = scrollDistance > 0 ? 'down' : 'up';
+        var scrollProgress = Math.abs(scrollDistance) / (windowHeight / 2);
+        // console.log(scrollDirection, scrollProgress);
+        
+        // 根據滑動方向和進度控制動畫播放
+        if (scrollDirection === 'down') {
+            setAnimationProgress(0.99);
+        } else {
+            if (scrollProgress >= 1) {
+                setAnimationProgress(0.01);
+            } else {
+                setAnimationProgress(1 - scrollProgress);
+            }
+        }
+    }
+
+    // 監聽滾動事件
+    window.addEventListener('scroll', calculateScrollValues);
+
+    // 初始狀態下播放動畫
+    animation_p.play();
 </script>
