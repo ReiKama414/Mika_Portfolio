@@ -2,18 +2,24 @@
     <!-- <h1>首頁內容</h1> -->
     <div class="flex justify-between wapper_container_hand">
         <div id="lottie-container-hand" class="self-start flex-1 pt-12"></div>
-        <div class="text-5xl xl:text-6xl custom-font-family2 self-end pb-24 lg:pb-36" style="letter-spacing: 0.34em; color: #606060;">
+        <div class="text-5xl xl:text-6xl custom-font-Fahkwang self-end pb-24 lg:pb-36" style="letter-spacing: 0.34em; color: #606060;">
             <h3 class="pb-4"> Hi, there👇</h3>
             <h3> It’s </h3>
         </div>
     </div>
-    <div class="flex justify-between">
-        <div id="lottie-container-p" class="self-start"></div>
-        <div class="self-end">
-            <h3>A UI/UX designer foucused on business probability and create solution in a fun way</h3>
+    <div class="flex items-center justify-between h-screen">
+        <div id="lottie-container-p" class="w-3/5"></div>
+        <div class="inline-flex flex-col items-center px-16 w-2/5" style="letter-spacing: 0.01em; color: #606060;">
+            <div id="lottie-container-mika_characters"></div>
+            <h3 class="text-xl custom-font-Fahkwang">A UI/UX designer foucused on business probability and create solution in a fun way</h3>
+            <div class="self-end me-3">
+                <a href="/about" class="move-horizontal flex items-center pt-4">
+                    Learn more
+                    <img src="/src/assets/icons/icon _arrow down circle_.png" class="w-14 lg:w-16 ps-1" alt="Arrow" />
+                </a>
+            </div>
         </div>
     </div>
-    <div class="h-screen"></div>
     <div id="block-container" class="grid grid-cols-2 gap-10 mt-30 px-4 lg:px:6 xl:px-16 2xl:px-28"></div>
 </div>
 
@@ -90,6 +96,8 @@
     });
 
     var lottieContainer_p = document.getElementById('lottie-container-p');
+    var lottieContainer_mika_characters = document.getElementById('lottie-container-mika_characters');
+
     var animation_p = lottie.loadAnimation({
         container: lottieContainer_p,
         renderer: 'svg',
@@ -98,17 +106,25 @@
         path: 'https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/63846e13ee7073da028730b6_sit.json'
     });
 
+    var animation_mika_characters = lottie.loadAnimation({
+        container: lottieContainer_mika_characters,
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/6384684aee7073c54386d6bf_mika2.json'
+    });
+
     // 設置動畫播放進度的函數
-    function setAnimationProgress(progress) {
-        animation_p.goToAndStop(animation_p.getDuration(true) * progress, true);
+    function setAnimationProgress(anim, progress) {
+        anim.goToAndStop(anim.getDuration(true) * progress, true);
     }
 
     // 計算滑動方向和到中點距離的函數
-    function calculateScrollValues() {
+    function calculateScrollValues(anim, containerDiv) {
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         var windowHeight = window.innerHeight;
-        var containerOffsetTop = lottieContainer_p.offsetTop;
-        var containerHeight = lottieContainer_p.offsetHeight;
+        var containerOffsetTop = containerDiv.offsetTop;
+        var containerHeight = containerDiv.offsetHeight;
         var scrollDistance = scrollTop + windowHeight / 2 - (containerOffsetTop + containerHeight / 2);
         var scrollDirection = scrollDistance > 0 ? 'down' : 'up';
         var scrollProgress = Math.abs(scrollDistance) / (windowHeight / 2);
@@ -116,19 +132,23 @@
         
         // 根據滑動方向和進度控制動畫播放
         if (scrollDirection === 'down') {
-            setAnimationProgress(0.99);
+            setAnimationProgress(anim, 0.99);
         } else {
             if (scrollProgress >= 1) {
-                setAnimationProgress(0.01);
+                setAnimationProgress(anim, 0.01);
             } else {
-                setAnimationProgress(1 - scrollProgress);
+                setAnimationProgress(anim, 1 - scrollProgress);
             }
         }
     }
-
+    
     // 監聽滾動事件
-    window.addEventListener('scroll', calculateScrollValues);
+    window.addEventListener('scroll', () => {
+        calculateScrollValues(animation_p, lottieContainer_p);
+        calculateScrollValues(animation_mika_characters, lottieContainer_mika_characters);
+    });
 
     // 初始狀態下播放動畫
     animation_p.play();
+    animation_mika_characters.play();
 </script>

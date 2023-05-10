@@ -8,5 +8,37 @@
 }
 
 #lottie-container-hand {
-    max-width: 36.25rem;
+    max-width: 36rem;
+}
+
+#lottie-container-p {
+    max-width: 40rem;
+}
+
+#lottie-container-mika_characters {
+    position: relative;
+    padding-right: 2.5rem;
+    width: 50rem;
+}
+
+
+@keyframes moveHorizontal {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+.move-horizontal img {
+    animation: moveHorizontal 1.5s cubic-bezier(.42, 0, .58, 1) infinite;
+    animation-play-state: paused;
+}
+  
+.move-horizontal:hover img {
+    animation-play-state: running;
 }
