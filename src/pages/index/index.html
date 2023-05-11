@@ -25,14 +25,29 @@
 
 <script>
     // 方塊數量
-    var blockCount = 5;
+    var blockCount = 4;
 
     // 圖片和連結的陣列
     var blockItems = [
-        { image: "https://images.unsplash.com/photo-1682589848125-dbff2da5dc8e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=453&q=80", link: "https://example.com/page1" },
-        { image: "https://plus.unsplash.com/premium_photo-1665657351435-96c58da04fd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80", link: "" },
-        { image: "", link: "https://example.com/page2" },
-        { image: "image3.jpg", link: "" },
+        // 1 ~ 4
+        { image: "src/assets/images/example_image_1.png", link: "" },
+        { image: "src/assets/images/example_image_2.png", link: "" },
+        { image: "src/assets/images/example_image_3.png", link: "" },
+        { image: "", link: "" },
+        // 5 ~ 8
+        { image: "", link: "" },
+        { image: "", link: "" },
+        { image: "", link: "" },
+        { image: "", link: "" },
+        // 9 ~ 12
+        { image: "", link: "" },
+        { image: "", link: "" },
+        { image: "", link: "" },
+        { image: "", link: "" },
+        // 13 ~ 16
+        { image: "", link: "" },
+        { image: "", link: "" },
+        { image: "", link: "" },
         { image: "", link: "" },
     ];
 
@@ -110,8 +125,9 @@
         container: lottieContainer_mika_characters,
         renderer: 'svg',
         loop: false,
-        autoplay: false,
-        path: 'https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/6384684aee7073c54386d6bf_mika2.json'
+        loop: false,
+        path: 'src/assets/mika_s.json'
+        // path: 'https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/6384684aee7073c54386d6bf_mika2.json'
     });
 
     // 設置動畫播放進度的函數
@@ -128,6 +144,7 @@
         var scrollDistance = scrollTop + windowHeight / 2 - (containerOffsetTop + containerHeight / 2);
         var scrollDirection = scrollDistance > 0 ? 'down' : 'up';
         var scrollProgress = Math.abs(scrollDistance) / (windowHeight / 2);
+        console.log(containerOffsetTop, containerOffsetTop, containerHeight, scrollDistance);
         // console.log(scrollDirection, scrollProgress);
         
         // 根據滑動方向和進度控制動畫播放
