@@ -1,8 +1,16 @@
 .block {
     background-color: #D9D9D9;
     border-radius: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 2.5s, transform 4s;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 3px, rgba(0, 0, 0, 0.075) 0px 0px 7.2px, rgba(0, 0, 0, 0.09) 0px 0px 13.6px, rgba(0, 0, 0, 0.106) 0px 0px 24.3px, rgba(0, 0, 0, 0.13) 0px 0px 45.5px;
 }
 
+.block-float-up {
+    opacity: 1;
+    transform: translateY(0);
+}
 .wapper_container_hand {
     height: calc(100vh - 8.75rem);
 }
@@ -20,7 +28,6 @@
     padding-right: 2.5rem;
     width: 50rem;
 }
-
 
 @keyframes moveHorizontal {
     0% {
@@ -41,4 +48,36 @@
   
 .move-horizontal:hover img {
     animation-play-state: running;
+}
+
+.gradient-div {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 33.33%;
+    background: linear-gradient(to top, rgba(11, 26, 44, .85), transparent);
+}
+
+.app-name,
+.app-contentA,
+.app-contentB {
+  position: relative;
+  z-index: 1;
+}
+
+.app-name {
+    /* padding-bottom: .5rem; */
+    font-size: 2rem;
+    text-shadow: 1px 1px #0B1A2C;
+    letter-spacing: 0.475rem;
+    color: rgb(253, 253, 253);
+}
+.app-contentA {
+    letter-spacing: 0.16rem;
+    color: rgb(236, 236, 236);
+}
+.app-contentB {
+    letter-spacing: 0.12rem;
+    color: rgb(218, 218, 218);
 }

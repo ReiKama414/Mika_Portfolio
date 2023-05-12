@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fahkwang:wght@500&family=Inknut+Antiqua:wght@500&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fahkwang:wght@500&family=Inknut+Antiqua:wght@500&family=Noto+Sans+TC:wght@100;400&display=swap')
+
 $header-height: 6.75rem
 $header-top: 1rem
 $text-color: #151515
+
+@font-face 
+  font-family: 'Soukou Mincho'
+  src: url('../../fonts/SoukouMincho-2.ttf') format('truetype')
 
 body
     font-family: 'DM Sans', sans-serif, Arial, Helvetica
@@ -21,6 +26,9 @@ body
     min-height: $header-height
     z-index: 9999
 
+.custom-container
+    padding-bottom: 7.5rem
+
 // /src/assets/icons/head_color.png
 
 /***------------ Custom css ------------***/
@@ -30,6 +38,10 @@ body
     font-family: 'Inknut Antiqua', sans-serif, Arial, Helvetica
 .custom-font-Fahkwang
     font-family: 'Fahkwang', sans-serif, Arial, Helvetica
+.custom-font-Soukou
+  font-family: 'Soukou Mincho', sans-serif, Arial, Helvetica
+.custom-font-NotoSans
+  font-family: 'Noto Sans TC', sans-serif, Arial, Helvetica
 .custom-font-color1
     color: #222222
 
@@ -98,10 +110,6 @@ body
 /** box shadow **/
 .custom-box-shadow-1
     box-shadow: 3px 3px 7px 3px #f6f6f6
-
-/** **/
-.custom-duration-4500
-    transition-duration: 4500ms !important
 
 /** gap **/
 .custom-gap-1
