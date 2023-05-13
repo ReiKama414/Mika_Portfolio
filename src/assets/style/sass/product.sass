@@ -1,24 +1,48 @@
 $header-height: 7.5rem
 $header-top: 1rem
 $text-color: #212966
+$content-pd-0: 12%
+$content-pd-1: 10%
+$content-pd-2: 7%
+$content-pd-3: 5%
+$content-img-pd-0: 18%
+$content-img-pd-1: 16%
+$content-img-pd-2: 13%
+$content-img-pd-3: 11%
     
 body
     padding: 0
 
 #app
     .section
-        &:first-of-type
+        &:nth-of-type(1)
             padding-top: calc($header-height + $header-top + 1rem)
             backdrop-filter: blur(5px)
             background-image: url('../../kinghoksu/bg/bg1.png')
             background-repeat: no-repeat
             background-position: center
+            .glass
+                top: calc($header-height + $header-top + 5rem)
+                bottom: 2.5rem
+                backdrop-filter: blur(1px)
+                // img 
+                //     opacity: 0.5
+            //     box-shadow: 12px 12px 0px 12px rgba(65, 64, 64, 0.1)
+            //     backdrop-filter: blur(5px)
+            //     border-radius: 40px
+            //     > div
+            //         position: absolute
+            //         inset: 0 -24px -24px 0
+            //         background: rgba(255, 255, 255, 0.1)
+            //         box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
+            //         backdrop-filter: blur(15px)
+            //         border-radius: 52px
             .content
                 font-size: 2.5rem
                 letter-spacing: 0.12em
                 color: $text-color
                 > div:first-of-type
-                    padding-left: 10%
+                    padding-left: $content-pd-0
                     min-width: 35rem
                 .app-name
                     padding-top: 1.125rem
@@ -30,7 +54,22 @@ body
                         font-size: 1.25rem
                         line-height: 1.875rem
                 .app-img
-                    padding-right: 10%
+                    padding-right: $content-img-pd-0
+        &:nth-of-type(2)
+            backdrop-filter: blur(5px)
+            background-image: url('../../kinghoksu/bg/bg2.png')
+            background-repeat: no-repeat
+            background-position: center
+
+@media (max-width: 1535.98px)
+    #app
+        .section
+            &:first-of-type
+                .content
+                    > div:first-of-type
+                        padding-left: $content-pd-1
+                    .app-img
+                        padding-right: $content-img-pd-1
 
 @media (max-width: 1399.98px)
     #app
@@ -38,9 +77,9 @@ body
             &:first-of-type
                 .content
                     > div:first-of-type
-                        padding-left: 7%
+                        padding-left: $content-pd-2
                     .app-img
-                        padding-right: 7%
+                        padding-right: $content-img-pd-2
 
 @media (max-width: 1199.98px)
     #app
@@ -49,16 +88,45 @@ body
                 .content
                     font-size: 2.25rem
                     > div:first-of-type
-                        padding-left: 5%
+                        padding-left: $content-pd-3
                         min-width: 0
+                    .app-logo
+                        width: 4.375rem
+                        height: 4.375rem
                     .app-name
                         padding-top: 0.85rem
                         line-height: 2.5rem
                     .app-content
+                        padding-top: 1rem
                         line-height: 3.375rem
                         + div
                             padding-top: 0.85rem
                             font-size: 1rem
                             line-height: 1.75rem
                     .app-img
-                        padding-right: 5%
+                        padding-right: $content-img-pd-3
+
+@media (max-width: 1079.98px)
+    #app
+        .section
+            &:first-of-type
+                .content
+                    font-size: 1.5rem
+                    > div:first-of-type
+                        padding-left: $content-pd-3
+                        min-width: 0
+                        transform: translateY(-15px)
+                    .app-name
+                        padding-top: 0.625rem
+                        line-height: 2rem
+                    .app-content
+                        padding-top: 0.5rem
+                        line-height: 2.5rem
+                        + div
+                            padding-top: 0.625rem
+                            font-size: 0.75rem
+                            line-height: 1.25rem
+                    .app-img
+                        padding-right: $content-img-pd-3
+                    .app-baibai
+                        transform: scale(.75)
