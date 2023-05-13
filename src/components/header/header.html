@@ -1,5 +1,5 @@
 <script>
-  var baseUrl = window.location.pathname.startsWith('/Mika_Portfolio') ? '/Mika_Portfolio' : '';
+  var baseUrl_header = window.location.pathname.startsWith('/Mika_Portfolio') ? '/Mika_Portfolio' : '';
   var links = [
     {
       text: 'Home',
@@ -17,7 +17,7 @@
 
   var linkHtml = '';
   links.forEach(function(link) {
-    var url = baseUrl + link.url;
+    var url = baseUrl_header + link.url;
 
     linkHtml += `
       <li class="mx-3 my-5 px-1 custom-font-color1">
@@ -30,7 +30,7 @@
 
   var headerHtml = `
     <header class="fixed top-4 left-1/2 w-11/12 backdrop-blur-md transform -translate-x-1/2 px-10 py-2.5 rounded-full flex items-center justify-between custom-box-shadow-1">
-      <a href="${baseUrl + '/'}">
+      <a href="${baseUrl_header + '/'}">
         <!-- img id="logo" src="/src/assets/icons/head_color.png" class="" style="width: 80px; height: 90px;" alt="Logo" -->
         <div id="lottie-container-logo"></div>
       </a>

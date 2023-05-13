@@ -24,6 +24,7 @@
 </div>
 
 <script>
+    var baseUrl_inner = window.location.pathname.startsWith('/Mika_Portfolio') ? '/Mika_Portfolio' : '';
     // 方塊數量 (目前可以到 16)
     var blockCount = 6;
 
@@ -38,7 +39,7 @@
         },
         {   // 2
             image: "src/assets/images/example_image_2.png",
-            link: "/kinghoksu",
+            link: `${baseUrl_inner}/kinghoksu`,
             appName: "景德祠APP",
             appCot1: "準產品上線網頁",
             appCot2: "APP產品APP重點功能介紹",
