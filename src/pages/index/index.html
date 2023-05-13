@@ -1,13 +1,13 @@
 <div class="lg:container lg:mx-auto lg:px-16 xl:px-20 2xl:px-24 overflow-hidden custom-container">
     <!-- <h1>首頁內容</h1> -->
-    <div class="flex justify-between wapper_container_hand">
+    <div class="flex justify-between wapper_container_hand" style="min-height: 45rem;">
         <div id="lottie-container-hand" class="self-start flex-1 pt-12"></div>
         <div class="text-5xl xl:text-6xl custom-font-Fahkwang self-end pb-24 lg:pb-36" style="letter-spacing: 0.34em; color: #606060;">
             <h3 class="pb-4"> Hi, there👇</h3>
             <h3> It’s </h3>
         </div>
     </div>
-    <div class="flex items-center justify-between h-screen">
+    <div class="flex items-center justify-between h-screen" style="min-height: 40rem;">
         <div id="lottie-container-p" class="w-3/5"></div>
         <div class="inline-flex flex-col items-center px-16 w-2/5" style="letter-spacing: 0.01em; color: #606060;">
             <div id="lottie-container-mika_characters" class="relative"></div>
@@ -279,6 +279,14 @@
                 setAnimationProgress(anim, 0.01);
             } else {
                 setAnimationProgress(anim, 1 - scrollProgress);
+            }
+        }
+        
+        if (containerDiv === lottieContainer_p) {
+            if (scrollDistance <= 0) {
+                containerDiv.style.transform = `translateY(${window.pageYOffset + windowHeight / 2 - (containerOffsetTop + containerHeight / 2.5)}px)`;
+            } else {
+                containerDiv.style.transform = 'translateY(0%)';
             }
         }
     }
