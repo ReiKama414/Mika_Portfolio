@@ -38,7 +38,7 @@
         },
         {   // 2
             image: "src/assets/images/example_image_2.png",
-            link: "",
+            link: "/kinghoksu",
             appName: "景德祠APP",
             appCot1: "準產品上線網頁",
             appCot2: "APP產品APP重點功能介紹",
@@ -282,13 +282,13 @@
             }
         }
         
-        if (containerDiv === lottieContainer_p) {
-            if (scrollDistance <= 0) {
-                containerDiv.style.transform = `translateY(${window.pageYOffset + windowHeight / 2 - (containerOffsetTop + containerHeight / 2.5)}px)`;
-            } else {
-                containerDiv.style.transform = 'translateY(0%)';
-            }
-        }
+        // if (containerDiv === lottieContainer_p) {
+        //     if (scrollDistance <= 0) {
+        //         containerDiv.style.transform = `translateY(${window.pageYOffset + windowHeight / 2 - (containerOffsetTop + containerHeight / 2.5)}px)`;
+        //     } else {
+        //         containerDiv.style.transform = 'translateY(0%)';
+        //     }
+        // }
     }
     
     window.addEventListener('scroll', () => {

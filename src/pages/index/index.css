@@ -21,8 +21,8 @@
 
 #lottie-container-p {
     max-width: 40rem;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease-in-out;
+    /* transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out; */
 }
 
 #lottie-container-mika_characters {

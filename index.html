@@ -82,6 +82,12 @@
     page('/contact', function() {
       loadPage(routes['/contact'].page, routes['/contact'].title, '/contact');
     });
+    page('/kinghoksu', function() {
+      window.location.href = '/kinghoksu/index.html';
+    });
+    // page('/kinghoksu/page1', function() {
+    //   window.location.href = '/kinghoksu/page1.html';
+    // });
     page('*', notFoundPage);
 
     // 監聽路由變化
