@@ -1,8 +1,5 @@
 <script>
-  // 獲取基本 URL
-  var baseUrl = window.location.pathname.startsWith('/Mika_Portfolio') ? '/Mika_Portfolio' : '';
-
-  // 創建連結的陣列
+  // var baseUrl = window.location.pathname.startsWith('/Mika_Portfolio') ? '/Mika_Portfolio' : '';
   var links = [
     {
       text: 'Home',
@@ -18,10 +15,9 @@
     // }
   ];
 
-  // 生成連結
   var linkHtml = '';
   links.forEach(function(link) {
-    var url = baseUrl + link.url; // 使用絕對路徑
+    var url = baseUrl + link.url;
 
     linkHtml += `
       <li class="mx-3 my-5 px-1 custom-font-color1">
@@ -32,7 +28,6 @@
     `;
   });
 
-  // 更新 header 的 HTML
   var headerHtml = `
     <header class="fixed top-4 left-1/2 w-11/12 backdrop-blur-md transform -translate-x-1/2 px-10 py-2.5 rounded-full flex items-center justify-between custom-box-shadow-1">
       <a href="${baseUrl + '/'}">
@@ -58,7 +53,6 @@
     </header>
   `;
 
-  // 更新 header 的內容
   $('#header').html(headerHtml);
 
   var lottieContainer_Logo = document.getElementById("lottie-container-logo");
@@ -73,46 +67,13 @@
 
   lottieContainer_Logo.addEventListener("mouseenter", function() {
     animation_logo.setDirection(1); // 設置播放方向為正向
-    animation_logo.play(); // 播放動畫
+    animation_logo.play();
   });
 
   lottieContainer_Logo.addEventListener("mouseleave", function() {
     animation_logo.setDirection(-1); // 設置播放方向為倒轉
-    animation_logo.play(); // 播放動畫
+    animation_logo.play();
   });
 
   animation_logo.setSpeed(2);
 </script>
-
-<!-- <header class="fixed top-4 left-1/2 w-11/12 backdrop-blur-md transform -translate-x-1/2 px-10 py-2.5 rounded-full flex items-center justify-between custom-box-shadow-1">
-    <div>
-      logo
-    </div>
-    <ul class="flex items-center gap-4">
-      <li class="mx-3 my-5 px-1 custom-font-color1">
-        <a href="/Mika_Portfolio/">
-          Home
-        </button>
-      </li>
-      <li class="mx-3 my-5 px-1 custom-font-color1">
-        <a href="/Mika_Portfolio/about">
-          About
-        </button>
-      </li>
-      <li class="ms-3 my-5 px-1 custom-font-color1">
-        <a href="/Mika_Portfolio/contact">
-          Contact
-        </button>
-      </li>
-      <li>
-        <a class="inline-flex items-center px-7 py-4 font-medium leading-tight border border-solid border-black rounded-full capitalize"
-          style="letter-spacing: 0.125rem;"
-          href="link-to-resume.pdf"
-          download
-        >
-          <img class="custom-w-5_5 custom-h-5_5 object-contain me-2" src="https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/63837ea016814d1c2fbdd8bb_download.svg" alt="Download Icon">
-          Resume
-        </a>
-      </li>
-    </ul>
-</header> -->
