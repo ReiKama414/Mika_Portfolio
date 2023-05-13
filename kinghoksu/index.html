@@ -17,7 +17,9 @@
 <body>
   <div id="header"></div>
 
-  <div id="app">123</div>
+  <div class="content" style="height: 3000px;">
+
+  </div>
 
   <div id="footer"></div>
 
@@ -42,89 +44,6 @@
         $('#footer').html(response);
       }
     });
-
-    
-    // var routes = {
-    //   '/': {
-    //     page: 'index.html',
-    //     title: "Mika's Portfolio"
-    //   },
-    //   '/about': {
-    //     page: 'about.html',
-    //     title: 'About | Mika\'s Portfolio'
-    //   },
-    //   '/contact': {
-    //     page: 'contact.html',
-    //     title: 'Contact | Mika\'s Portfolio'
-    //   }
-    // };
-
-    // var firstLoad = true;
-    // var baseUrl = '';
-
-    // // 條件語句：判斷是否在本地開發環境
-    // if (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') {
-    //   // 本地開發環境下的路徑設置
-    //   baseUrl = ''; // 可以根據你的本地伺服器設定做調整，例如 '/Mika_Portfolio'
-    // } else {
-    //   // 部署到 GitHub Pages 上的路徑設置
-    //   baseUrl = '/Mika_Portfolio';
-    // }
-    // page.base(baseUrl);
-    
-    // // 設定路由
-    // page('/', function() {
-    //   loadPage(routes['/'].page, routes['/'].title, '/');
-    // });
-    // page('/about', function() {
-    //   loadPage(routes['/about'].page, routes['/about'].title, '/about');
-    // });
-    // page('/contact', function() {
-    //   loadPage(routes['/contact'].page, routes['/contact'].title, '/contact');
-    // });
-    // page('*', notFoundPage);
-
-    // // 監聽路由變化
-    // page();
-
-    // // 加載頁面的函式
-    // function loadPage(page, title, url) {
-    //   page = `src/pages/${page.replace('.html', '')}/${page}`;
-    //   $.ajax({
-    //     url: page,
-    //     dataType: 'html',
-    //     success: function(response) {
-    //       $('#app').html(response);
-
-    //       if (!firstLoad) {
-    //         var prevCss = $('head link[rel="stylesheet"]:last').attr('href');
-    //         $('head link[rel="stylesheet"][href="' + prevCss + '"]').remove();
-    //       } else {
-    //         firstLoad = false;
-    //       }
-
-    //       loadCss(page.replace('.html', '.css'));\
-    //       window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    //       document.title = title;
-    //     }
-    //   });
-    // }
-
-    // // 加載頁面的 Css 檔案
-    // function loadCss(cssFile) {
-    //   var link = document.createElement('link');
-    //   link.rel = 'stylesheet';
-    //   link.href = cssFile;
-    //   document.head.appendChild(link);
-    // }
-    // 頁面不存在的處理
-    // function notFoundPage() {
-    //   document.getElementById('app').innerHTML = '<h1>頁面未找到</h1>';
-    // }
-
-    // // 啟動路由監聽
-    // page({ hashbang: true });
   </script>
 </body>
 
