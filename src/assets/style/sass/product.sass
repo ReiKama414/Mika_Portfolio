@@ -1,5 +1,6 @@
 $header-height: 7.5rem
 $header-top: 1rem
+$text-color: #212966
     
 body
     padding: 0
@@ -12,3 +13,52 @@ body
             background-image: url('../../kinghoksu/bg/bg1.png')
             background-repeat: no-repeat
             background-position: center
+            .content
+                font-size: 2.5rem
+                letter-spacing: 0.12em
+                color: $text-color
+                > div:first-of-type
+                    padding-left: 10%
+                    min-width: 35rem
+                .app-name
+                    padding-top: 1.125rem
+                    line-height: 2.75rem
+                .app-content
+                    line-height: 3.625rem
+                    + div
+                        padding-top: 1.125rem
+                        font-size: 1.25rem
+                        line-height: 1.875rem
+                .app-img
+                    padding-right: 10%
+
+@media (max-width: 1399.98px)
+    #app
+        .section
+            &:first-of-type
+                .content
+                    > div:first-of-type
+                        padding-left: 7%
+                    .app-img
+                        padding-right: 7%
+
+@media (max-width: 1199.98px)
+    #app
+        .section
+            &:first-of-type
+                .content
+                    font-size: 2.25rem
+                    > div:first-of-type
+                        padding-left: 5%
+                        min-width: 0
+                    .app-name
+                        padding-top: 0.85rem
+                        line-height: 2.5rem
+                    .app-content
+                        line-height: 3.375rem
+                        + div
+                            padding-top: 0.85rem
+                            font-size: 1rem
+                            line-height: 1.75rem
+                    .app-img
+                        padding-right: 5%
