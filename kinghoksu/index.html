@@ -9,25 +9,32 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <link href="../src/assets/style/css/style.min.css" rel="stylesheet">
+  <link href="../src/assets/style/css/product.min.css" rel="stylesheet">
 </head>
 
 <body>
   <div id="header"></div>
 
-  <div class="content" style="height: 3000px;">
-
+  <div class="content">
+    <div class="section">
+    </div>
+    
+    <div class="section" style="background-color: #939FAA;">
+    </div>
+    
+    <div class="section" style="background-color: #475577; min-height: 3000px;">
+    </div>
   </div>
 
   <div id="footer"></div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://unpkg.com/page/page.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js" integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
   <script>
-    // 使用 jQuery 的 AJAX 加載 header.html
     $.ajax({
       url: '../src/components/header/header_kinghoksu.html',
       dataType: 'html',
@@ -36,7 +43,6 @@
       }
     });
 
-    // 使用 jQuery 的 AJAX 加載 footer.html
     $.ajax({
       url: '../src/components/footer/footer.html',
       dataType: 'html',
@@ -44,6 +50,16 @@
         $('#footer').html(response);
       }
     });
+
+    $(function() {
+      $.scrollify({
+        section: ".section",
+        easing: "easeOutExpo",
+        scrollSpeed: 800,
+        scrollbars: true,
+      });
+    });
+
   </script>
 </body>
 

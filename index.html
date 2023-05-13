@@ -25,7 +25,6 @@
   <script src="https://unpkg.com/page/page.js"></script>
 
   <script>
-    // 使用 jQuery 的 AJAX 加載 header.html
     $.ajax({
       url: 'src/components/header/header.html',
       dataType: 'html',
@@ -34,7 +33,6 @@
       }
     });
 
-    // 使用 jQuery 的 AJAX 加載 footer.html
     $.ajax({
       url: 'src/components/footer/footer.html',
       dataType: 'html',
@@ -93,7 +91,6 @@
     // 監聽路由變化
     page();
 
-    // 加載頁面的函式
     function loadPage(page, title, url) {
       page = `src/pages/${page.replace('.html', '')}/${page}`;
       // console.log(page);
@@ -103,7 +100,6 @@
         success: function(response) {
           $('#app').html(response);
 
-          // 判斷是否為第一次呼叫
           if (!firstLoad) {
             // 取得前一個頁面的 CSS 和 JS 文件
             var prevCss = $('head link[rel="stylesheet"]:last').attr('href');
@@ -116,17 +112,10 @@
             firstLoad = false;
           }
 
-          // 加載頁面的 Sass 和 JavaScript
           loadCss(page.replace('.html', '.css'));
           // loadScript(page.replace('.html', '.js'));
       
-          // 滾動到頁面頂部
           window.scrollTo({ top: 0, behavior: 'smooth' });
-
-          // 修改路由名稱
-          // history.pushState({}, title, url);
-
-          // 修改標題
           document.title = title;
         }
       });
