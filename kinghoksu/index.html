@@ -20,14 +20,11 @@
 
   <div id="app">
     <div class="section bg-contain lg:bg-cover flex items-center">
-      <!-- <div class="absolute left-12 right-12 bottom-10 z-0 glass">
-        <div></div>
-      </div> -->
-      <div class="absolute left-12 right-12 z-0 glass">
-        <img src="../src/assets/kinghoksu/glass/g1-1.png" alt="background layout image" class="absolute inset-0 w-full h-full" />
+      <img src="../src/assets/kinghoksu/glass/w1.png" alt="background layout image" class="absolute inset-0 w-full h-full z-10 object-cover" />
+      <div class="glass z-0">
+        <img src="../src/assets/kinghoksu/glass/g1.png" alt="background layout image" class="absolute inset-0 w-full h-full" />
       </div>
-      <!-- <img src="../src/assets/kinghoksu/glass/g1.png" alt="background layout image" class="absolute px-12 pt-20 pb-10 opacity-60 w-full h-4/5 z-0" /> -->
-      <div class="absolute content flex px-12 pt-20 pb-10 w-full h-4/5 z-10">
+      <div class="content flex z-10">
         <div class="flex flex-col items-start justify-center w-1/2 custom-font-NotoSerif">
           <div class="inline-flex flex-col items-center justify-start">
             <img id="logo" src="../src/assets/kinghoksu/App Icon@3x 2.png" class="app-logo custom-w-100px object-contain" alt="APP Logo" />
@@ -47,16 +44,43 @@
         </div>
         <div class="relative w-1/2 h-full">
           <img src="../src/assets/kinghoksu/img/g1.png" class="app-img relative bottom-8 ms-auto h-full object-contain" alt="APP 圖片"/>
-          <img src="../src/assets/kinghoksu/gif/baibai1.png" class="absolute app-baibai" style="left: -7.5rem; bottom: -5rem" alt="拜拜" />
+          <img src="../src/assets/kinghoksu/gif/baibai1.png" class="absolute app-baibai" alt="拜拜" />
         </div>
       </div>
     </div>
     
     <div class="section bg-contain xl:bg-cover flex items-center">
-      <img src="../src/assets/kinghoksu/glass/g2.png" alt="background layout image" class="absolute px-12 py-24 opacity-50 w-full h-full z-0" />
-      <div class="absolute content flex px-12 py-24 w-full h-full z-10">
-        <div class="relative w-1/2 h-full"></div>
-        <div class="flex flex-col items-start justify-center w-1/2 custom-font-NotoSerif">
+      <div class="glass z-0"></div>
+      <!-- <img src="../src/assets/kinghoksu/glass/g2.png" alt="background layout image" class="absolute px-12 py-24 opacity-50 w-full h-full z-0" /> -->
+      <div class="content flex z-10">
+        <div class="w-5/12 h-full">
+          <div class="relative app-img h-full">
+            <img src="../src/assets/kinghoksu/img/meow1.png" class="mx-auto h-full object-contain" alt="APP 圖片"/>
+            <div id="typing-text" class="absolute custom-font-NotoSans font-medium">123</div>
+          </div>
+        </div>
+        <div class="relative w-7/12 custom-font-PingFang font-normal app-tab">
+          <a>
+            <img src="../src/assets/kinghoksu/img/fun1.png" />
+            <img src="../src/assets/kinghoksu/img/fun1.png" class="absolute inset-0" />
+            <span>拜拜賺積分</span>
+          </a>
+          <a>
+            <img src="../src/assets/kinghoksu/img/fun2.png" />
+            <img src="../src/assets/kinghoksu/img/fun2.png" class="absolute inset-0" />
+            <span>擲筊問籤</span>
+          </a>
+          <a>
+            <img src="../src/assets/kinghoksu/img/fun3.png" />
+            <img src="../src/assets/kinghoksu/img/fun3.png" class="absolute inset-0" />
+            <span>發財金</span>
+          </a>
+          <a>
+            <img src="../src/assets/kinghoksu/img/fun4.png" />
+            <img src="../src/assets/kinghoksu/img/fun4.png" class="absolute inset-0" />
+            <span>點燈服務</span>
+          </a>
+          <img src="../src/assets/kinghoksu/img/title1.png" alt="title text" class="absolute left-0 right-0 mx-auto object-contain" />
         </div>
       </div>
     </div>
@@ -95,6 +119,29 @@
         scrollbars: true,
       });
     });
+
+    var text = "你好呀～\n我是景德祠的虎爺\n在ＡＰＰ裡面負責引導大家唷~\n跟我一起來看景德祠ＡＰＰ有哪些特色功能吧";
+    var speed = 50;
+    var typingText = document.getElementById("typing-text");
+
+    typingText.innerHTML = "";
+    var cursorVisible = true;
+
+    function typeWriter(text, i) {
+      if (i < text.length) {
+        if (text.charAt(i) === "\n") {
+          typingText.innerHTML += "<br>";
+        } else {
+          typingText.innerHTML += text.charAt(i) + "|";
+        }
+        setTimeout(function() {
+          typingText.innerHTML = typingText.innerHTML.replace("|", "");
+          typeWriter(text, i + 1);
+        }, speed);
+      }
+    }
+
+    typeWriter(text, 0);
   </script>
 </body>
 
