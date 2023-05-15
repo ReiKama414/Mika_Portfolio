@@ -16,13 +16,34 @@ body
     padding: 0
 
 #app
+    #app-menu-fixed
+        display: none
+        align-items: center
+        justify-content: space-around
+        padding: 0.313rem 1.688rem 
+        bottom: 60px
+        width: 494px
+        height: 90px
+        background: rgba(255, 255, 255, 0.1)
+        border-radius: 40px
+        box-shadow: 0px 0px 10px rgba(25, 51, 81, 0.35)
+        backdrop-filter: blur(30px)
+        button
+            // @include size(5rem)
+            padding: 0 0.938rem
+            transition: all .25s
+            &:not(.active)
+                mix-blend-mode: luminosity
+                opacity: 0.4
     .section
-        overflow: hidden
         color: $text-color
-        > div
-            position: absolute
-            left: 8.5%
-            right: 8.5%
+        &:nth-of-type(1),
+        &:nth-of-type(2)
+            overflow: hidden
+            > div
+                position: absolute
+                left: 8.5%
+                right: 8.5%
         .content
             letter-spacing: 0.12em
         &:nth-of-type(1)
@@ -86,7 +107,7 @@ body
                         font-size: 1.5rem
                         line-height: 1.875rem
                         letter-spacing: 1px
-                        max-width: 412px
+                        max-width: 420px
                         min-height: 225px
                         color: #629BF0
                         background: rgba(255, 255, 255, 0.08)
@@ -98,7 +119,7 @@ body
                     flex-wrap: wrap
                     padding-top: 3rem
                     padding-bottom: 5rem
-                    > a
+                    > button
                         @include size(50%)
                         position: relative
                         img
@@ -117,6 +138,45 @@ body
                             filter: saturate(200%) blur(10px)
                     > img
                         top: -3rem
+        &:nth-of-type(3)
+            padding: 8.5%
+            width: 100%
+            > *
+                letter-spacing: 0.12em
+            .app-img
+                img
+                    max-width: 505px
+                > div
+                    padding: 18px 20px
+                    top: 24%
+                    left: -8%
+                    color: #FFFFFF
+                    background: #629BF0
+                    border-radius: 40px 40px 0px 40px
+                    box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
+                    backdrop-filter: blur(30px)
+                    opacity: 0
+                    transition: opacity 4.5s ease-in-out, top 5s ease-in
+            .app-img > div,
+            .content p,
+            .content .app-box
+                font-size: 24px
+                line-height: 30px
+            .content
+                h3
+                    font-size: 40px
+                    line-height: 58px
+                    img
+                        top: -35%
+                        left: -20%
+                        z-index: -1
+                .app-box
+                    padding: 18px 28px
+                    color: #629BF0
+                    background: rgba(255, 255, 255, 0.1)
+                    border-radius: 40px 40px 40px 0px
+                    box-shadow: 1px 4px 10px rgba(25, 51, 81, 0.35)
+                    backdrop-filter: blur(30px)
 
 @media (max-width: 1299.98px)
     #app
@@ -156,6 +216,18 @@ body
                             font-size: 1rem
                             line-height: 1.45rem
                             min-height: 185px
+            &:nth-of-type(3)
+                .app-img > div,
+                .content p,
+                .content .app-box
+                    font-size: 20px
+                    line-height: 28px
+                .app-img > div
+                    padding: 16px 18px
+                .content
+                    h3
+                        font-size: 36px
+                        line-height: 48px
 
 @media (max-width: 1079.98px)
     #app
@@ -181,3 +253,15 @@ body
                 .content
                     .app-tab
                         padding-bottom: 3rem
+            &:nth-of-type(3)
+                .app-img > div,
+                .content p,
+                .content .app-box
+                        font-size: 18px
+                        line-height: 26px
+                .app-img > div
+                    padding: 12px 14px
+                .content
+                    h3
+                        font-size: 32px
+                        line-height: 45px
