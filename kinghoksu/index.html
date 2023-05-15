@@ -117,31 +117,33 @@
         easing: "easeOutExpo",
         scrollSpeed: 800,
         scrollbars: true,
+        before: function(index, sections) {
+          if (index === 1) {
+            var text = "你好呀～\n我是景德祠的虎爺\n在ＡＰＰ裡面負責引導大家唷~\n跟我一起來看景德祠ＡＰＰ有哪些特色功能吧";
+            var speed = 50;
+            var typingText = document.getElementById("typing-text");
+
+            typingText.innerHTML = "";
+
+            function typeWriter(text, i) {
+              if (i < text.length) {
+                if (text.charAt(i) === "\n") {
+                  typingText.innerHTML += "<br>";
+                } else {
+                  typingText.innerHTML += text.charAt(i) + "|";
+                }
+                setTimeout(function() {
+                  typingText.innerHTML = typingText.innerHTML.replace("|", "");
+                  typeWriter(text, i + 1);
+                }, speed);
+              }
+            }
+
+            typeWriter(text, 0);
+          }
+        },
       });
     });
-
-    var text = "你好呀～\n我是景德祠的虎爺\n在ＡＰＰ裡面負責引導大家唷~\n跟我一起來看景德祠ＡＰＰ有哪些特色功能吧";
-    var speed = 50;
-    var typingText = document.getElementById("typing-text");
-
-    typingText.innerHTML = "";
-    var cursorVisible = true;
-
-    function typeWriter(text, i) {
-      if (i < text.length) {
-        if (text.charAt(i) === "\n") {
-          typingText.innerHTML += "<br>";
-        } else {
-          typingText.innerHTML += text.charAt(i) + "|";
-        }
-        setTimeout(function() {
-          typingText.innerHTML = typingText.innerHTML.replace("|", "");
-          typeWriter(text, i + 1);
-        }, speed);
-      }
-    }
-
-    typeWriter(text, 0);
   </script>
 </body>
 
