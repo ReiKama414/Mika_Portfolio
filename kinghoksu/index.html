@@ -19,74 +19,100 @@
   <div id="header"></div>
 
   <div id="app">
-    <div class="section bg-contain lg:bg-cover flex items-center" data-section-name="index">
-      <img src="../src/assets/kinghoksu/glass/w1.png" alt="background layout image" class="absolute inset-0 w-full h-full z-10 object-cover" />
+    <div class="section relative flex items-center justify-center w-full fc-primary">
+      <!-- BackGround -->
+      <img src="../src/assets/kinghoksu/bg/bg1.png" alt="background layout image" class="w-full h-full z-0 object-cover" />
       <div class="glass z-0">
-        <img src="../src/assets/kinghoksu/glass/g1.png" alt="background layout image" class="absolute inset-0 w-full h-full" />
+        <img src="../src/assets/kinghoksu/glass/g1.png" alt="background layout image" />
       </div>
-      <div class="content flex z-10">
-        <div class="flex flex-col items-start justify-center w-1/2 custom-font-NotoSerif">
+      <img src="../src/assets/kinghoksu/glass/w1.png" alt="background layout image" class="absolute inset-0 w-full h-full z-10 object-cover" />
+      
+      <!-- Content -->
+      <div class="content w-full z-10 flex">
+        <!-- Left Helf -->
+        <div class="flex flex-col items-start justify-center w-1/2 custom-font-NotoSerif ls-12 whitespace-nowrap">
           <div class="inline-flex flex-col items-center justify-start">
-            <img id="logo" src="../src/assets/kinghoksu/App Icon@3x 2.png" class="app-logo custom-w-100px object-contain" alt="APP Logo" />
-            <div class="app-name inline-flex flex-col items-center justify-center font-black">
-              <h3>景德祠</h3>
-              <h3>APP</h3>
+            <img id="logo" src="../src/assets/kinghoksu/App Icon@3x 2.png" class="custom-w-100px object-contain pb-4" alt="APP Logo" />
+            <div class="app-name text-center font-black custom-font-Soukou fs-01 pb-4">
+              <h3 class="whitespace-pre-line">景德祠
+                APP</h3>
             </div>
           </div>
-          <div class="font-bold app-content">
+          <div class="font-bold fs-02 pb-4">
             遊戲化民間信仰<br />
             打破傳統廟宇互動方式
           </div>
-          <div class="font-semibold">
+          <div class="font-semibold fs-03">
             用不同角度方式解譯<br />
             古老又很不酷的台灣民俗文化
           </div>
         </div>
+        <!-------------->
+        <!-- Right Helf -->
         <div class="relative w-1/2 h-full">
-          <img src="../src/assets/kinghoksu/img/g1.png" class="app-img relative bottom-8 ms-auto h-full object-contain" alt="APP 圖片"/>
+          <img src="../src/assets/kinghoksu/img/g1.png" class="app-img relative bottom-10 ms-auto h-full object-contain" alt="APP 圖片"/>
           <img src="../src/assets/kinghoksu/gif/baibai1.png" class="absolute app-baibai" alt="拜拜" />
         </div>
+        <!-------------->
       </div>
     </div>
-    
-    <div class="section bg-contain xl:bg-cover flex items-center" data-section-name="menu">
+
+    <div class="section relative flex items-center justify-center w-full fc-primary" id="second-section">
+      <!-- BackGround -->
+      <img src="../src/assets/kinghoksu/bg/bg2.png" alt="background layout image" class="w-full h-full z-0 object-cover" />
       <div class="glass z-0"></div>
-      <!-- <img src="../src/assets/kinghoksu/glass/g2.png" alt="background layout image" class="absolute px-12 py-24 opacity-50 w-full h-full z-0" /> -->
-      <div class="content flex z-10">
-        <div class="w-5/12 h-full">
+
+      <!-- Content -->
+      <div class="content w-full z-10 flex">
+        <!-- Left Helf -->
+        <div class="custom-w-45p h-full">
           <div class="relative app-img h-full">
-            <img src="../src/assets/kinghoksu/img/meow1.png" class="mx-auto h-full object-contain" alt="APP 圖片"/>
-            <div id="typing-text" class="absolute custom-font-NotoSans font-normal">123</div>
+            <img src="../src/assets/kinghoksu/img/meow1.png" class="relative mx-auto h-full object-contain" alt="APP 圖片"/>
+            <div id="typing-text" class="absolute custom-font-NotoSans font-normal"></div>
           </div>
         </div>
-        <div class="relative w-7/12 custom-font-PingFang font-normal app-tab">
-          <button class="action-btn1">
+        <!-------------->
+        <!-- Right Helf -->
+        <div class="app-tab relative custom-w-55p custom-font-PingFang font-normal fs-04 ls-12">
+          <img src="../src/assets/kinghoksu/img/title1.png" alt="title text" class="absolute left-0 right-0 mx-auto object-contain" />
+          <a>
             <img src="../src/assets/kinghoksu/img/fun1.png" />
             <img src="../src/assets/kinghoksu/img/fun1.png" class="absolute inset-0" />
             <span>拜拜賺積分</span>
-          </button>
-          <button class="action-btn2">
+          </a>
+          <a>
             <img src="../src/assets/kinghoksu/img/fun2.png" />
             <img src="../src/assets/kinghoksu/img/fun2.png" class="absolute inset-0" />
             <span>擲筊問籤</span>
-          </button>
-          <button class="action-btn3">
+          </a>
+          <a>
             <img src="../src/assets/kinghoksu/img/fun3.png" />
             <img src="../src/assets/kinghoksu/img/fun3.png" class="absolute inset-0" />
             <span>發財金</span>
-          </button>
-          <button class="action-btn4">
+          </a>
+          <a>
             <img src="../src/assets/kinghoksu/img/fun4.png" />
             <img src="../src/assets/kinghoksu/img/fun4.png" class="absolute inset-0" />
             <span>點燈服務</span>
           </button>
-          <img src="../src/assets/kinghoksu/img/title1.png" alt="title text" class="absolute left-0 right-0 mx-auto object-contain" />
+        </a>
+        <!-------------->
+      </div>
+    </div>
+    
+    <!-- <div class="section bg-contain xl:bg-cover flex items-center" data-section-name="menu">
+      <div class="content flex z-10">
+        <div class="w-5/12 h-full">
+          <div class="relative app-img h-full">
+          </div>
+        </div>
+        <div class="relative w-7/12 custom-font-PingFang font-normal app-tab">
         </div>
       </div>
     </div>
     
     <div class="section flex flex-col scrollable-content" data-section-name="summary1">
-      <!-- First half -->
+      <!-- First half --
       <div class="flex justify-around">
         <div class="relative app-img w-1/2 pl-24 pr-6">
           <img src="../src/assets/kinghoksu/gif/baibai2.png" class="w-full object-contain ms-auto" alt="手機拜拜打卡" />
@@ -103,7 +129,7 @@
             我們緊密的糾纏在一起</div>
         </div>
       </div>
-      <!-- Second half -->
+      <!-- Second half --
       <div>
       </div>
 
@@ -118,7 +144,7 @@
     <div class="section scrollable-content" style="background-color: #77475f;" data-section-name="summary4">
     </div>
 
-    <!-- Menu -->
+    <!-- Menu --
     <div id="app-menu-fixed" class="fixed mx-auto left-0 right-0">
       <button class="action-btn1">
         <img src="../src/assets/kinghoksu/img/menu1.png" />
@@ -132,7 +158,7 @@
       <button class="action-btn4">
         <img src="../src/assets/kinghoksu/img/menu4.png" />
       </button>
-    </div>
+    </div> -->
   </div>
 
   <div id="footer" data-section-name="footer"></div>
@@ -157,89 +183,121 @@
       }
     });
 
-    $(function() {
-      var typingTimer;
-      var isTypingInProgress = false;
-      
-      $.scrollify({
-        section: ".section",
-        easing: "easeOutExpo",
-        scrollSpeed: 800,
-        scrollbars: true,
-        interstitialSection:"#footer",
-        before: function(index, sections) {
-          // 打字計時
-          if (index === 1 && !isTypingInProgress) {
-            var text = "你好呀～\n我是景德祠的虎爺\n在ＡＰＰ裡面負責引導大家唷~\n跟我一起來看景德祠ＡＰＰ有哪些特色功能吧！";
-            var speed = 50;
-            var typingText = document.getElementById("typing-text");
+    var text = "你好呀～\n我是景德祠的虎爺\n在ＡＰＰ裡面負責引導大家唷~\n跟我一起來看景德祠ＡＰＰ有哪些特色功能吧！";
+    var speed = 50;
+    var typingText = document.getElementById("typing-text");
 
-            typingText.innerHTML = "";
-            isTypingInProgress = true;
+    typingText.innerHTML = "";
 
-            function typeWriter(text, i) {
-              if (i < text.length) {
-                if (text.charAt(i) === "\n") {
-                  typingText.innerHTML += "<br>";
-                } else {
-                  typingText.innerHTML += text.charAt(i) + "|";
-                }
-                typingTimer = setTimeout(function() {
-                  typingText.innerHTML = typingText.innerHTML.replace("|", "");
-                  typeWriter(text, i + 1);
-                }, speed);
-              } else {
-                isTypingInProgress = false;
-              }
-            }
-            typeWriter(text, 0);
-          } else if (index === 0 && typeof typingTimer !== "undefined") {
-            clearTimeout(typingTimer);
-            isTypingInProgress = false;
-          }
-          
-          // Menu 出現時機
-          if (index !== 0 && index !== 1) {
-            $("#app-menu-fixed").fadeIn(500).css("display", "flex");
-          } else {
-            $("#app-menu-fixed").fadeOut(500);
-          }
+    function typeWriter(text, i) {
+      if (i < text.length) {
+        if (text.charAt(i) === "\n") {
+          typingText.innerHTML += "<br>";
+        } else {
+          typingText.innerHTML += text.charAt(i) + "|";
+        }
+        setTimeout(function() {
+          typingText.innerHTML = typingText.innerHTML.replace("|", "");
+          typeWriter(text, i + 1);
+        }, speed);
+      }
+    }
 
-          // Menu Button 狀態
-          $("#app-menu-fixed button").removeClass("active");
-          $("#app-img-box-l").css("opacity", "0");
-          $("#app-img-box-l").css("top", "0");
-
-          if (index === 2) {
-            $("#app-menu-fixed button:nth-child(1)").addClass("active");
-            $("#app-img-box-l").css("opacity", "1");
-            $("#app-img-box-l").css("top", "24%");
-          } else if (index === 3) {
-            $("#app-menu-fixed button:nth-child(2)").addClass("active");
-          } else if (index === 4) {
-            $("#app-menu-fixed button:nth-child(3)").addClass("active");
-          } else if (index === 5) {
-            $("#app-menu-fixed button:nth-child(4)").addClass("active");
-          }
-        },
-      });
-
-      $(".action-btn1").on("click", function() {
-        $.scrollify.move("#summary1");
-      });
-
-      $(".action-btn2").on("click", function() {
-        $.scrollify.move("#summary2");
-      });
-
-      $(".action-btn3").on("click", function() {
-        $.scrollify.move("#summary3");
-      });
-
-      $(".action-btn4").on("click", function() {
-        $.scrollify.move("#summary4");
+    var observer = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.target.id === "second-section" && entry.isIntersecting) {
+          typeWriter(text, 0);
+          observer.disconnect();
+        }
       });
     });
+
+    var secondSection = document.getElementById("second-section");
+    observer.observe(secondSection);
+
+    // $(function() {
+    //   var typingTimer;
+    //   var isTypingInProgress = false;
+      
+    //   $.scrollify({
+    //     section: ".section",
+    //     easing: "easeOutExpo",
+    //     scrollSpeed: 800,
+    //     scrollbars: true,
+    //     interstitialSection:"#footer",
+    //     before: function(index, sections) {
+    //       // 打字計時
+    //       if (index === 1 && !isTypingInProgress) {
+    //         var text = "你好呀～\n我是景德祠的虎爺\n在ＡＰＰ裡面負責引導大家唷~\n跟我一起來看景德祠ＡＰＰ有哪些特色功能吧！";
+    //         var speed = 50;
+    //         var typingText = document.getElementById("typing-text");
+
+    //         typingText.innerHTML = "";
+    //         isTypingInProgress = true;
+
+    //         function typeWriter(text, i) {
+    //           if (i < text.length) {
+    //             if (text.charAt(i) === "\n") {
+    //               typingText.innerHTML += "<br>";
+    //             } else {
+    //               typingText.innerHTML += text.charAt(i) + "|";
+    //             }
+    //             typingTimer = setTimeout(function() {
+    //               typingText.innerHTML = typingText.innerHTML.replace("|", "");
+    //               typeWriter(text, i + 1);
+    //             }, speed);
+    //           } else {
+    //             isTypingInProgress = false;
+    //           }
+    //         }
+    //         typeWriter(text, 0);
+    //       } else if (index === 0 && typeof typingTimer !== "undefined") {
+    //         clearTimeout(typingTimer);
+    //         isTypingInProgress = false;
+    //       }
+          
+    //       // Menu 出現時機
+    //       if (index !== 0 && index !== 1) {
+    //         $("#app-menu-fixed").fadeIn(500).css("display", "flex");
+    //       } else {
+    //         $("#app-menu-fixed").fadeOut(500);
+    //       }
+
+    //       // Menu Button 狀態
+    //       $("#app-menu-fixed button").removeClass("active");
+    //       $("#app-img-box-l").css("opacity", "0");
+    //       $("#app-img-box-l").css("top", "0");
+
+    //       if (index === 2) {
+    //         $("#app-menu-fixed button:nth-child(1)").addClass("active");
+    //         $("#app-img-box-l").css("opacity", "1");
+    //         $("#app-img-box-l").css("top", "24%");
+    //       } else if (index === 3) {
+    //         $("#app-menu-fixed button:nth-child(2)").addClass("active");
+    //       } else if (index === 4) {
+    //         $("#app-menu-fixed button:nth-child(3)").addClass("active");
+    //       } else if (index === 5) {
+    //         $("#app-menu-fixed button:nth-child(4)").addClass("active");
+    //       }
+    //     },
+    //   });
+
+    //   $(".action-btn1").on("click", function() {
+    //     $.scrollify.move("#summary1");
+    //   });
+
+    //   $(".action-btn2").on("click", function() {
+    //     $.scrollify.move("#summary2");
+    //   });
+
+    //   $(".action-btn3").on("click", function() {
+    //     $.scrollify.move("#summary3");
+    //   });
+
+    //   $(".action-btn4").on("click", function() {
+    //     $.scrollify.move("#summary4");
+    //   });
+    // });
   </script>
 </body>
 

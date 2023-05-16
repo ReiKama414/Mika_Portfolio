@@ -16,6 +16,94 @@ body
     padding: 0
 
 #app
+    .section
+        font-size: 16px
+        min-height: 100vh
+        .content,
+        .glass
+            position: absolute
+            width: 85%
+        .content
+            > div:first-of-type
+                padding-left: 8.5%
+            > div:last-of-type
+                padding-right: 8.5%
+        &:nth-of-type(1)
+            .content,
+            .glass
+                top: calc($header-height + $header-top + 5rem)
+                height: 80vh
+            .glass
+                box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
+                backdrop-filter: blur(30px)
+                border-radius: 40px
+                img:first-of-type
+                    @include size(100%)
+                    opacity: 0.4
+            .app-img
+                max-width: 100%
+            .app-baibai
+                left: -7.75rem
+                bottom: -6.5rem
+                width: 28em
+        &:nth-of-type(2)
+            .content,
+            .glass
+                top: 7rem
+                height: 70vh
+            .content
+                > div:first-of-type
+                    padding-left: 7.5%
+                > div:last-of-type
+                    padding-right: 7.5%
+            .glass
+                background: rgba(255, 255, 255, 0.1)
+                box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
+                backdrop-filter: blur(40px)
+                border-radius: 40px
+            .app-img
+                bottom: -6rem
+                > div
+                    margin-left: auto
+                    margin-right: auto
+                    padding: 1.313rem 2.188rem
+                    bottom: 43vh
+                    left: 0
+                    right: 0
+                    font-size: 1.5em
+                    line-height: 1.25em
+                    letter-spacing: 1px
+                    max-width: 420px
+                    min-height: 220px
+                    color: #629BF0
+                    background: rgba(255, 255, 255, 0.08)
+                    box-shadow: inset 0px 0px 20px #ABDCFF, inset 0px 4px 10px rgba(255, 255, 255, 0.3)
+                    backdrop-filter: blur(10px)
+                    border-radius: 40px
+            .app-tab
+                display: flex
+                flex-wrap: wrap
+                padding-top: 3rem
+                padding-bottom: 4rem
+                a
+                    @include size(50%)
+                    position: relative
+                    img
+                        margin-left: auto
+                        margin-right: auto
+                        height: 100%
+                        object-fit: contain
+                        transition: filter .25s
+                    span
+                        position: absolute
+                        bottom: -1.25rem
+                        left: 0
+                        right: 0
+                        text-align: center
+                    &:hover img:nth-of-type(1)
+                        filter: saturate(200%) blur(10px)
+                > img
+                    top: -3rem
     #app-menu-fixed
         display: none
         align-items: center
@@ -35,233 +123,167 @@ body
             &:not(.active)
                 mix-blend-mode: luminosity
                 opacity: 0.4
-    .section
-        color: $text-color
-        &:nth-of-type(1),
-        &:nth-of-type(2)
-            overflow: hidden
-            > div
-                position: absolute
-                left: 8.5%
-                right: 8.5%
-        .content
-            letter-spacing: 0.12em
-        &:nth-of-type(1)
-            @include blurred-background('../../kinghoksu/bg/bg1.png')
-            padding-top: calc($header-height + $header-top + 1rem)
-            > div
-                top: calc($header-height + $header-top + 5rem)
-                bottom: 7.5%
-            .glass
-                box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
-                backdrop-filter: blur(30px)
-                border-radius: 40px
-                img:first-of-type
-                    opacity: 0.5
-            .content
-                font-size: 2.5rem
-                > div:first-of-type
-                    padding-left: 8%
-                    min-width: 35rem
-                .app-name
-                    padding-top: 1.125rem
-                    line-height: 2.75rem
-                .app-content
-                    line-height: 3.625rem
-                    + div
-                        padding-top: 1.125rem
-                        font-size: 1.25rem
-                        line-height: 1.875rem
-                .app-img
-                    padding-right: 15%
-                .app-baibai
-                    left: -7.5rem
-                    bottom: -6rem
-        &:nth-of-type(2)
-            @include blurred-background('../../kinghoksu/bg/bg2.png')
-            > div
-                top: 12.5%
-                bottom: 12.5%
-            .glass
-                background: rgba(255, 255, 255, 0.1)
-                box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
-                backdrop-filter: blur(40px)
-                border-radius: 40px
-            .content
-                font-size: clamp(0.75rem, 1.6vw, 2.5rem)
-                // font-size: 1.5rem
-                line-height: 3.625rem
-                > div:first-of-type
-                    padding-left: 7%
-                > div:last-of-type
-                    margin-left: 1rem
-                .app-img
-                    bottom: -6rem
-                    > div
-                        margin-left: auto
-                        margin-right: auto
-                        padding: 1.313rem 2.188rem
-                        bottom: 45vh
-                        left: 0
-                        right: 0
-                        font-size: 1.5rem
-                        line-height: 1.875rem
-                        letter-spacing: 1px
-                        max-width: 420px
-                        min-height: 225px
-                        color: #629BF0
-                        background: rgba(255, 255, 255, 0.08)
-                        box-shadow: inset 0px 0px 20px #ABDCFF, inset 0px 4px 10px rgba(255, 255, 255, 0.3)
-                        backdrop-filter: blur(10px)
-                        border-radius: 40px
-                .app-tab
-                    display: flex
-                    flex-wrap: wrap
-                    padding-top: 3rem
-                    padding-bottom: 5rem
-                    > button
-                        @include size(50%)
-                        position: relative
-                        img
-                            margin-left: auto
-                            margin-right: auto
-                            height: 100%
-                            object-fit: contain
-                            transition: filter .25s
-                        span
-                            position: absolute
-                            bottom: -1.75rem
-                            left: 0
-                            right: 0
-                            text-align: center
-                        &:hover img:nth-of-type(1)
-                            filter: saturate(200%) blur(10px)
-                    > img
-                        top: -3rem
-        &:nth-of-type(3)
-            padding: 8.5%
-            width: 100%
-            > *
-                letter-spacing: 0.12em
-            .app-img
-                img
-                    max-width: 505px
-                > div
-                    padding: 18px 20px
-                    top: 24%
-                    left: -8%
-                    color: #FFFFFF
-                    background: #629BF0
-                    border-radius: 40px 40px 0px 40px
-                    box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
-                    backdrop-filter: blur(30px)
-                    opacity: 0
-                    transition: opacity 4.5s ease-in-out, top 5s ease-in
-            .app-img > div,
-            .content p,
-            .content .app-box
-                font-size: 24px
-                line-height: 30px
-            .content
-                h3
-                    font-size: 40px
-                    line-height: 58px
-                    img
-                        top: -35%
-                        left: -20%
-                        z-index: -1
-                .app-box
-                    padding: 18px 28px
-                    color: #629BF0
-                    background: rgba(255, 255, 255, 0.1)
-                    border-radius: 40px 40px 40px 0px
-                    box-shadow: 1px 4px 10px rgba(25, 51, 81, 0.35)
-                    backdrop-filter: blur(30px)
+//     .section
+//         .content
+//             letter-spacing: 0.12em
+//         &:nth-of-type(2)
+//             @include blurred-background('../../kinghoksu/bg/bg2.png')
+//             > div
+//                 top: 12.5%
+//                 bottom: 12.5%
+//             .glass
+//             .content
+//                 font-size: clamp(0.75rem, 1.6vw, 2.5rem)
+//                 // font-size: 1.5rem
+//                 line-height: 3.625rem
+//                 > div:first-of-type
+//                     padding-left: 7%
+//                 > div:last-of-type
+//                     margin-left: 1rem
+//         &:nth-of-type(3)
+//             padding: 8.5%
+//             width: 100%
+//             > *
+//                 letter-spacing: 0.12em
+//             .app-img
+//                 img
+//                     max-width: 505px
+//                 > div
+//                     padding: 18px 20px
+//                     top: 24%
+//                     left: -8%
+//                     color: #FFFFFF
+//                     background: #629BF0
+//                     border-radius: 40px 40px 0px 40px
+//                     box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
+//                     backdrop-filter: blur(30px)
+//                     opacity: 0
+//                     transition: opacity 4.5s ease-in-out, top 5s ease-in
+//             .app-img > div,
+//             .content p,
+//             .content .app-box
+//                 font-size: 24px
+//                 line-height: 30px
+//             .content
+//                 h3
+//                     font-size: 40px
+//                     line-height: 58px
+//                     img
+//                         top: -35%
+//                         left: -20%
+//                         z-index: -1
+//                 .app-box
+//                     padding: 18px 28px
+//                     color: #629BF0
+//                     background: rgba(255, 255, 255, 0.1)
+//                     border-radius: 40px 40px 40px 0px
+//                     box-shadow: 1px 4px 10px rgba(25, 51, 81, 0.35)
+//                     backdrop-filter: blur(30px)
+
+@media (max-width: 1399.98px)
+    #app
+        .section
+            font-size: 15px
 
 @media (max-width: 1299.98px)
     #app
         .section
-            &:nth-of-type(2)
-                .content
-                    .app-img
-                        > div
-                            font-size: 1.25rem
-                            line-height: 1.6rem
-                            min-height: 195px
+            font-size: 14px
 
 @media (max-width: 1199.98px)
     #app
         .section
-            &:nth-of-type(1)
-                .content
-                    font-size: 2rem
-                    > div:first-of-type
-                        min-width: 0
-                    .app-logo
-                        @include size(4.375rem)
-                    .app-name
-                        padding-top: 0.85rem
-                        line-height: 2.5rem
-                    .app-content
-                        padding-top: 1rem
-                        line-height: 3.375rem
-                        + div
-                            padding-top: 0.85rem
-                            font-size: 1rem
-                            line-height: 1.75rem
-            &:nth-of-type(2)
-                .content
-                    .app-img
-                        > div
-                            font-size: 1rem
-                            line-height: 1.45rem
-                            min-height: 185px
-            &:nth-of-type(3)
-                .app-img > div,
-                .content p,
-                .content .app-box
-                    font-size: 20px
-                    line-height: 28px
-                .app-img > div
-                    padding: 16px 18px
-                .content
-                    h3
-                        font-size: 36px
-                        line-height: 48px
+            font-size: 13px
 
-@media (max-width: 1079.98px)
+@media (max-width: 1099.98px)
     #app
         .section
-            &:nth-of-type(1)
-                .content
-                    font-size: 1.5rem
-                    > div:first-of-type
-                        min-width: 0
-                    .app-name
-                        padding-top: 0.625rem
-                        line-height: 2rem
-                    .app-content
-                        padding-top: 0.5rem
-                        line-height: 2.5rem
-                        + div
-                            padding-top: 0.625rem
-                            font-size: 0.75rem
-                            line-height: 1.25rem
-                    .app-baibai
-                        transform: scale(.75)
-            &:nth-of-type(2)
-                .content
-                    .app-tab
-                        padding-bottom: 3rem
-            &:nth-of-type(3)
-                .app-img > div,
-                .content p,
-                .content .app-box
-                        font-size: 18px
-                        line-height: 26px
-                .app-img > div
-                    padding: 12px 14px
-                .content
-                    h3
-                        font-size: 32px
-                        line-height: 45px
+            font-size: 12px
+
+// @media (max-width: 1299.98px)
+//     #app
+//         .section
+//             &:nth-of-type(2)
+//                 .content
+//                     .app-img
+//                         > div
+//                             font-size: 1.25rem
+//                             line-height: 1.6rem
+//                             min-height: 195px
+
+// @media (max-width: 1199.98px)
+//     #app
+//         .section
+//             &:nth-of-type(1)
+//                 .content
+//                     font-size: 2rem
+//                     > div:first-of-type
+//                         min-width: 0
+//                     .app-logo
+//                         @include size(4.375rem)
+//                     .app-name
+//                         padding-top: 0.85rem
+//                         line-height: 2.5rem
+//                     .app-content
+//                         padding-top: 1rem
+//                         line-height: 3.375rem
+//                         + div
+//                             padding-top: 0.85rem
+//                             font-size: 1rem
+//                             line-height: 1.75rem
+//             &:nth-of-type(2)
+//                 .content
+//                     .app-img
+//                         > div
+//                             font-size: 1rem
+//                             line-height: 1.45rem
+//                             min-height: 185px
+//             &:nth-of-type(3)
+//                 .app-img > div,
+//                 .content p,
+//                 .content .app-box
+//                     font-size: 20px
+//                     line-height: 28px
+//                 .app-img > div
+//                     padding: 16px 18px
+//                 .content
+//                     h3
+//                         font-size: 36px
+//                         line-height: 48px
+
+// @media (max-width: 1079.98px)
+//     #app
+//         .section
+//             &:nth-of-type(1)
+//                 .content
+//                     font-size: 1.5rem
+//                     > div:first-of-type
+//                         min-width: 0
+//                     .app-name
+//                         padding-top: 0.625rem
+//                         line-height: 2rem
+//                     .app-content
+//                         padding-top: 0.5rem
+//                         line-height: 2.5rem
+//                         + div
+//                             padding-top: 0.625rem
+//                             font-size: 0.75rem
+//                             line-height: 1.25rem
+//                     .app-baibai
+//                         transform: scale(.75)
+//             &:nth-of-type(2)
+//                 .content
+//                     .app-tab
+//                         padding-bottom: 3rem
+//             &:nth-of-type(3)
+//                 .app-img > div,
+//                 .content p,
+//                 .content .app-box
+//                         font-size: 18px
+//                         line-height: 26px
+//                 .app-img > div
+//                     padding: 12px 14px
+//                 .content
+//                     h3
+//                         font-size: 32px
+//                         line-height: 45px
