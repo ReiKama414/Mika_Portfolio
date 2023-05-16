@@ -19,7 +19,8 @@
   <div id="header"></div>
 
   <div id="app">
-    <div class="section relative flex items-center justify-center w-full fc-primary">
+    <!-- Index -->
+    <div class="section relative flex items-center justify-center w-full fc-primary" id="first-section">
       <!-- BackGround -->
       <img src="../src/assets/kinghoksu/bg/bg1.png" alt="background layout image" class="w-full h-full z-0 object-cover" />
       <div class="glass z-0">
@@ -57,6 +58,7 @@
       </div>
     </div>
 
+    <!-- Menu -->
     <div class="section relative flex items-center justify-center w-full fc-primary" id="second-section">
       <!-- BackGround -->
       <img src="../src/assets/kinghoksu/bg/bg2.png" alt="background layout image" class="w-full h-full z-0 object-cover" />
@@ -75,43 +77,37 @@
         <!-- Right Helf -->
         <div class="app-tab relative custom-w-55p custom-font-PingFang font-normal fs-04 ls-12">
           <img src="../src/assets/kinghoksu/img/title1.png" alt="title text" class="absolute left-0 right-0 mx-auto object-contain" />
-          <a>
+          <a href="#summary1">
             <img src="../src/assets/kinghoksu/img/fun1.png" />
             <img src="../src/assets/kinghoksu/img/fun1.png" class="absolute inset-0" />
             <span>拜拜賺積分</span>
           </a>
-          <a>
+          <a href="#summary2">
             <img src="../src/assets/kinghoksu/img/fun2.png" />
             <img src="../src/assets/kinghoksu/img/fun2.png" class="absolute inset-0" />
             <span>擲筊問籤</span>
           </a>
-          <a>
+          <a href="#summary3">
             <img src="../src/assets/kinghoksu/img/fun3.png" />
             <img src="../src/assets/kinghoksu/img/fun3.png" class="absolute inset-0" />
             <span>發財金</span>
           </a>
-          <a>
+          <a href="#summary4">
             <img src="../src/assets/kinghoksu/img/fun4.png" />
             <img src="../src/assets/kinghoksu/img/fun4.png" class="absolute inset-0" />
             <span>點燈服務</span>
-          </button>
-        </a>
+          </a>
+        </div>
         <!-------------->
       </div>
     </div>
-    
-    <!-- <div class="section bg-contain xl:bg-cover flex items-center" data-section-name="menu">
-      <div class="content flex z-10">
-        <div class="w-5/12 h-full">
-          <div class="relative app-img h-full">
-          </div>
-        </div>
-        <div class="relative w-7/12 custom-font-PingFang font-normal app-tab">
-        </div>
-      </div>
-    </div>
-    
-    <div class="section flex flex-col scrollable-content" data-section-name="summary1">
+
+    <div class="section" id="summary1" style="background-color: burlywood;"></div>
+    <div class="section" id="summary2" style="background-color: rgb(154, 197, 154);"></div>
+    <div class="section" id="summary3" style="background-color: rgb(135, 173, 222);"></div>
+    <div class="section" id="summary4" style="background-color: rgb(222, 135, 150);"></div>
+
+    <!-- <div class="section flex flex-col scrollable-content" data-section-name="summary1">
       <!-- First half --
       <div class="flex justify-around">
         <div class="relative app-img w-1/2 pl-24 pr-6">
@@ -128,37 +124,23 @@
             在微觀的物理世界裡，
             我們緊密的糾纏在一起</div>
         </div>
-      </div>
-      <!-- Second half --
-      <div>
-      </div>
-
-    </div>
-
-    <div class="section scrollable-content" style="background-color: #774747;" data-section-name="summary2">
-    </div>
-
-    <div class="section scrollable-content" style="background-color: #477773;" data-section-name="summary3">
-    </div>
-
-    <div class="section scrollable-content" style="background-color: #77475f;" data-section-name="summary4">
-    </div>
-
-    <!-- Menu --
-    <div id="app-menu-fixed" class="fixed mx-auto left-0 right-0">
-      <button class="action-btn1">
-        <img src="../src/assets/kinghoksu/img/menu1.png" />
-      </button>
-      <button class="action-btn2">
-        <img src="../src/assets/kinghoksu/img/menu2.png" />
-      </button>
-      <button class="action-btn3">
-        <img src="../src/assets/kinghoksu/img/menu3.png" />
-      </button>
-      <button class="action-btn4">
-        <img src="../src/assets/kinghoksu/img/menu4.png" />
-      </button>
     </div> -->
+
+    <!-- Menu Bar -->
+    <div id="app-menu-fixed" class="fixed mx-auto left-0 right-0">
+      <a href="#summary1" class="fixed-div-button">
+        <img src="../src/assets/kinghoksu/img/menu1.png" />
+      </a>
+      <a href="#summary2" class="fixed-div-button">
+        <img src="../src/assets/kinghoksu/img/menu2.png" />
+      </a>
+      <a href="#summary3" class="fixed-div-button">
+        <img src="../src/assets/kinghoksu/img/menu3.png" />
+      </a>
+      <a href="#summary4" class="fixed-div-button">
+        <img src="../src/assets/kinghoksu/img/menu4.png" />
+      </a>
+    </div>
   </div>
 
   <div id="footer" data-section-name="footer"></div>
@@ -214,6 +196,46 @@
 
     var secondSection = document.getElementById("second-section");
     observer.observe(secondSection);
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+  
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    var buttons = document.querySelectorAll(".fixed-div-button");
+
+    var observer2 = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        var section = entry.target;
+        var sectionIndex = Array.from(section.parentNode.children).indexOf(section);
+
+        if (entry.isIntersecting && entry.target.id !== "second-section" && entry.target.id !== "first-section" ) {
+          $("#app-menu-fixed").fadeIn(500).css("display", "flex");
+
+          buttons.forEach(function(button, index) {
+            if (sectionIndex === index + 2) {
+              button.classList.add("active");
+            } else {
+              button.classList.remove("active");
+            }
+          });
+        } else if(entry.target.id === "second-section" || entry.target.id === "first-section") {
+          $("#app-menu-fixed").fadeOut(500);
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    var sections = document.querySelectorAll(".section");
+    sections.forEach(function(section) {
+      observer2.observe(section);
+    });
 
     // $(function() {
     //   var typingTimer;
