@@ -70,7 +70,7 @@
         <div class="custom-w-45p h-full">
           <div class="relative app-img h-full">
             <img src="../src/assets/kinghoksu/img/meow1.png" class="relative mx-auto h-full object-contain" alt="APP 圖片"/>
-            <div id="typing-text" class="absolute custom-font-NotoSans font-normal"></div>
+            <div id="typing-text" class="absolute custom-font-NotoSans font-normal fs-05"></div>
           </div>
         </div>
         <!-------------->
@@ -102,29 +102,115 @@
       </div>
     </div>
 
-    <div class="section" id="summary1" style="background-color: burlywood;"></div>
-    <div class="section" id="summary2" style="background-color: rgb(154, 197, 154);"></div>
-    <div class="section" id="summary3" style="background-color: rgb(135, 173, 222);"></div>
-    <div class="section" id="summary4" style="background-color: rgb(222, 135, 150);"></div>
-
-    <!-- <div class="section flex flex-col scrollable-content" data-section-name="summary1">
-      <!-- First half --
-      <div class="flex justify-around">
-        <div class="relative app-img w-1/2 pl-24 pr-6">
-          <img src="../src/assets/kinghoksu/gif/baibai2.png" class="w-full object-contain ms-auto" alt="手機拜拜打卡" />
-          <div id="app-img-box-l" class="absolute custom-font-NotoSans font-normal whitespace-nowrap">手機拜神有用嗎？</div>
+    <!-- BaiBai -->
+    <div class="section relative flex items-center justify-start w-full fc-primary flex-col" id="summary1">
+      <!-- First half -->
+      <!-- Content -->
+      <div class="content-inner flex justify-around w-full z-10">
+        <!-- Left Helf -->
+        <div class="relative app-img pr-6 w-1/2">
+          <img src="../src/assets/kinghoksu/gif/baibai2.png" class="object-contain ms-auto" alt="手機拜拜打卡" />
+          <div id="summary1-img-box-1" class="absolute custom-font-NotoSans font-normal whitespace-nowrap fs-05 text-white opacity-0">手機拜神有用嗎？</div>
         </div>
-        <div class="content inline-flex flex-col justify-center pl-6">
-          <h3 class="custom-font-NotoSerif font-bold mb-3 relative">
-            <img src="../src/assets/kinghoksu/img/cloud1.png" class="absolute" alt="雲朵" />
+        <!-------------->
+        <!-- Right Helf -->
+        <div class="inline-flex flex-col justify-center pl-6 ls-12">
+          <h3 class="custom-font-NotoSerif font-bold fs-02 pb-4 relative">
+            <img src="../src/assets/kinghoksu/img/cloud1.png" class="absolute object-contain cloud_bg_title" alt="雲朵" />
             每日拜拜打卡賺積分
           </h3>
-          <p class="custom-font-PingFang text-center mb-5">遠距拜拜 心意不減</p>
-          <div class="custom-font-NotoSans font-normal whitespace-pre-line app-box">量子糾纏！
+          <p class="custom-font-PingFang text-center pb-6 fs-05">遠距拜拜 心意不減</p>
+          <div id="summary1-img-box-2" class="app-box custom-font-NotoSans font-normal whitespace-pre-line fs-05 custom-font-color2 opacity-0">量子糾纏！
             在微觀的物理世界裡，
             我們緊密的糾纏在一起</div>
         </div>
-    </div> -->
+        <!-------------->
+      </div>
+      <!------------------>
+
+      <!-- Second half -->
+      <!-- Content -->
+      <div class="content-inner flex justify-between w-full z-10">
+        <!-- Left Helf -->
+        <div class="flex flex-col justify-center flex-1 relative">
+          <div class="app-box-group flex gap-x-5 ls-12 custom-font-PingFang text-center">
+            <div>
+              <img src="../src/assets/icons/clock.svg" class="object-contain" alt="🕘" />
+              <h3 class="fs-06 font-semibold pb-4">不受限拜拜</h3>
+              <p class="fs-05 font-normal whitespace-pre-line">隨時隨地拜拜
+                和神明培養感情</p>
+            </div>
+            <div>
+              <img src="../src/assets/icons/hand.svg" class="object-contain" alt="🙏" />
+              <h3 class="fs-06 font-semibold pb-4">沈浸式互動</h3>
+              <p class="fs-05 font-normal whitespace-pre-line">前後搖擺
+                功德+1</p>
+            </div>
+            <div>
+              <h3 class="fs-06 font-semibold">集滿</h3>
+              <h4 class="fs-07 custom-font-color3 font-bold">5點</h4>
+              <h3 class="fs-06 font-semibold">解鎖長輩圖</h3>
+            </div>
+          </div>
+          <div><!-- 保留區塊 --></div>
+          <img src="../src/assets/kinghoksu/img/block1.png" class="absolute bottom-0" alt="☁️" style="left: -6em; width: 15.75em; z-index: -1;" />
+        </div>
+        <!-------------->
+        <!-- Right Helf -->
+        <div class="inline-flex flex-col items-center">
+          <img src="../src/assets/kinghoksu/img/g2.png" class="object-contain px-5 mb-3" style="width: 31em;" alt="長輩圖手機" />
+          <p class="custom-font-PingFang font-normal fs-03 text-center ls-2" style="width: 15em; transform: translateX(20px);">快來搜集長輩也看不懂的迷因專屬年輕人長輩圖吧！</p>
+        </div>
+        <!-------------->
+      </div>
+      <!------------------>
+    </div>
+
+    <div class="section relative flex items-center justify-center w-full fc-primary" id="summary2" style="background-color: rgb(154, 197, 154);"></div>
+    <div class="section relative flex items-center justify-center w-full fc-primary" id="summary3" style="background-color: rgb(135, 173, 222);"></div>
+    
+    <!-- DianDeng -->
+    <div class="section relative flex items-center justify-center w-full fc-primary flex-col" id="summary4">
+      <!-- First half -->
+      <!-- Content -->
+      <div class="content-inner flex justify-start w-full z-10">
+        <!-- Left Helf -->
+        <div class="_leftHelf pr-8">
+          <img src="../src/assets/kinghoksu/gif/selllightmewo.gif" alt="賣燈作品" />
+        </div>
+        <!-------------->
+        <!-- Right Helf -->
+        <div class="_rightHelf self-end" style="padding-bottom: 8em;">
+          <h3 class="custom-font-NotoSerif font-bold fs-02 pb-4 relative app-title ls-12">
+            <img src="../src/assets/kinghoksu/img/cloud1.png" class="absolute object-contain cloud_bg_title" alt="雲朵" style="top: -0.65em; left: -1.2em;" />
+            求健康平安必備-點燈
+          </h3>
+          <p class="fs-03 font-bold custom-font-Songti ls-2" style="width: 21em;">在這南閻浮提的人生，求平安、求事業、求財乃在正常不過，來景德祠APP點燈，照亮你的人生</p>
+        </div>
+        <!-------------->
+      </div>
+      <!------------------>
+
+      <!-- Second half -->
+      <!-- Content -->
+      <div class="content-inner flex justify-end w-full z-10">
+        <!-- Left Helf -->
+        <div class="_leftHelf self-end" style="padding-bottom: 8em;">
+          <h3 class="custom-font-NotoSerif font-bold fs-02 pb-4 relative app-title ls-12">
+            <img src="../src/assets/kinghoksu/img/cloud1.png" class="absolute object-contain cloud_bg_title" alt="雲朵" />
+            收藏匣
+          </h3>
+          <p class="fs-03 font-bold custom-font-Songti ls-2" style="width: 18.45em;">在APP裡點過的燈、求過的發財金都會典藏在收藏匣中，方便查找，點好的燈會無時無刻放大光明並運作著，隨時都可以來看看照亮自己的明燈、擦拭自己的發財金</p>
+        </div>
+        <!-------------->
+        <!-- Right Helf -->
+        <div class="_rightHelf pl-6">
+          <img src="../src/assets/kinghoksu/img/app-collection.png" alt="收藏匣" />
+        </div>
+        <!-------------->
+      </div>
+      <!------------------>
+    </div>
 
     <!-- Menu Bar -->
     <div id="app-menu-fixed" class="fixed mx-auto left-0 right-0">
@@ -207,7 +293,7 @@
       });
     });
 
-    var buttons = document.querySelectorAll(".fixed-div-button");
+    var fixed_div_btns = document.querySelectorAll(".fixed-div-button");
 
     var observer2 = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
@@ -217,7 +303,7 @@
         if (entry.isIntersecting && entry.target.id !== "second-section" && entry.target.id !== "first-section" ) {
           $("#app-menu-fixed").fadeIn(500).css("display", "flex");
 
-          buttons.forEach(function(button, index) {
+          fixed_div_btns.forEach(function(button, index) {
             if (sectionIndex === index + 2) {
               button.classList.add("active");
             } else {
@@ -237,89 +323,31 @@
       observer2.observe(section);
     });
 
-    // $(function() {
-    //   var typingTimer;
-    //   var isTypingInProgress = false;
-      
-    //   $.scrollify({
-    //     section: ".section",
-    //     easing: "easeOutExpo",
-    //     scrollSpeed: 800,
-    //     scrollbars: true,
-    //     interstitialSection:"#footer",
-    //     before: function(index, sections) {
-    //       // 打字計時
-    //       if (index === 1 && !isTypingInProgress) {
-    //         var text = "你好呀～\n我是景德祠的虎爺\n在ＡＰＰ裡面負責引導大家唷~\n跟我一起來看景德祠ＡＰＰ有哪些特色功能吧！";
-    //         var speed = 50;
-    //         var typingText = document.getElementById("typing-text");
+    var summary1_img_box1 = document.querySelector("#summary1-img-box-1");
+    var summary1_img_box2 = document.querySelector("#summary1-img-box-2");
+    var observer3 = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var target = entry.target;
+          if (target === summary1_img_box1) {
+            target.style.transition = "opacity 2s, top 2s";
+            target.style.opacity = 1;
+            target.style.top = "5em";
+          } else if (target === summary1_img_box2) {
+            target.style.transition = "opacity 1.5s, transform 1.5s";
+            target.style.opacity = 1;
+            target.style.transform = "translateY(0)";
+          }
 
-    //         typingText.innerHTML = "";
-    //         isTypingInProgress = true;
+          observer.unobserve(target);
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
 
-    //         function typeWriter(text, i) {
-    //           if (i < text.length) {
-    //             if (text.charAt(i) === "\n") {
-    //               typingText.innerHTML += "<br>";
-    //             } else {
-    //               typingText.innerHTML += text.charAt(i) + "|";
-    //             }
-    //             typingTimer = setTimeout(function() {
-    //               typingText.innerHTML = typingText.innerHTML.replace("|", "");
-    //               typeWriter(text, i + 1);
-    //             }, speed);
-    //           } else {
-    //             isTypingInProgress = false;
-    //           }
-    //         }
-    //         typeWriter(text, 0);
-    //       } else if (index === 0 && typeof typingTimer !== "undefined") {
-    //         clearTimeout(typingTimer);
-    //         isTypingInProgress = false;
-    //       }
-          
-    //       // Menu 出現時機
-    //       if (index !== 0 && index !== 1) {
-    //         $("#app-menu-fixed").fadeIn(500).css("display", "flex");
-    //       } else {
-    //         $("#app-menu-fixed").fadeOut(500);
-    //       }
-
-    //       // Menu Button 狀態
-    //       $("#app-menu-fixed button").removeClass("active");
-    //       $("#app-img-box-l").css("opacity", "0");
-    //       $("#app-img-box-l").css("top", "0");
-
-    //       if (index === 2) {
-    //         $("#app-menu-fixed button:nth-child(1)").addClass("active");
-    //         $("#app-img-box-l").css("opacity", "1");
-    //         $("#app-img-box-l").css("top", "24%");
-    //       } else if (index === 3) {
-    //         $("#app-menu-fixed button:nth-child(2)").addClass("active");
-    //       } else if (index === 4) {
-    //         $("#app-menu-fixed button:nth-child(3)").addClass("active");
-    //       } else if (index === 5) {
-    //         $("#app-menu-fixed button:nth-child(4)").addClass("active");
-    //       }
-    //     },
-    //   });
-
-    //   $(".action-btn1").on("click", function() {
-    //     $.scrollify.move("#summary1");
-    //   });
-
-    //   $(".action-btn2").on("click", function() {
-    //     $.scrollify.move("#summary2");
-    //   });
-
-    //   $(".action-btn3").on("click", function() {
-    //     $.scrollify.move("#summary3");
-    //   });
-
-    //   $(".action-btn4").on("click", function() {
-    //     $.scrollify.move("#summary4");
-    //   });
-    // });
+    observer3.observe(summary1_img_box1);
+    observer3.observe(summary1_img_box2);
   </script>
 </body>
 

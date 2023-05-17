@@ -16,10 +16,19 @@ body
     padding: 0
     scroll-behavior: smooth
 
+
+.cloud_bg_title
+    top: -1rem
+    left: -2em
+    width: 3em
+    z-index: -1
+
 #app
     .section
         font-size: 16px
         min-height: 100vh
+        .content-inner
+            width: 85%
         .content,
         .glass
             position: absolute
@@ -71,8 +80,6 @@ body
                     bottom: 43vh
                     left: 0
                     right: 0
-                    font-size: 1.5em
-                    line-height: 1.25em
                     letter-spacing: 1px
                     max-width: 420px
                     min-height: 220px
@@ -105,6 +112,72 @@ body
                         filter: saturate(200%) blur(10px)
                 > img
                     top: -3rem
+        &:nth-of-type(3)
+            .content-inner
+                &:first-of-type
+                    padding-top: 6.5em
+                    padding-bottom: 5em
+                    > div:first-of-type
+                        padding-left: 7.5%
+                    > div:last-of-type
+                        padding-right: 7.5%
+                &:last-of-type
+                    padding-top: 5em
+                    padding-bottom: 12em
+                .app-img
+                    img
+                        width: 37.5em
+                    > div
+                        padding: 0.75em .835em
+                        top: 0 // 5em
+                        left: -2em
+                        background: #629BF0
+                        border-radius: 40px 40px 0px 40px
+                        box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
+                        backdrop-filter: blur(30px)
+                .app-box
+                    padding: 0.75em 1.18em
+                    background: rgba(255, 255, 255, 0.1)
+                    border-radius: 40px 40px 40px 0px
+                    box-shadow: 1px 4px 10px rgba(25, 51, 81, 0.35)
+                    backdrop-filter: blur(30px)
+                    transform: translateY(50px)
+                .app-box-group
+                    > div
+                        display: inline-flex
+                        flex-direction: column
+                        align-items: center
+                        justify-content: center
+                        aspect-ratio: 1/1
+                        padding: 1.25em
+                        width: 100%
+                        background: rgba(255, 255, 255, 0.1)
+                        border-radius: 40px
+                        box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
+                        backdrop-filter: blur(30px)
+                        img
+                            width: 3.75em
+                        > *
+                            letter-spacing: 0.12em
+        &:nth-of-type(6)
+            .content-inner
+                > div:first-of-type
+                    padding-left: 7.5%
+                > div:last-of-type
+                    padding-right: 7.5%
+                &:first-of-type
+                    padding-top: 6.5em
+                    padding-bottom: 2em
+                    ._leftHelf
+                        img
+                            width: 21.875em
+                &:last-of-type
+                    padding-top: 2em
+                    padding-bottom: 5em
+                    ._rightHelf
+                        img
+                            width: 28em
+                
     #app-menu-fixed
         display: none
         align-items: center
@@ -125,46 +198,6 @@ body
             &:not(.active)
                 mix-blend-mode: luminosity
                 opacity: 0.4
-
-//         &:nth-of-type(3)
-//             padding: 8.5%
-//             width: 100%
-//             > *
-//                 letter-spacing: 0.12em
-//             .app-img
-//                 img
-//                     max-width: 505px
-//                 > div
-//                     padding: 18px 20px
-//                     top: 24%
-//                     left: -8%
-//                     color: #FFFFFF
-//                     background: #629BF0
-//                     border-radius: 40px 40px 0px 40px
-//                     box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
-//                     backdrop-filter: blur(30px)
-//                     opacity: 0
-//                     transition: opacity 4.5s ease-in-out, top 5s ease-in
-//             .app-img > div,
-//             .content p,
-//             .content .app-box
-//                 font-size: 24px
-//                 line-height: 30px
-//             .content
-//                 h3
-//                     font-size: 40px
-//                     line-height: 58px
-//                     img
-//                         top: -35%
-//                         left: -20%
-//                         z-index: -1
-//                 .app-box
-//                     padding: 18px 28px
-//                     color: #629BF0
-//                     background: rgba(255, 255, 255, 0.1)
-//                     border-radius: 40px 40px 40px 0px
-//                     box-shadow: 1px 4px 10px rgba(25, 51, 81, 0.35)
-//                     backdrop-filter: blur(30px)
 
 @media (max-width: 1399.98px)
     #app
