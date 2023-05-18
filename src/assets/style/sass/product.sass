@@ -73,21 +73,25 @@ body
                 border-radius: 40px
             .app-img
                 bottom: -6rem
+                img
+                    width: 60em
                 > div
                     margin-left: auto
                     margin-right: auto
-                    padding: 1.313rem 2.188rem
                     bottom: 43vh
                     left: 0
                     right: 0
                     letter-spacing: 1px
-                    max-width: 420px
-                    min-height: 220px
+                    width: 17.167em
                     color: #629BF0
                     background: rgba(255, 255, 255, 0.08)
                     box-shadow: inset 0px 0px 20px #ABDCFF, inset 0px 4px 10px rgba(255, 255, 255, 0.3)
                     backdrop-filter: blur(10px)
                     border-radius: 40px
+                    p
+                        padding: 1em 1.5em
+                        &:first-of-type
+                            visibility: hidden
             .app-tab
                 display: flex
                 flex-wrap: wrap
@@ -159,6 +163,90 @@ body
                             width: 3.75em
                         > *
                             letter-spacing: 0.12em
+        &:nth-of-type(5)
+            .tab-wrapper
+                @include size(100%, 40.65em)
+                max-width: 1200px
+                .tab-container 
+                    text-align: right
+                    border-radius: 20px
+                    .tabs
+                        display: flex
+                        justify-content: flex-end
+                        .tab
+                            padding: 0.75em 1.45em 0
+                            margin-left: .5em
+                            color: rgba(98, 155, 240, 0.5)
+                            box-shadow: 2px 2px 10px rgba(25, 51, 81, 0.35)
+                            backdrop-filter: blur(30px)
+                            border-radius: 20px 20px 0px 0px
+                            transform: translateY(-4.5px)
+                            cursor: pointer
+                            &::after
+                                content: ""
+                                position: absolute
+                                left: 0
+                                right: 0
+                                bottom: -0.5em
+                                height: 1em
+                                background: white
+                            &.active
+                                color: #629BF0
+                                background: #ECF5FF
+                                z-index: 10
+                                &::after
+                                    background: #ECF5FF
+                .tab-content
+                    position: relative
+                    display: flex
+                    // justify-content: end
+                    padding: 3.75em 2.68em
+                    background: linear-gradient(222deg, #ECF5FF 35%, #FFFFFF 65%)
+                    border-radius: 40px 0 40px 40px
+                    box-shadow: 2px 2px 10px rgba(25, 51, 81, 0.35)
+                    backdrop-filter: blur(30px)
+                    .tab-pane 
+                        display: none
+                        margin-left: auto
+                        margin-right: 1%
+                        min-width: 28em
+                        color: #333
+                        animation: fadeIn 1s ease-in
+                        &.active
+                            display: block
+                        > img
+                            position: absolute
+                            left: -20em
+                            width: 56em
+                            max-width: none
+                            object-fit: contain
+                        .tab-bc
+                            margin-top: 0.75em
+                            padding: 0.75em 0.835em
+                            background: rgba(255, 255, 255, 0.1)
+                            border-radius: 40px 40px 40px 0px
+                            box-shadow: 1px 4px 10px rgba(25, 51, 81, 0.35)
+                            backdrop-filter: blur(30px)
+                        ul
+                            gap: 0.675em
+                            li
+                                display: inline-flex
+                                align-items: center
+                                color: $text-color
+                                letter-spacing: 0.2em
+                                &::before
+                                    @include size(1.417em, 1.792em)
+                                    content: ""
+                                    display: block
+                                    margin-right: 0.45em
+                                    background: url('../../icons/bringbring.png')
+                                    background-size: contain
+                                    background-repeat: no-repeat
+            @keyframes fadeIn
+                from
+                    opacity: 0
+                to
+                    opacity: 1
         &:nth-of-type(6)
             .content-inner
                 > div:first-of-type
@@ -218,36 +306,3 @@ body
     #app
         .section
             font-size: 12px
-
-
-// @media (max-width: 1199.98px)
-//     #app
-//         .section
-//             &:nth-of-type(3)
-//                 .app-img > div,
-//                 .content p,
-//                 .content .app-box
-//                     font-size: 20px
-//                     line-height: 28px
-//                 .app-img > div
-//                     padding: 16px 18px
-//                 .content
-//                     h3
-//                         font-size: 36px
-//                         line-height: 48px
-
-// @media (max-width: 1079.98px)
-//     #app
-//         .section
-//             &:nth-of-type(3)
-//                 .app-img > div,
-//                 .content p,
-//                 .content .app-box
-//                         font-size: 18px
-//                         line-height: 26px
-//                 .app-img > div
-//                     padding: 12px 14px
-//                 .content
-//                     h3
-//                         font-size: 32px
-//                         line-height: 45px
