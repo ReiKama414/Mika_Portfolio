@@ -283,18 +283,22 @@
         </div>
         <!-------------->
       </div>
+
       <!------------------>
 
       <!-- Fourth half -->
       <!-- Content -->
-      <div class="content-inner flex justify-end w-full z-10">
+      <!-- <div class="content-inner flex justify-end w-full z-10" style="width: 100%;"> -->
+        <!-- BackGround -->
+        <!-- <img src="../src/assets/kinghoksu/bg/TudiGong.png" alt="土地公線稿背景" class="w-full h-full z-0 object-cover" /> -->
+
         <!-- Left Helf -->
-        <div class="_leftHelf"></div>
+        <!-- <div class="_leftHelf"></div> -->
         <!-------------->
         <!-- Right Helf -->
-        <div class="_rightHelf"></div>
+        <!-- <div class="_rightHelf"></div> -->
         <!-------------->
-      </div>
+      <!-- </div> -->
       <!------------------>
     </div>
     
@@ -433,7 +437,7 @@
           $("#app-menu-fixed").fadeIn(500).css("display", "flex");
 
           fixed_div_btns.forEach(function(button, index) {
-            if (sectionIndex === index + 2) {
+            if (sectionIndex === (index + 2)) {
               button.classList.add("active");
             } else {
               button.classList.remove("active");

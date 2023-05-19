@@ -169,7 +169,7 @@ body
                     padding-top: 8em
                     &:nth-of-type(2)
                         padding-top: 15em
-            .content-inner
+            .content-inner:not(:last-of-type)
                 max-width: 1200px
             .tab-wrapper
                 width: 100%
@@ -262,6 +262,7 @@ body
                 filter: drop-shadow(0px 0px 37px #FFA59A)
                 &:hover
                     transform: perspective(1000px) rotateX(61deg) rotateY(11deg) rotateZ(-31deg) scale(1.05, 1.15)
+            
         &:nth-of-type(6)
             .content-inner
                 > div:first-of-type
