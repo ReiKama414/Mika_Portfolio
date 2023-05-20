@@ -8,9 +8,9 @@
   <title>Product | Mika's Portfolio</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
   <link href="../src/assets/style/css/style.min.css" rel="stylesheet">
   <link href="../src/assets/style/css/product.min.css" rel="stylesheet">
 </head>
@@ -154,13 +154,14 @@
     </div>
 
     <!-- PoeDivination -->
-    <div class="section summary relative flex items-center justify-center w-full fc-primary" id="summary2">
-      <div class="content-inner flex w-full z-10">
+    <div class="section summary relative flex items-center justify-center w-full fc-primary flex-col" id="summary2">
+      <div class="Swiper_one content-inner flex w-full z-10 relative">
         <img src="../src/assets/kinghoksu/img/block4.png" class="object-contain absolute" alt="色塊背景" style="right: 5em; top: 3.5em; width: 7.65em; z-index: -1;" />
-        <img src="../src/assets/kinghoksu/img/block5.png" class="object-contain absolute" alt="色塊背景" style="left: 4em; bottom: 3.5em; width: 13.8em; z-index: -1;" />
-        <div class="_leftHelf w-1/2">
-          <img src="../src/assets/kinghoksu/gif/mobileToss.gif" class="object-contain mx-auto -translate-y-32" alt="擲筊" style="width: 22.25em;" />
-          <!-- <img src="../src/assets/kinghoksu/gif/lottery1.gif" class="object-contain mx-auto h-full py-6" alt="擲筊" /> -->
+        <img src="../src/assets/kinghoksu/img/block5.png" class="object-contain absolute" alt="色塊背景" style="left: 4em; bottom: -8.5em; width: 13.8em; z-index: -1;" />
+        <div class="bg-box w-1/2"></div>
+        <div class="_leftHelf relative swiper-wrapper">
+          <img src="../src/assets/kinghoksu/gif/mobileToss.gif" class="swiper-slide" alt="擲筊" />
+          <img src="../src/assets/kinghoksu/gif/lottery1.gif" class="py-6 swiper-slide" alt="抽籤" id="lottery-img" />
         </div>
         <div class="_rightHelf w-1/2 inline-flex flex-col justify-center">
           <img src="../src/assets/kinghoksu/gif/Pending_tiger.png" class="object-contain translate-x-12" alt="虎爺霸氣躺" style="width: 14.75em;" />
@@ -172,6 +173,27 @@
             你有去過廟裡擲筊求籤過嗎？是不是已經跪好久，但還有好多問題想要神明給予指引，景德祠APP讓你有筊擲出去還有搖籤桶的踏實感
           </p>
         </div>
+      </div>
+      <div class="Swiper_two content-inner flex w-full z-10 relative">
+        <div class="bg-box w-1/2"></div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+        </div>
+        <!-- <div class="_leftHelf relative"> -->
+          <!-- <img src="../src/assets/kinghoksu/gif/mobileToss.gif" class="swiper-slide" alt="擲筊" />
+          <img src="../src/assets/kinghoksu/gif/lottery1.gif" class="py-6 swiper-slide" alt="抽籤" id="lottery-img" /> -->
+        <!-- </div>
+        <div class="_rightHelf w-1/2 inline-flex flex-col justify-center"> -->
+          <!-- <img src="../src/assets/kinghoksu/gif/Pending_tiger.png" class="object-contain translate-x-12" alt="虎爺霸氣躺" style="width: 14.75em;" />
+          <h3 class="custom-font-NotoSerif font-bold fs-02 pb-1 ls-12 relative z-10">
+            <img src="../src/assets/kinghoksu/img/cloud1.png" class="absolute object-contain cloud_bg_title" alt="雲朵" style="top: -0.7em;" />
+            廟宇的經典
+          </h3>
+          <p class="fs-05 font-normal custom-font-PingFang ls-2 translate-x-3.5" style="width: 16em;">
+            你有去過廟裡擲筊求籤過嗎？是不是已經跪好久，但還有好多問題想要神明給予指引，景德祠APP讓你有筊擲出去還有搖籤桶的踏實感
+          </p> -->
+        <!-- </div> -->
       </div>
     </div>
     
@@ -339,8 +361,9 @@
   <div id="footer" data-section-name="footer"></div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js" integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
   <script>
     $.ajax({
       url: '../src/components/header/header_kinghoksu.html',
@@ -480,6 +503,31 @@
       $(".tab-pane[data-tab='" + tab + "']").addClass("active");
     });
 
+    var swiper = new Swiper(".Swiper_one", {
+      direction: "vertical",
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 600,
+      mousewheel: {
+        releaseOnEdges: true,
+        sensitivity: .36,
+      }
+    });
+    var swiper2 = new Swiper(".Swiper_two", {
+      direction: "vertical",
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 600,
+      mousewheel: {
+        releaseOnEdges: true,
+        sensitivity: .36,
+      }
+    });
+
+    $("#lottery-img").click(function() {
+      var img = $(this);
+      img.attr("src", "../src/assets/kinghoksu/gif/lottery2.gif");
+    });
   </script>
 </body>
 
