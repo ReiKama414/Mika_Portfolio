@@ -153,7 +153,27 @@
       </div>
     </div>
 
-    <div class="section summary relative flex items-center justify-center w-full fc-primary" id="summary2" style="background-color: rgb(154, 197, 154);"></div>
+    <!-- PoeDivination -->
+    <div class="section summary relative flex items-center justify-center w-full fc-primary" id="summary2">
+      <div class="content-inner flex w-full z-10">
+        <img src="../src/assets/kinghoksu/img/block4.png" class="object-contain absolute" alt="色塊背景" style="right: 5em; top: 3.5em; width: 7.65em; z-index: -1;" />
+        <img src="../src/assets/kinghoksu/img/block5.png" class="object-contain absolute" alt="色塊背景" style="left: 4em; bottom: 3.5em; width: 13.8em; z-index: -1;" />
+        <div class="_leftHelf w-1/2">
+          <img src="../src/assets/kinghoksu/gif/mobileToss.gif" class="object-contain mx-auto -translate-y-32" alt="擲筊" style="width: 22.25em;" />
+          <!-- <img src="../src/assets/kinghoksu/gif/lottery1.gif" class="object-contain mx-auto h-full py-6" alt="擲筊" /> -->
+        </div>
+        <div class="_rightHelf w-1/2 inline-flex flex-col justify-center">
+          <img src="../src/assets/kinghoksu/gif/Pending_tiger.png" class="object-contain translate-x-12" alt="虎爺霸氣躺" style="width: 14.75em;" />
+          <h3 class="custom-font-NotoSerif font-bold fs-02 pb-1 ls-12 relative z-10">
+            <img src="../src/assets/kinghoksu/img/cloud1.png" class="absolute object-contain cloud_bg_title" alt="雲朵" style="top: -0.7em;" />
+            廟宇的經典
+          </h3>
+          <p class="fs-05 font-normal custom-font-PingFang ls-2 translate-x-3.5" style="width: 16em;">
+            你有去過廟裡擲筊求籤過嗎？是不是已經跪好久，但還有好多問題想要神明給予指引，景德祠APP讓你有筊擲出去還有搖籤桶的踏實感
+          </p>
+        </div>
+      </div>
+    </div>
     
     <!-- FaDaCai -->
     <div class="section summary relative flex items-center justify-center w-full fc-primary flex-col" id="summary3">
@@ -268,15 +288,10 @@
     
     <!-- DianDeng -->
     <div class="section summary relative flex items-center justify-center w-full fc-primary flex-col" id="summary4">
-      <!-- First half -->
-      <!-- Content -->
       <div class="content-inner flex justify-start w-full z-10">
-        <!-- Left Helf -->
         <div class="_leftHelf pr-8">
           <img src="../src/assets/kinghoksu/gif/selllightmewo.gif" alt="賣燈作品" />
         </div>
-        <!-------------->
-        <!-- Right Helf -->
         <div class="_rightHelf self-end" style="padding-bottom: 8em;">
           <h3 class="custom-font-NotoSerif font-bold fs-02 pb-4 relative app-title ls-12">
             <img src="../src/assets/kinghoksu/img/cloud1.png" class="absolute object-contain cloud_bg_title" alt="雲朵" style="top: -0.65em; left: -1.2em;" />
@@ -284,12 +299,8 @@
           </h3>
           <p class="fs-03 font-bold custom-font-Songti ls-2" style="width: 21em;">在這南閻浮提的人生，求平安、求事業、求財乃在正常不過，來景德祠APP點燈，照亮你的人生</p>
         </div>
-        <!-------------->
       </div>
-      <!------------------>
 
-      <!-- Second half -->
-      <!-- Content -->
       <div class="content-inner flex justify-end w-full z-10">
         <!-- Left Helf -->
         <div class="_leftHelf self-end" style="padding-bottom: 8em;">
@@ -306,7 +317,6 @@
         </div>
         <!-------------->
       </div>
-      <!------------------>
     </div>
 
     <!-- Menu Bar -->
@@ -418,7 +428,7 @@
       observer2.observe(summary);
     });
 
-    $(window).scroll(function() {
+    $(window).on('scroll touchmove', function() {
       var scrollTop = $(this).scrollTop();
       var windowHeight = $(this).height();
       
@@ -463,14 +473,13 @@
     $(".tab").click(function() {
       var tab = $(this).data("tab");
       
-      // 切換選項卡樣式
       $(".tab").removeClass("active");
       $(this).addClass("active");
       
-      // 切換選項卡內容
       $(".tab-pane").removeClass("active");
       $(".tab-pane[data-tab='" + tab + "']").addClass("active");
     });
+
   </script>
 </body>
 
