@@ -155,26 +155,40 @@
 
     <!-- PoeDivination -->
     <div class="section summary relative flex items-center justify-center w-full fc-primary flex-col" id="summary2">
-      <div class="Swiper_one content-inner flex w-full z-10 relative">
+      <div class="content-inner flex w-full z-10 relative">
+        <div class="bg-box w-1/2"></div>
+        <div class="_leftHelf relative swiper-wrapper">
+          <img src="../src/assets/kinghoksu/gif/mobileToss.gif" class="swiper-slide" alt="擲筊" />
+        </div>
+        <div class="_rightHelf w-1/2 inline-flex flex-col justify-center items-center">
+          <img src="../src/assets/kinghoksu/gif/Pending_tiger.png" class="object-contain translate-x-12" alt="虎爺霸氣躺" style="width: 14.75em;" />
+          <h3 class="custom-font-NotoSerif font-bold fs-02 pb-1 ls-12 relative z-10">
+            <img src="../src/assets/kinghoksu/img/cloud1.png" class="absolute object-contain cloud_bg_title" alt="雲朵" style="top: -0.7em;" />
+            廟宇的經典-擲筊
+          </h3>
+          <p class="fs-05 font-normal custom-font-PingFang ls-2 translate-x-3.5" style="width: 16em;">
+            你有去過廟裡擲筊過嗎？是不是已經跪好久，但還有好多問題想要神明給予指引，景德祠APP讓你有筊擲出去的踏實感
+          </p>
+        </div>
+      </div>
+      <div class="content-inner flex w-full z-10 relative">
         <img src="../src/assets/kinghoksu/img/block4.png" class="object-contain absolute" alt="色塊背景" style="right: 5em; top: 3.5em; width: 7.65em; z-index: -1;" />
         <img src="../src/assets/kinghoksu/img/block5.png" class="object-contain absolute" alt="色塊背景" style="left: 4em; bottom: -8.5em; width: 13.8em; z-index: -1;" />
         <div class="bg-box w-1/2"></div>
         <div class="_leftHelf relative swiper-wrapper">
-          <img src="../src/assets/kinghoksu/gif/mobileToss.gif" class="swiper-slide" alt="擲筊" />
           <img src="../src/assets/kinghoksu/gif/lottery1.gif" class="py-6 swiper-slide" alt="抽籤" id="lottery-img" />
         </div>
         <div class="_rightHelf w-1/2 inline-flex flex-col justify-center">
-          <img src="../src/assets/kinghoksu/gif/Pending_tiger.png" class="object-contain translate-x-12" alt="虎爺霸氣躺" style="width: 14.75em;" />
           <h3 class="custom-font-NotoSerif font-bold fs-02 pb-1 ls-12 relative z-10">
             <img src="../src/assets/kinghoksu/img/cloud1.png" class="absolute object-contain cloud_bg_title" alt="雲朵" style="top: -0.7em;" />
-            廟宇的經典
+            廟宇的經典-求籤
           </h3>
           <p class="fs-05 font-normal custom-font-PingFang ls-2 translate-x-3.5" style="width: 16em;">
-            你有去過廟裡擲筊求籤過嗎？是不是已經跪好久，但還有好多問題想要神明給予指引，景德祠APP讓你有筊擲出去還有搖籤桶的踏實感
+            今天運勢如何呢？來抽一支籤吧，看看看看會抽到什麼！？
           </p>
         </div>
       </div>
-      <div class="Swiper_two content-inner flex w-full z-10 relative">
+      <div class="Swiper content-inner flex w-full z-10 relative">
         <div class="bg-box w-1/2"></div>
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -510,17 +524,7 @@
       $(".tab-pane[data-tab='" + tab + "']").addClass("active");
     });
 
-    var swiper = new Swiper(".Swiper_one", {
-      direction: "vertical",
-      slidesPerView: 1,
-      spaceBetween: 0,
-      speed: 600,
-      mousewheel: {
-        releaseOnEdges: true,
-        sensitivity: .36,
-      }
-    });
-    var swiper2 = new Swiper(".Swiper_two", {
+    var swiper = new Swiper(".Swiper", {
       direction: "vertical",
       slidesPerView: 1,
       spaceBetween: 0,

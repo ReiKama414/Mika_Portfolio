@@ -167,7 +167,8 @@ body
             .content-inner
                 padding-top: 8em
                 width: 100%
-                &:first-of-type
+                &:nth-of-type(1),
+                &:nth-of-type(2)
                     margin-bottom: 8em
                     .bg-box
                         position: absolute
@@ -178,33 +179,42 @@ body
                         box-shadow: 0px 2px 10px rgba(25, 51, 81, 0.35)
                         backdrop-filter: blur(30px)
                     ._leftHelf
-                        width: 50% !important
+                        width: 50%
                         height: 31.75em
                         // background: rgba(255, 255, 255, 0.1)
                         // border-radius: 0 40px 40px 0
                         // box-shadow: 0px 2px 10px rgba(25, 51, 81, 0.35)
                         // backdrop-filter: blur(30px)
-                        .swiper-slide-active
-                            opacity: 1
                         img
-                            // position: absolute
-                            // left: 0
-                            // right: 0
                             margin-left: auto
                             margin-right: auto
                             object-fit: contain
-                            opacity: 0
-                            transition: opacity 0.55s
-                            &:first-of-type
-                                height: auto !important
-                                width: 22.25em
-                                transform: translateY(-8rem) !important
-                            &:last-of-type
-                                cursor: pointer
-                                transform: translateY(-7.5em) !important
                     ._rightHelf
                         padding-left: 7em
                         padding-right: 7.5%
+                &:nth-of-type(1)
+                    .bg-box
+                        right: 0
+                        border-radius: 40px 0 0 40px
+                    ._rightHelf
+                        order: 1
+                    ._leftHelf
+                        order: 2
+                        img
+                            transform: translateY(-8em) scale(1.25)
+                &:nth-of-type(2) ._leftHelf img
+                    cursor: pointer
+                // &:nth-of-type(1),
+                // &:nth-of-type(2)
+                //     margin-bottom: 8em
+                //     .bg-box
+                //         position: absolute
+                //         bottom: 0
+                //         height: 31.75em
+                //         background: rgba(255, 255, 255, 0.1)
+                //         border-radius: 0 40px 40px 0
+                //         box-shadow: 0px 2px 10px rgba(25, 51, 81, 0.35)
+                //         backdrop-filter: blur(30px)
                 &:last-of-type
                     .swiper-wrapper
                         height: 38.313em
