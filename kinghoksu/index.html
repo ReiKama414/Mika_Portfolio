@@ -9,7 +9,6 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
   <link href="../src/assets/style/css/style.min.css" rel="stylesheet">
   <link href="../src/assets/style/css/product.min.css" rel="stylesheet">
@@ -166,7 +165,7 @@
             <img src="../src/assets/kinghoksu/img/cloud1.png" class="absolute object-contain cloud_bg_title" alt="雲朵" style="top: -0.7em;" />
             廟宇的經典-擲筊
           </h3>
-          <p class="fs-05 font-normal custom-font-PingFang ls-2 translate-x-3.5" style="width: 16em;">
+          <p class="fs-05 font-normal custom-font-PingFang ls-2 translate-x-9" style="width: 16em;">
             你有去過廟裡擲筊過嗎？是不是已經跪好久，但還有好多問題想要神明給予指引，景德祠APP讓你有筊擲出去的踏實感
           </p>
         </div>
@@ -188,33 +187,24 @@
           </p>
         </div>
       </div>
-      <div class="Swiper content-inner flex w-full z-10 relative">
-        <div class="bg-box w-1/2"></div>
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="../src/assets/kinghoksu/gif/mobile1.gif" />
-          </div>
-          <div class="swiper-slide">
-            <img src="../src/assets/kinghoksu/gif/mobile2.gif" />
-          </div>
-          <div class="swiper-slide">
-            <img src="../src/assets/kinghoksu/gif/mobile3.gif" />
-          </div>
-        </div>
-        <!-- <div class="_leftHelf relative"> -->
-          <!-- <img src="../src/assets/kinghoksu/gif/mobileToss.gif" class="swiper-slide" alt="擲筊" />
-          <img src="../src/assets/kinghoksu/gif/lottery1.gif" class="py-6 swiper-slide" alt="抽籤" id="lottery-img" /> -->
-        <!-- </div>
-        <div class="_rightHelf w-1/2 inline-flex flex-col justify-center"> -->
-          <!-- <img src="../src/assets/kinghoksu/gif/Pending_tiger.png" class="object-contain translate-x-12" alt="虎爺霸氣躺" style="width: 14.75em;" />
+      <div class="content-inner flex w-full z-10 relative" id="Swiper">
+        <div class="_leftHelf w-1/2 inline-flex flex-col items-start justify-start">
+          <img src="../src/assets/kinghoksu/img/meow2.png" class="object-contain translate-x-12" alt="虎爺" style="width: 12.685em;" />
           <h3 class="custom-font-NotoSerif font-bold fs-02 pb-1 ls-12 relative z-10">
-            <img src="../src/assets/kinghoksu/img/cloud1.png" class="absolute object-contain cloud_bg_title" alt="雲朵" style="top: -0.7em;" />
-            廟宇的經典
+            <img src="../src/assets/kinghoksu/img/cloud1.png" class="absolute object-contain cloud_bg_title" alt="雲朵" style="top: -0.45em; left: -1.85em;" />
+            <span id="swiper-title">忘了問題嗎？</span>
           </h3>
-          <p class="fs-05 font-normal custom-font-PingFang ls-2 translate-x-3.5" style="width: 16em;">
-            你有去過廟裡擲筊求籤過嗎？是不是已經跪好久，但還有好多問題想要神明給予指引，景德祠APP讓你有筊擲出去還有搖籤桶的踏實感
-          </p> -->
-        <!-- </div> -->
+          <p id="swiper-content" class="fs-05 font-normal custom-font-PingFang ls-2 translate-x-1" style="width: 14.08em;">
+            去拜拜常常問了下一題問題忘了前幾題問題嗎？困擾著大家，景德祠APP讓大家再也不用拿紙記下來，貼心設計讓你在問之前設定問題邊問邊查看剛剛所提的問題
+          </p>
+        </div>
+        <div class="_rightHelf w-1/2 relative">
+          <div class="step_wrapper absolute custom-font-color3 font-bold custom-font-NotoSans fs-05 ls-12">
+            <span class="custom-font-color4" id="swiper-step-content">step1</span>
+            <p id="swiper-s-title">擲筊前設定好問題<br/>（非必須）</p>
+          </div>
+          <img src="../src/assets/kinghoksu/gif/mobile1.gif" class="object-contain" alt="Step GIF" id="swiper-img" />
+        </div>
       </div>
     </div>
     
@@ -323,7 +313,7 @@
             </p>
           </div>
           <div class="_rightHelf">
-            <img src="../src/assets/kinghoksu/img/g3.png" alt="掃描土地公公" class="object-contain" />
+            <img src="../src/assets/kinghoksu/gif/mobileTodigong.gif" alt="土地公加持" class="object-contain" />
           </div>
         </div>
       </div>
@@ -382,9 +372,6 @@
   <div id="footer" data-section-name="footer"></div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
   <script>
     $.ajax({
       url: '../src/components/header/header_kinghoksu.html',
@@ -486,6 +473,29 @@
       // else if (scrollTop + windowHeight > footerTop) {
       //   $("#app-menu-fixed").fadeOut(500);
       // }
+      
+      var swiperSectionTop = $('#Swiper').offset().top;
+      var diff = swiperSectionTop - scrollTop;
+      if(diff > 60) {
+        $('#swiper-title').text('忘了問題嗎？');
+        $('#swiper-content').text('去拜拜常常問了下一題問題忘了前幾題問題嗎？困擾著大家，景德祠APP讓大家再也不用拿紙記下來，貼心設計讓你在問之前設定問題邊問邊查看剛剛所提的問題');
+        $('#swiper-step-content').text('step1');
+        $('#swiper-s-title').html('擲筊前設定好問題<br/>（非必須）');
+        $('#swiper-img').attr('src', '../src/assets/kinghoksu/gif/mobile1.gif');
+      } else if (diff <= 50 && diff > -50) {
+        $('#swiper-title').text('邊看邊問');
+        $('#swiper-content').text('擲筊途中不知道該跟神明說些什麼嗎，我們預設了題詞暗示要怎麼跟神明說明身份來歷，還有所設定問題');
+        $('#swiper-step-content').text('step2');
+        $('#swiper-s-title').text('擲筊中邊問邊看');
+        $('#swiper-img').attr('src', '../src/assets/kinghoksu/gif/mobile2.gif');
+      } else if (diff <= -50) {
+        $('#swiper-title').text('問題連環炮');
+        $('#swiper-content').text('你有過問下一題的時候，記不太清楚剛剛上一題問了什麼、得到什麼答案嗎，或是突然想回憶起幾天前問了神明什麼，但卻記不太清楚甚至忘記，這時候就可以去擲筊記錄簿！');
+        $('#swiper-step-content').text('step3');
+        $('#swiper-s-title').text('擲筊完回顧歷史');
+        $('#swiper-img').attr('src', '../src/assets/kinghoksu/gif/mobile3.gif');
+      }
+      console.log(diff)
     });
 
     var summary1_img_box1 = document.querySelector("#summary1-img-box-1");
@@ -522,17 +532,6 @@
       
       $(".tab-pane").removeClass("active");
       $(".tab-pane[data-tab='" + tab + "']").addClass("active");
-    });
-
-    var swiper = new Swiper(".Swiper", {
-      direction: "vertical",
-      slidesPerView: 1,
-      spaceBetween: 0,
-      speed: 600,
-      mousewheel: {
-        releaseOnEdges: true,
-        sensitivity: 0.1,
-      }
     });
 
     $("#lottery-img").click(function() {

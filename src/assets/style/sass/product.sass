@@ -165,7 +165,7 @@ body
                             letter-spacing: 0.12em
         &:nth-of-type(4)
             .content-inner
-                padding-top: 8em
+                padding-top: 14.5em
                 width: 100%
                 &:nth-of-type(1),
                 &:nth-of-type(2)
@@ -201,44 +201,37 @@ body
                     ._leftHelf
                         order: 2
                         img
+                            width: 19.5em
                             transform: translateY(-8em) scale(1.25)
                 &:nth-of-type(2) ._leftHelf img
+                    height: 100%
                     cursor: pointer
-                // &:nth-of-type(1),
-                // &:nth-of-type(2)
-                //     margin-bottom: 8em
-                //     .bg-box
-                //         position: absolute
-                //         bottom: 0
-                //         height: 31.75em
-                //         background: rgba(255, 255, 255, 0.1)
-                //         border-radius: 0 40px 40px 0
-                //         box-shadow: 0px 2px 10px rgba(25, 51, 81, 0.35)
-                //         backdrop-filter: blur(30px)
                 &:last-of-type
-                    .swiper-wrapper
+                    margin-bottom: 6em
+                    ._leftHelf
+                        padding-left: 12em
+                        padding-right: 7.5%
                         height: 38.313em
-                        .swiper-slide
-                            @include size(50%)
-                            margin-left: auto
-                            opacity: 0
-                            transition: opacity 0.55s
-                            img
-                                margin-left: auto
-                                margin-right: auto
-                                width: 16em
-                                object-fit: contain
-                            &.swiper-slide-active
-                                opacity: 1
-                    .bg-box
-                        position: absolute
-                        bottom: 0
-                        right: 0
-                        height: calc(38.313em - 4.438em)
+                        transform: translateY(-4.5em)
+                    ._rightHelf
+                        height: 33.875em
                         background: rgba(255, 255, 255, 0.1)
                         border-radius: 40px 0 0 40px
                         box-shadow: 0px 2px 10px rgba(25, 51, 81, 0.35)
                         backdrop-filter: blur(30px)
+                        .step_wrapper
+                            padding: 0.6em 1.9em
+                            bottom: 20.85em
+                            left: -4em
+                            background: rgba(255, 255, 255, 1)
+                            border-radius: 60px
+                            box-shadow: 0px 0px 10px rgba(25, 51, 81, 0.35)
+                            backdrop-filter: blur(30px)
+                        img
+                            margin-left: auto
+                            margin-right: auto
+                            width: 17.5em
+                            transform: translateY(-7em)
         &:nth-of-type(5)
             > div
                 &:not(.pt-0)
@@ -254,7 +247,7 @@ body
                     ._rightHelf
                         padding-right: 7.5%
                         img
-                            width: 26em
+                            width: 52em
             .tab-wrapper
                 width: 100%
                 // height: 40.65em
