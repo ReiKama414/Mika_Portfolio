@@ -190,20 +190,22 @@
       <div class="content-inner flex w-full z-10 relative" id="Swiper">
         <div class="_leftHelf w-1/2 inline-flex flex-col items-start justify-start">
           <img src="../src/assets/kinghoksu/img/meow2.png" class="object-contain translate-x-12" alt="虎爺" style="width: 12.685em;" />
-          <h3 class="custom-font-NotoSerif font-bold fs-02 pb-1 ls-12 relative z-10">
+          <div class="custom-font-NotoSerif font-bold fs-02 pb-1 ls-12 relative z-10">
             <img src="../src/assets/kinghoksu/img/cloud1.png" class="absolute object-contain cloud_bg_title" alt="雲朵" style="top: -0.45em; left: -1.85em;" />
-            <span id="swiper-title">忘了問題嗎？</span>
-          </h3>
-          <p id="swiper-content" class="fs-05 font-normal custom-font-PingFang ls-2 translate-x-1" style="width: 14.08em;">
-            去拜拜常常問了下一題問題忘了前幾題問題嗎？困擾著大家，景德祠APP讓大家再也不用拿紙記下來，貼心設計讓你在問之前設定問題邊問邊查看剛剛所提的問題
-          </p>
+            <p id="swiper-title">忘了問題嗎？</p>
+          </div>
+          <div class="fs-05 font-normal custom-font-PingFang ls-2 translate-x-1">
+            <p id="swiper-content" style="width: 14.08em;">
+              去拜拜常常問了下一題問題忘了前幾題問題嗎？困擾著大家，景德祠APP讓大家再也不用拿紙記下來，貼心設計讓你在問之前設定問題邊問邊查看剛剛所提的問題
+            </p>
+          </div>
         </div>
         <div class="_rightHelf w-1/2 relative">
           <div class="step_wrapper absolute custom-font-color3 font-bold custom-font-NotoSans fs-05 ls-12">
-            <span class="custom-font-color4" id="swiper-step-content">step1</span>
+            <p class="custom-font-color4" id="swiper-step-content">step1</p>
             <p id="swiper-s-title">擲筊前設定好問題<br/>（非必須）</p>
           </div>
-          <img src="../src/assets/kinghoksu/gif/mobile1.gif" class="object-contain" alt="Step GIF" id="swiper-img" />
+          <img src="../src/assets/kinghoksu/gif/mobile1.gif" class="object-contain relative" alt="Step GIF" id="swiper-img" />
         </div>
       </div>
     </div>
@@ -476,26 +478,49 @@
       
       var swiperSectionTop = $('#Swiper').offset().top;
       var diff = swiperSectionTop - scrollTop;
-      if(diff > 60) {
-        $('#swiper-title').text('忘了問題嗎？');
-        $('#swiper-content').text('去拜拜常常問了下一題問題忘了前幾題問題嗎？困擾著大家，景德祠APP讓大家再也不用拿紙記下來，貼心設計讓你在問之前設定問題邊問邊查看剛剛所提的問題');
-        $('#swiper-step-content').text('step1');
-        $('#swiper-s-title').html('擲筊前設定好問題<br/>（非必須）');
-        $('#swiper-img').attr('src', '../src/assets/kinghoksu/gif/mobile1.gif');
+      if(diff > 60 && $('#swiper-title').text() !== '忘了問題嗎？') {
+        $('#swiper-title').addClass('animate-transition animate-slide-in-bottom');
+        $('#swiper-content').addClass('animate-transition animate-slide-in-bottom');
+        $('#swiper-step-content').addClass('animate-transition animate-slide-in-top');
+        $('#swiper-s-title').addClass('animate-transition animate-slide-in-top');
+        $('#swiper-img').addClass('animate-transition animate-slide-in-top');
       } else if (diff <= 50 && diff > -50) {
-        $('#swiper-title').text('邊看邊問');
-        $('#swiper-content').text('擲筊途中不知道該跟神明說些什麼嗎，我們預設了題詞暗示要怎麼跟神明說明身份來歷，還有所設定問題');
-        $('#swiper-step-content').text('step2');
-        $('#swiper-s-title').text('擲筊中邊問邊看');
-        $('#swiper-img').attr('src', '../src/assets/kinghoksu/gif/mobile2.gif');
-      } else if (diff <= -50) {
-        $('#swiper-title').text('問題連環炮');
-        $('#swiper-content').text('你有過問下一題的時候，記不太清楚剛剛上一題問了什麼、得到什麼答案嗎，或是突然想回憶起幾天前問了神明什麼，但卻記不太清楚甚至忘記，這時候就可以去擲筊記錄簿！');
-        $('#swiper-step-content').text('step3');
-        $('#swiper-s-title').text('擲筊完回顧歷史');
-        $('#swiper-img').attr('src', '../src/assets/kinghoksu/gif/mobile3.gif');
+        $('#swiper-title').addClass('animate-transition animate-slide-in-bottom');
+        $('#swiper-content').addClass('animate-transition animate-slide-in-bottom');
+        $('#swiper-step-content').addClass('animate-transition animate-slide-in-top');
+        $('#swiper-s-title').addClass('animate-transition animate-slide-in-top');
+        $('#swiper-img').addClass('animate-transition animate-slide-in-top');
+      } else if (diff <= -50 && $('#swiper-title').text() !== '問題連環炮') {
+        $('#swiper-title').addClass('animate-transition animate-slide-in-bottom');
+        $('#swiper-content').addClass('animate-transition animate-slide-in-bottom');
+        $('#swiper-step-content').addClass('animate-transition animate-slide-in-top');
+        $('#swiper-s-title').addClass('animate-transition animate-slide-in-top');
+        $('#swiper-img').addClass('animate-transition animate-slide-in-top');
       }
-      console.log(diff)
+
+      
+      setTimeout(function() {
+        if(diff > 60 && $('#swiper-title').text() !== '忘了問題嗎？') {
+          $('#swiper-title').text('忘了問題嗎？').removeClass('animate-slide-in-bottom');
+          $('#swiper-content').text('去拜拜常常問了下一題問題忘了前幾題問題嗎？困擾著大家，景德祠APP讓大家再也不用拿紙記下來，貼心設計讓你在問之前設定問題邊問邊查看剛剛所提的問題').removeClass('animate-slide-in-bottom');
+          $('#swiper-step-content').text('step1').removeClass('animate-slide-in-top');
+          $('#swiper-s-title').html('擲筊前設定好問題<br/>（非必須）').removeClass('animate-slide-in-top');
+          $('#swiper-img').attr('src', '../src/assets/kinghoksu/gif/mobile1.gif').removeClass('animate-slide-in-top')
+        } else if (diff <= 50 && diff > -50) {
+          $('#swiper-title').text('邊看邊問').removeClass('animate-slide-in-bottom');
+          $('#swiper-content').text('擲筊途中不知道該跟神明說些什麼嗎，我們預設了題詞暗示要怎麼跟神明說明身份來歷，還有所設定問題').removeClass('animate-slide-in-bottom');
+          $('#swiper-step-content').text('step2').removeClass('animate-slide-in-top');
+          $('#swiper-s-title').text('擲筊中邊問邊看').removeClass('animate-slide-in-top');
+          $('#swiper-img').attr('src', '../src/assets/kinghoksu/gif/mobile2.gif').removeClass('animate-slide-in-top');
+        } else if (diff <= -50 && $('#swiper-title').text() !== '問題連環炮') {
+          $('#swiper-title').text('問題連環炮').removeClass('animate-slide-in-bottom');
+          $('#swiper-content').text('你有過問下一題的時候，記不太清楚剛剛上一題問了什麼、得到什麼答案嗎，或是突然想回憶起幾天前問了神明什麼，但卻記不太清楚甚至忘記，這時候就可以去擲筊記錄簿！').removeClass('animate-slide-in-bottom');
+          $('#swiper-step-content').text('step3').removeClass('animate-slide-in-top');
+          $('#swiper-s-title').text('擲筊完回顧歷史').removeClass('animate-slide-in-top');
+          $('#swiper-img').attr('src', '../src/assets/kinghoksu/gif/mobile3.gif').removeClass('animate-slide-in-top');
+        }
+      }, 2000);
+      // console.log(diff)
     });
 
     var summary1_img_box1 = document.querySelector("#summary1-img-box-1");

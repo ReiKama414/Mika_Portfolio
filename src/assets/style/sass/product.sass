@@ -12,6 +12,18 @@ $text-color: #212966
   width: $w
   height: $h
 
+
+.animate-transition
+  transition: all 2s ease-in-out
+
+.animate-slide-in-bottom
+  transform: translateY(40px)
+  opacity: 0
+
+.animate-slide-in-top
+  transform: translateY(-40px)
+  opacity: 0
+
 body
     padding: 0
     scroll-behavior: smooth
@@ -231,7 +243,7 @@ body
                             margin-left: auto
                             margin-right: auto
                             width: 17.5em
-                            transform: translateY(-7em)
+                            bottom: 7em
         &:nth-of-type(5)
             > div
                 &:not(.pt-0)
