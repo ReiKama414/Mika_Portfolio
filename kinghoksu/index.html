@@ -484,7 +484,7 @@
         $('#swiper-step-content').addClass('animate-transition animate-slide-in-top');
         $('#swiper-s-title').addClass('animate-transition animate-slide-in-top');
         $('#swiper-img').addClass('animate-transition animate-slide-in-top');
-      } else if (diff <= 50 && diff > -50) {
+      } else if (diff <= 50 && diff > -50 && $('#swiper-title').text() !== '邊看邊問') {
         $('#swiper-title').addClass('animate-transition animate-slide-in-bottom');
         $('#swiper-content').addClass('animate-transition animate-slide-in-bottom');
         $('#swiper-step-content').addClass('animate-transition animate-slide-in-top');
@@ -506,7 +506,7 @@
           $('#swiper-step-content').text('step1').removeClass('animate-slide-in-top');
           $('#swiper-s-title').html('擲筊前設定好問題<br/>（非必須）').removeClass('animate-slide-in-top');
           $('#swiper-img').attr('src', '../src/assets/kinghoksu/gif/mobile1.gif').removeClass('animate-slide-in-top')
-        } else if (diff <= 50 && diff > -50) {
+        } else if (diff <= 50 && diff > -50 && $('#swiper-title').text() !== '邊看邊問') {
           $('#swiper-title').text('邊看邊問').removeClass('animate-slide-in-bottom');
           $('#swiper-content').text('擲筊途中不知道該跟神明說些什麼嗎，我們預設了題詞暗示要怎麼跟神明說明身份來歷，還有所設定問題').removeClass('animate-slide-in-bottom');
           $('#swiper-step-content').text('step2').removeClass('animate-slide-in-top');
