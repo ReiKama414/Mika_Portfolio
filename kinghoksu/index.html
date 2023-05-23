@@ -201,7 +201,7 @@
           </div>
         </div>
         <div class="_rightHelf w-1/2 relative">
-          <div class="step_wrapper absolute custom-font-color3 font-bold custom-font-NotoSans fs-05 ls-12">
+          <div id="swiper-step_wrapper" class="step_wrapper absolute custom-font-color3 font-bold custom-font-NotoSans fs-05 ls-12">
             <p class="custom-font-color4" id="swiper-step-content">step1</p>
             <p id="swiper-s-title">擲筊前設定好問題<br/>（非必須）</p>
           </div>
@@ -479,40 +479,43 @@
       var swiperSectionTop = $('#Swiper').offset().top;
       var diff = swiperSectionTop - scrollTop;
       if(diff > 60 && $('#swiper-title').text() !== '忘了問題嗎？') {
-        $('#swiper-title').addClass('animate-transition animate-slide-in-bottom');
-        $('#swiper-content').addClass('animate-transition animate-slide-in-bottom');
-        $('#swiper-step-content').addClass('animate-transition animate-slide-in-top');
-        $('#swiper-s-title').addClass('animate-transition animate-slide-in-top');
-        $('#swiper-img').addClass('animate-transition animate-slide-in-top');
+        $('#swiper-title').addClass('animate-slide-in-bottom');
+        $('#swiper-content').addClass('animate-slide-in-bottom');
+        $('#swiper-step-content').addClass('animate-slide-in-top');
+        $('#swiper-s-title').addClass('animate-slide-in-top');
+        $('#swiper-img').addClass('animate-slide-in-top');
       } else if (diff <= 50 && diff > -50 && $('#swiper-title').text() !== '邊看邊問') {
-        $('#swiper-title').addClass('animate-transition animate-slide-in-bottom');
-        $('#swiper-content').addClass('animate-transition animate-slide-in-bottom');
-        $('#swiper-step-content').addClass('animate-transition animate-slide-in-top');
-        $('#swiper-s-title').addClass('animate-transition animate-slide-in-top');
-        $('#swiper-img').addClass('animate-transition animate-slide-in-top');
+        $('#swiper-title').addClass('animate-slide-in-bottom');
+        $('#swiper-content').addClass('animate-slide-in-bottom');
+        $('#swiper-step-content').addClass('animate-slide-in-top');
+        $('#swiper-s-title').addClass('animate-slide-in-top');
+        $('#swiper-img').addClass('animate-slide-in-top');
       } else if (diff <= -50 && $('#swiper-title').text() !== '問題連環炮') {
-        $('#swiper-title').addClass('animate-transition animate-slide-in-bottom');
-        $('#swiper-content').addClass('animate-transition animate-slide-in-bottom');
-        $('#swiper-step-content').addClass('animate-transition animate-slide-in-top');
-        $('#swiper-s-title').addClass('animate-transition animate-slide-in-top');
-        $('#swiper-img').addClass('animate-transition animate-slide-in-top');
+        $('#swiper-title').addClass('animate-slide-in-bottom');
+        $('#swiper-content').addClass('animate-slide-in-bottom');
+        $('#swiper-step-content').addClass('animate-slide-in-top');
+        $('#swiper-s-title').addClass('animate-slide-in-top');
+        $('#swiper-img').addClass('animate-slide-in-top');
       }
 
       
       setTimeout(function() {
         if(diff > 60 && $('#swiper-title').text() !== '忘了問題嗎？') {
+          $('#swiper-step_wrapper').css({'height': '4.95em', 'width': '13em'});
           $('#swiper-title').text('忘了問題嗎？').removeClass('animate-slide-in-bottom');
           $('#swiper-content').text('去拜拜常常問了下一題問題忘了前幾題問題嗎？困擾著大家，景德祠APP讓大家再也不用拿紙記下來，貼心設計讓你在問之前設定問題邊問邊查看剛剛所提的問題').removeClass('animate-slide-in-bottom');
           $('#swiper-step-content').text('step1').removeClass('animate-slide-in-top');
           $('#swiper-s-title').html('擲筊前設定好問題<br/>（非必須）').removeClass('animate-slide-in-top');
           $('#swiper-img').attr('src', '../src/assets/kinghoksu/gif/mobile1.gif').removeClass('animate-slide-in-top')
         } else if (diff <= 50 && diff > -50 && $('#swiper-title').text() !== '邊看邊問') {
+          $('#swiper-step_wrapper').css({'height': '3.7em', 'width': '11.65em'});
           $('#swiper-title').text('邊看邊問').removeClass('animate-slide-in-bottom');
           $('#swiper-content').text('擲筊途中不知道該跟神明說些什麼嗎，我們預設了題詞暗示要怎麼跟神明說明身份來歷，還有所設定問題').removeClass('animate-slide-in-bottom');
           $('#swiper-step-content').text('step2').removeClass('animate-slide-in-top');
           $('#swiper-s-title').text('擲筊中邊問邊看').removeClass('animate-slide-in-top');
           $('#swiper-img').attr('src', '../src/assets/kinghoksu/gif/mobile2.gif').removeClass('animate-slide-in-top');
         } else if (diff <= -50 && $('#swiper-title').text() !== '問題連環炮') {
+          $('#swiper-step_wrapper').css({'height': '3.7em', 'width': '11.65em'});
           $('#swiper-title').text('問題連環炮').removeClass('animate-slide-in-bottom');
           $('#swiper-content').text('你有過問下一題的時候，記不太清楚剛剛上一題問了什麼、得到什麼答案嗎，或是突然想回憶起幾天前問了神明什麼，但卻記不太清楚甚至忘記，這時候就可以去擲筊記錄簿！').removeClass('animate-slide-in-bottom');
           $('#swiper-step-content').text('step3').removeClass('animate-slide-in-top');
