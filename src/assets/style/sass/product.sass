@@ -76,67 +76,71 @@ body
         &:nth-of-type(2)
             .content,
             .glass
-                top: 7rem
-                height: 70vh
+                top: 15rem
+                height: 41.25em
             .content
                 > div:first-of-type
+                    padding-right: 5%
                     padding-left: 7.5%
                 > div:last-of-type
-                    padding-right: 7.5%
+                    padding-right: 4%
+                    width: 26em
             .glass
                 background: rgba(255, 255, 255, 0.1)
                 box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
                 backdrop-filter: blur(40px)
                 border-radius: 40px
             .app-img
-                bottom: -6rem
+                // bottom: -6rem
                 img
-                    width: 60em
+                    width: 23em
+                    transform: translateY(-2.75em)
                 > div
                     margin-left: auto
                     margin-right: auto
-                    bottom: 43vh
+                    top: 3.25em
                     left: 0
                     right: 0
                     letter-spacing: 1px
-                    width: 17.167em
+                    width: 17.5em
                     color: #629BF0
                     background: rgba(255, 255, 255, 0.08)
                     box-shadow: inset 0px 0px 20px #ABDCFF, inset 0px 4px 10px rgba(255, 255, 255, 0.3)
                     backdrop-filter: blur(10px)
                     border-radius: 40px
                     p
-                        padding: 1em 1.5em
+                        padding: 1.2em 1.5em
                         &:first-of-type
                             visibility: hidden
             .app-tab
                 display: flex
                 flex-wrap: wrap
                 padding-top: 3rem
-                padding-bottom: 4rem
+                padding-bottom: 2.5rem
                 a
                     @include size(50%)
                     position: relative
                     img
                         margin-left: auto
                         margin-right: auto
-                        height: 100%
                         object-fit: contain
+                        height: calc(100% - 1.65em)
                         transition: filter .25s
-                    span
-                        position: absolute
-                        bottom: -1.25rem
-                        left: 0
-                        right: 0
+                    p
+                        // position: absolute
+                        // bottom: -1.25rem
+                        // left: 0
+                        // right: 0
                         text-align: center
                     &:hover img:nth-of-type(1)
                         filter: saturate(200%) blur(10px)
                 > img
                     top: -3rem
+                    transform: translateX(-2.25em)
         &:nth-of-type(3)
             .content-inner
                 &:first-of-type
-                    padding-top: 6.5em
+                    padding-top: 14.8rem
                     padding-bottom: 5em
                     > div:first-of-type
                         padding-left: 7.5%
@@ -322,7 +326,7 @@ body
                         > img
                             position: absolute
                             left: -20em
-                            width: 56em
+                            width: 48em
                             max-width: none
                             object-fit: contain
                         .tab-bc
