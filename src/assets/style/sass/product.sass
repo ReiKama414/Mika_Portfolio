@@ -75,22 +75,19 @@ body
                 bottom: -6.5rem
                 width: 28em
         &:nth-of-type(2)
-            .content,
-            .glass
-                top: 15rem
-                height: 41.25em
             .content
+                position: relative
+                height: 41.25em
+                background: rgba(255, 255, 255, 0.1)
+                box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
+                backdrop-filter: blur(40px)
+                border-radius: 40px
                 > div:first-of-type
                     padding-right: 5%
                     padding-left: 7.5%
                 > div:last-of-type
                     padding-right: 4%
                     width: 26em
-            .glass
-                background: rgba(255, 255, 255, 0.1)
-                box-shadow: 4px 4px 10px rgba(25, 51, 81, 0.35)
-                backdrop-filter: blur(40px)
-                border-radius: 40px
             .app-img
                 // bottom: -6rem
                 img
@@ -137,11 +134,12 @@ body
                         filter: saturate(200%) blur(10px)
                 > img
                     top: -3rem
+                    width: 10em
                     transform: translateX(-2.25em)
         &:nth-of-type(3)
             .content-inner
                 &:first-of-type
-                    padding-top: 14.8rem
+                    padding-top: 8.5rem
                     padding-bottom: 5em
                     > div:first-of-type
                         padding-left: 7.5%
