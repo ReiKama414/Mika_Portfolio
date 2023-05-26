@@ -1,5 +1,5 @@
 <header id="header-inner" class="fixed top-4 left-1/2 custom-w-90p backdrop-blur-md transform -translate-x-1/2 px-10 py-2.5 rounded-full flex items-center justify-between custom-box-shadow-2" style="transition: width 0.3s, top 0.3s;">
-    <div class="flex h-full">
+    <div class="flex h-full cursor-pointer" id="kinghoksu_Logo_gotoTop">
       <img id="logo" src="../src/assets/kinghoksu/App Logo.png" class="h-full object-contain" alt="Logo" />
       <div class="inline-flex flex-col items-center justify-center custom-font-Soukou text-2xl font-black ps-2.5" style="color: #212966; letter-spacing: 0.12em;">
         <h3>景德祠</h3>
@@ -37,6 +37,16 @@
         }
 
         lastScrollTop = scrollTop;
+      });
+
+      var kinghoksu_isScrolling = false;
+      $('#kinghoksu_Logo_gotoTop').on('click', function() {
+        if (!kinghoksu_isScrolling) {
+          kinghoksu_isScrolling = true;
+          $('html, body').animate({ scrollTop: 0 }, 750, function() {
+            kinghoksu_isScrolling = false;
+          });
+        }
       });
     });
 </script>

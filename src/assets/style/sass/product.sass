@@ -282,14 +282,17 @@ body
                         display: flex
                         justify-content: flex-end
                         .tab
+                            text-align: center
                             padding: 0.75em 1.45em 0
                             margin-left: .5em
+                            width: 13.063rem
                             color: rgba(98, 155, 240, 0.5)
                             box-shadow: 2px 2px 10px rgba(25, 51, 81, 0.35)
                             backdrop-filter: blur(30px)
                             border-radius: 20px 20px 0px 0px
-                            transform: translateY(-4.5px)
+                            transform: translateY(.7em)
                             cursor: pointer
+                            transition: line-height .3s
                             &::after
                                 content: ""
                                 position: absolute
@@ -299,8 +302,11 @@ body
                                 height: 1em
                                 background: white
                             &.active
+                                font-size: 1.25em
+                                line-height: 1.35em
                                 color: #629BF0
                                 background: #ECF5FF
+                                transform: translateY(-0.05em)
                                 z-index: 10
                                 &::after
                                     background: #ECF5FF
