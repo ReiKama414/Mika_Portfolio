@@ -21,6 +21,8 @@
 
   <div id="footer"></div>
 
+  <div id="tooSmall"></div>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://unpkg.com/page/page.js"></script>
 
@@ -41,6 +43,13 @@
       }
     });
 
+    $.ajax({
+      url: 'src/components/tooSmall.html',
+      dataType: 'html',
+      success: function(response) {
+        $('#tooSmall').html(response);
+      }
+    });
     
     var routes = {
       '/': {
@@ -138,8 +147,8 @@
 
     // 頁面不存在的處理
     function notFoundPage() {
-      // loadPage('not-found.html', 'Not Found | Mika\'s Portfolio', '/not-found');
-      document.getElementById('app').innerHTML = '<h1>頁面未找到</h1>';
+      loadPage('not-found.html', 'Not Found | Mika\'s Portfolio', '/not-found');
+      // document.getElementById('app').innerHTML = '<h1>頁面未找到</h1>';
     }
 
     // 啟動路由監聽

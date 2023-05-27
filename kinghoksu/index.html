@@ -243,7 +243,7 @@
               <h2 class="fs-02 custom-font-color3 font-bold custom-font-Bangla ls-12">200<span class="ls-12">元代金 聚寶盆</span></h2>
               <h3 class="fs-08 custom-font-color3 font-medium ls-12">每年限量<span class="font-bold custom-font-Bangla" style="font-size: 1.25em;">16668</span>名</h3>
               <p class="tab-bc custom-font-PingFang custom-font-color2 w-max fs-05 ls-12">我要抽到no.16668的發財金!</p>
-              <ul class="flex flex-col fs-05 custom-font-PingFang mt-8">
+              <ul class="flex flex-col fs-05 custom-font-PingFang mt-6">
                 <li>隨機限量編號</li>
                 <li>線上線下二選一</li>
                 <li>線上發財金數位發行</li>
@@ -256,7 +256,7 @@
               <h2 class="fs-02 custom-font-color3 font-bold custom-font-Bangla ls-12">300<span class="ls-12">元代金 聚寶盆</span></h2>
               <h3 class="fs-08 custom-font-color3 font-medium ls-12">每年限量<span class="font-bold custom-font-Bangla" style="font-size: 1.25em;">1668</span>名</h3>
               <p class="tab-bc custom-font-PingFang custom-font-color2 w-max fs-05 ls-12">我要抽到no.1668的發財金!</p>
-              <ul class="flex flex-col fs-05 custom-font-PingFang mt-8">
+              <ul class="flex flex-col fs-05 custom-font-PingFang mt-6">
                 <li>隨機限量編號</li>
                 <li>線上線下二選一</li>
                 <li>線上發財金數位發行</li>
@@ -269,7 +269,7 @@
               <h2 class="fs-02 custom-font-color3 font-bold custom-font-Bangla ls-12">600<span class="ls-12">元代金 聚寶盆</span></h2>
               <h3 class="fs-08 custom-font-color3 font-medium ls-12">每年限量<span class="font-bold custom-font-Bangla" style="font-size: 1.25em;">168</span>名</h3>
               <p class="tab-bc custom-font-PingFang custom-font-color2 w-max fs-05 ls-12">我要抽到no.168的發財金!</p>
-              <ul class="flex flex-col fs-05 custom-font-PingFang mt-8">
+              <ul class="flex flex-col fs-05 custom-font-PingFang mt-6">
                 <li>隨機限量編號</li>
                 <li>線上線下二選一</li>
                 <li>線上發財金數位發行</li>
@@ -384,6 +384,8 @@
 
   <div id="footer" data-section-name="footer"></div>
 
+  <div id="tooSmall"></div>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     $.ajax({
@@ -399,6 +401,14 @@
       dataType: 'html',
       success: function(response) {
         $('#footer').html(response);
+      }
+    });
+
+    $.ajax({
+      url: '../src/components/tooSmall.html',
+      dataType: 'html',
+      success: function(response) {
+        $('#tooSmall').html(response);
       }
     });
 

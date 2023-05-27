@@ -206,9 +206,20 @@ body
     filter: invert(1)
 
 /*****************************************/
+
+@media (min-width: 1024px)
+    #tooSmall
+        display: none
 @media (max-width: 1023.98px)
+    body   
+        align-items: center
+        justify-content: center
+        padding-top: 2em
+        padding-bottom: 2em
     #header, #app, #footer
         display: none
+    #tooSmall
+        display: block
     
 @media (max-width: 991.98px)
     .custom-gap-1 

@@ -292,7 +292,7 @@ body
                             border-radius: 20px 20px 0px 0px
                             transform: translateY(.7em)
                             cursor: pointer
-                            transition: line-height .3s
+                            // transition: line-height .5s
                             &::after
                                 content: ""
                                 position: absolute
@@ -315,7 +315,7 @@ body
                     display: flex
                     // justify-content: end
                     padding: 3.75em 2.68em
-                    background: linear-gradient(222deg, #ECF5FF 35%, #FFFFFF 65%)
+                    background: linear-gradient(216deg, #ECF5FF 26%, #FFFFFF 74%)
                     border-radius: 40px 0 40px 40px
                     box-shadow: 2px 2px 10px rgba(25, 51, 81, 0.35)
                     backdrop-filter: blur(30px)
@@ -352,10 +352,14 @@ body
                                     @include size(1.417em, 1.792em)
                                     content: ""
                                     display: block
-                                    margin-right: 0.45em
+                                    margin-right: 0.4em
                                     background: url('../../icons/bringbring.png')
                                     background-size: contain
                                     background-repeat: no-repeat
+                                &:nth-of-type(1),
+                                &:nth-of-type(2)
+                                    &::before
+                                        margin-right: 0.8em
                 @keyframes fadeIn
                     from
                         opacity: 0
