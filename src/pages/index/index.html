@@ -11,7 +11,7 @@
         <div id="lottie-container-p" class="w-3/5"></div>
         <div class="inline-flex flex-col items-center px-16 w-2/5" style="letter-spacing: 0.01em; color: #606060;">
             <div id="lottie-container-mika_characters" class="relative"></div>
-            <h3 class="text-xl custom-font-Fahkwang">A UI/UX designer foucused on business probability and create solution in a fun way</h3>
+            <h3 class="text-xl custom-font-Fahkwang">A UI/UX designer focused on balancing between aesthetics and usability </h3>
             <div class="self-end me-3">
                 <a href="/about" class="url-inner move-horizontal flex items-center pt-4">
                     Learn more
@@ -28,46 +28,58 @@
     var innerLink = document.querySelector('.url-inner');
     innerLink.href = baseUrl_inner + '/about';
     // 方塊數量 (目前可以到 16)
-    var blockCount = 6;
+    var blockCount = 5;
 
     // 圖片和連結的陣列
     var blockItems = [
         {   // 1
+            wtCot: false,
+            tag: 'APP',
             image: "src/assets/images/example_image_1.png",
-            link: "https://mika-chus-portfolio.webflow.io/product",
-            appName: "景德祠APP",
-            appCot1: "設計思考過程記錄",
-            appCot2: "從0到1獨立設計",
+            link: "https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=227-834&scaling=min-zoom&page-id=0%3A1&t=V0DXkW9CoSn9fzDc-1",
+            appName: "濟福寺.景德祠APP",
+            appCot1: "創造廟宇文化新體驗-",
+            appCot2: "重新規劃設計",
         },
         {   // 2
+            wtCot: false,
+            tag: 'APP',
             image: "src/assets/images/example_image_2.png",
-            link: `${baseUrl_inner}/kinghoksu`,
-            appName: "景德祠APP",
-            appCot1: "準產品上線網頁",
-            appCot2: "APP產品APP重點功能介紹",
+            link: "https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=258-313&scaling=min-zoom&page-id=0%3A1&t=rRPFuYlFjIDYvwHJ-1",
+            appName: "濟福寺.景德祠APP",
+            appCot1: "創造廟宇文化新體驗-",
+            appCot2: "針對功能優化、創新做設計研究",
         },
         {   // 3
+            wtCot: true,
+            tag: 'APP',
             image: "src/assets/images/example_image_3.png",
-            link: "",
-            appName: "景德祠APP",
-            appCot1: "發財金設計思考",
-            appCot2: "把現實中虧損發財金業務做數位轉化",
+            link: "https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=263-1728&scaling=min-zoom&page-id=0%3A1&t=sBJH3iBowPjirRBs-1",
+            appName: "濟福寺.景德祠APP",
+            appCot1: "創造廟宇文化新體驗-",
+            appCot2: "數位發財金",
         },
         {   // 4
-            image: "https://images.unsplash.com/photo-1683802175679-d77c014e6a2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1155&q=80",
-            link: "",
-            appName: "",
-            appCot1: "",
-            appCot2: "",
+            wtCot: false,
+            tag: 'WEB',
+            image: "src/assets/images/example_image_4.png",
+            link: `${baseUrl_inner}/kinghoksu`,
+            appName: "濟福寺.景德祠APP",
+            appCot1: "預備上線-",
+            appCot2: "AＰＰ產品頁面",
         },
         {   // 5
-            image: "",
+            wtCot: true,
+            tag: 'WEB',
+            image: "src/assets/images/example_image_5.png",
             link: "",
-            appName: "",
+            appName: "Matres HRM",
             appCot1: "",
-            appCot2: "",
+            appCot2: "新易人資管理系統",
         },
         {   // 6
+            wtCot: false,
+            tag: "",
             image: "",
             link: "",
             appName: "",
@@ -75,6 +87,8 @@
             appCot2: "",
         },
         {   // 7
+            wtCot: false,
+            tag: "",
             image: "",
             link: "",
             appName: "",
@@ -82,6 +96,8 @@
             appCot2: "",
         },
         {   // 8
+            wtCot: false,
+            tag: "",
             image: "",
             link: "",
             appName: "",
@@ -89,6 +105,8 @@
             appCot2: "",
         },
         {   // 9
+            wtCot: false,
+            tag: "",
             image: "",
             link: "",
             appName: "",
@@ -96,6 +114,8 @@
             appCot2: "",
         },
         {   // 10
+            wtCot: false,
+            tag: "",
             image: "",
             link: "",
             appName: "",
@@ -103,6 +123,8 @@
             appCot2: "",
         },
         {   // 11
+            wtCot: false,
+            tag: "",
             image: "",
             link: "",
             appName: "",
@@ -110,6 +132,8 @@
             appCot2: "",
         },
         {   // 12
+            wtCot: false,
+            tag: "",
             image: "",
             link: "",
             appName: "",
@@ -117,6 +141,8 @@
             appCot2: "",
         },
         {   // 13
+            wtCot: false,
+            tag: "",
             image: "",
             link: "",
             appName: "",
@@ -124,6 +150,8 @@
             appCot2: "",
         },
         {   // 14
+            wtCot: false,
+            tag: "",
             image: "",
             link: "",
             appName: "",
@@ -131,6 +159,8 @@
             appCot2: "",
         },
         {   // 15
+            wtCot: false,
+            tag: "",
             image: "",
             link: "",
             appName: "",
@@ -138,6 +168,8 @@
             appCot2: "",
         },
         {   // 16
+            wtCot: false,
+            tag: "",
             image: "",
             link: "",
             appName: "",
@@ -157,12 +189,14 @@
 
             var image = blockData.image;
             var link = blockData.link;
+            var comingsoon = blockData.wtCot;
+            var tagState = blockData.tag;
             var appName = blockData.appName;
             var appContent1 = blockData.appCot1;
             var appContent2 = blockData.appCot2;
 
             var block = $('<div>').addClass('block aspect-square overflow-hidden');
-            var content = $('<div>').addClass('content flex flex-col justify-end w-full h-full px-8 pb-6');
+            var content = $('<div>').addClass('content flex flex-col justify-end w-full h-full px-8 pb-8');
 
             if (image !== "") {
                 // var img = $('<img>').attr('src', image)
@@ -191,18 +225,39 @@
                 block.append(content);
             }
 
+            if (comingsoon) {
+                var comingsoonDiv = $('<div>')
+                    .addClass('app-comingsoon custom-font-NotoSans text-xl font-medium px-8')
+                    .text('準備中•即將上線');
+                content.append(comingsoonDiv);
+            }
+
+            if (tagState !== "") {
+                var tagStateDiv = $('<div>')
+                    .addClass('app-tag custom-font-NotoSans text-xl font-medium')
+                    .text(tagState)
+                    .attr('data-type', `${tagState}`);
+                content.append(tagStateDiv);
+            }
+
             if (appName !== "") {
-                var appNameDiv = $('<div>').addClass('app-name custom-font-Soukou').text(appName);
+                var appNameDiv = $('<div>')
+                    .addClass('app-name custom-font-Soukou text-4xl')
+                    .text(appName);
                     content.append(appNameDiv);
             }
 
             if (appContent1 !== "") {
-                var appContent1Div = $('<div>').addClass('app-contentA custom-font-NotoSans text-base font-normal').text(appContent1);
+                var appContent1Div = $('<div>')
+                    .addClass('app-contentA custom-font-NotoSans text-lg font-normal')
+                    .text(appContent1);
                 content.append(appContent1Div);
             }
 
             if (appContent2 !== "") {
-                var appContent2Div = $('<div>').addClass('app-contentB custom-font-NotoSans text-sm font-thin').text(appContent2);
+                var appContent2Div = $('<div>')
+                    .addClass('app-contentB custom-font-NotoSans text-xl font-bold')
+                    .text(appContent2);
                 content.append(appContent2Div);
             }
 
@@ -332,7 +387,7 @@
 
     $('#block-container').on('mouseleave', '.block', function (e) {
         // $(".block").css({"box-shadow": "0px 0px 3px rgba(0, 0, 0, 0.051), 0px 0px 7.2px rgba(0, 0, 0, 0.073), 0px 0px 13.6px rgba(0, 0, 0, 0.09), 0px 0px 24.3px rgba(0, 0, 0, 0.107), 0px 0px 45.5px rgba(0, 0, 0, 0.129)", "transform": "scale(1.0)"});
-        $(".block").css({"box-shadow": "none", "transform": "scale(1.0)"});
+        $(".block").css({"box-shadow": "2px 2px 4px 0px #0B1A2C40", "transform": "scale(1.0)"});
     });
 
 </script>
