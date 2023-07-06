@@ -18,11 +18,12 @@
 
   var linkHtml = '';
   links.forEach(function(link) {
-    var url = baseUrl_header + link.url;
+    let other = link.url.startsWith("http://") || link.url.startsWith("https://");
+    var url = other ? link.url : (baseUrl_header + link.url);
 
     linkHtml += `
       <li class="mx-3 my-5 px-1 custom-font-color1">
-        <a href="${url}" ${(url.startsWith("http://") || url.startsWith("https://")) ? 'target="_blank"' : ''}>
+        <a href="${url}" ${other ? 'target="_blank"' : ''}>
           ${link.text}
         </a>
       </li>
