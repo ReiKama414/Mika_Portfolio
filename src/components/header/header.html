@@ -7,7 +7,8 @@
     },
     {
       text: 'About',
-      url: '/about'
+      // url: '/about'
+      url: "https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=357-862&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=258%3A313&t=OIWsVLEdpaYOwflD-1",
     },
     // {
     //   text: 'Contact',
@@ -21,7 +22,7 @@
 
     linkHtml += `
       <li class="mx-3 my-5 px-1 custom-font-color1">
-        <a href="${url}">
+        <a href="${url}" ${(url.startsWith("http://") || url.startsWith("https://")) ? 'target="_blank"' : ''}>
           ${link.text}
         </a>
       </li>
@@ -39,8 +40,8 @@
         <li>
           <a class="inline-flex items-center px-7 py-4 font-medium leading-tight border border-solid border-black rounded-full capitalize dad-hover-img-filter-invert hover:text-white hover:bg-black"
             style="letter-spacing: 0.125rem;"
-            href="link-to-resume.pdf"
-            download
+            href="https://drive.google.com/file/d/1gOkyD2SRkYHZXXTXL-ybut2xFeVLW2v3/view"
+            target="_blank"
           >
             <img class="custom-w-5_5 custom-h-5_5 object-contain me-2"
               src="https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/63837ea016814d1c2fbdd8bb_download.svg"

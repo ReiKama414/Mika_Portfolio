@@ -58,6 +58,7 @@
     min-height: 2.625rem;
     font-size: 1.25em;
     letter-spacing: 0.5rem;
+    pointer-events: none;
 }
 .app-comingsoon {
     left: 0;
@@ -80,6 +81,7 @@
 .app-name,
 .app-contentA,
 .app-contentB {
+    pointer-events: none;
     text-shadow: 1px 1px 1px #000000;
     letter-spacing: 0.12rem;
     color: #FFFFFF;

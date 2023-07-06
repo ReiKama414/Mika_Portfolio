@@ -14,7 +14,14 @@
   <link href="src/assets/style/css/style.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="disable-scroll">
+  <div id="loading">
+    <div class="fixed inset-0 flex flex-col justify-center items-center text-2xl font-bold">
+      <img class="mb-3" src="src/assets/images/loading.png" alt="😾" />
+      載入中......
+    </div>  
+  </div>
+
   <div id="header"></div>
 
   <div id="app"></div>
@@ -27,6 +34,20 @@
   <script src="https://unpkg.com/page/page.js"></script>
 
   <script>
+    // 等待頁面完全加載
+    window.addEventListener('load', function() {
+      // 延遲一段時間後逐漸隱藏 loading 畫面
+      setTimeout(function() {
+        document.querySelector('body').classList.remove('disable-scroll');
+        document.querySelector('#loading').style.opacity = '0';
+      }, 2000);
+      
+      // 在漸漸隱藏結束後，隱藏 loading 畫面
+      setTimeout(function() {
+        document.querySelector('#loading').style.display = 'none';
+      }, 3000);
+    });
+
     $.ajax({
       url: 'src/components/header/header.html',
       dataType: 'html',

@@ -31,12 +31,26 @@ body
 #app
     flex: 1
 
+#loading
+    font-family: 'Noto Sans TC', sans-serif, Arial, Helvetica
+    opacity: 1
+    transition: opacity 1s ease-in-out
+    z-index: 10000
+    > div
+        letter-spacing: .12em
+        color: #475E8C
+        background-color: rgba(255, 255, 255, .5)
+        backdrop-filter: blur(20px)
+
 #header header
     height: $header-height
     z-index: 9999
 
 .custom-container
     padding-bottom: 7.5rem
+
+.disable-scroll
+      overflow: hidden
 
 // /src/assets/icons/head_color.png
 
@@ -63,17 +77,17 @@ body
 .custom-font-Fahkwang
     font-family: 'Fahkwang', sans-serif, Arial, Helvetica
 .custom-font-Soukou
-  font-family: 'Soukou Mincho', 'Noto Serif TC', sans-serif, Arial, Helvetica
+    font-family: 'Soukou Mincho', 'Noto Serif TC', sans-serif, Arial, Helvetica
 .custom-font-NotoSans
-  font-family: 'Noto Sans', sans-serif, Arial, Helvetica
+    font-family: 'Noto Sans', sans-serif, Arial, Helvetica
 .custom-font-NotoSerif
-  font-family: 'Noto Serif TC', serif
+    font-family: 'Noto Serif TC', serif
 .custom-font-PingFang
-  font-family: 'PingFang SC', sans-serif, Arial, Helvetica
+    font-family: 'PingFang SC', sans-serif, Arial, Helvetica
 .custom-font-Songti
-  font-family: 'Songti TC', sans-serif, Arial, Helvetica
+    font-family: 'Songti TC', sans-serif, Arial, Helvetica
 .custom-font-Bangla
-  font-family: 'Bangla MN', sans-serif, Arial, Helvetica
+    font-family: 'Bangla MN', sans-serif, Arial, Helvetica
   
 .fc-primary
     color: #212966
@@ -216,7 +230,7 @@ body
         justify-content: center
         padding-top: 2em
         padding-bottom: 2em
-    #header, #app, #footer
+    #header, #app, #footer, #loading
         display: none
     #tooSmall
         display: block
