@@ -35,210 +35,30 @@
 	// var innerLink = document.querySelector('.url-inner');
 	// innerLink.href = baseUrl_inner + '/about';
 
-	fetch("https://rkm414-site.vercel.app/api/mikaPortfolio")
+	fetch("http://localhost:3000/api/mikaPortfolio")
 		.then((response) => response.json())
 		.then((data) => {
 			console.log("Fetched Data:", data);
+			generateBlocks(data.data);
+			observeBlocks();
 		})
 		.catch((error) => {
 			console.error("Error fetching data:", error);
 		});
 
-	// 方塊數量 (目前可以到 16)
-	var blockCount = 6;
-
-	// 圖片和連結的陣列
-	var blockItems = [
-		{
-			// 1
-			wtCot: false,
-			tag: "APP",
-			image: "src/assets/images/example_image_1.png",
-			link: "https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=227-834&scaling=min-zoom&page-id=0%3A1&t=V0DXkW9CoSn9fzDc-1",
-			appName: "濟福寺.景德祠APP",
-			appCot1: "創造廟宇文化新體驗-",
-			appCot2: "重新規劃設計",
-		},
-		{
-			// 2
-			wtCot: false,
-			tag: "APP",
-			image: "src/assets/images/example_image_2.png",
-			link: "https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=258-313&scaling=min-zoom&page-id=0%3A1&t=rRPFuYlFjIDYvwHJ-1",
-			appName: "濟福寺.景德祠APP",
-			appCot1: "創造廟宇文化新體驗-",
-			appCot2: "針對功能優化、創新做設計研究",
-		},
-		{
-			// 3
-			wtCot: false,
-			tag: "APP",
-			image: "src/assets/images/example_image_3.png",
-			link: "https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=263-1728&scaling=min-zoom&page-id=0%3A1&t=sBJH3iBowPjirRBs-1",
-			appName: "濟福寺.景德祠APP",
-			appCot1: "創造廟宇文化新體驗-",
-			appCot2: "數位發財金",
-		},
-		{
-			// 4
-			wtCot: false,
-			tag: "WEB",
-			image: "src/assets/images/example_image_4.png",
-			link: `${baseUrl_inner}/kinghoksu`,
-			appName: "濟福寺.景德祠APP",
-			appCot1: "預備上線-",
-			appCot2: "AＰＰ產品頁面",
-		},
-		{
-			// 5
-			wtCot: true,
-			tag: "WEB",
-			image: "src/assets/images/example_image_5.png",
-			link: "",
-			appName: "廟宇後台管理系統",
-			appCot1: "",
-			appCot2: "濟福寺景德祠",
-		},
-		{
-			// 6
-			wtCot: true,
-			tag: "WEB",
-			image: "src/assets/images/example_image_6.png",
-			link: "",
-			appName: "Matres HRM",
-			appCot1: "",
-			appCot2: "新易人資管理系統",
-		},
-		{
-			// 7
-			wtCot: false,
-			tag: "",
-			image: "",
-			link: "",
-			appName: "",
-			appCot1: "",
-			appCot2: "",
-		},
-		{
-			// 8
-			wtCot: false,
-			tag: "",
-			image: "",
-			link: "",
-			appName: "",
-			appCot1: "",
-			appCot2: "",
-		},
-		{
-			// 9
-			wtCot: false,
-			tag: "",
-			image: "",
-			link: "",
-			appName: "",
-			appCot1: "",
-			appCot2: "",
-		},
-		{
-			// 10
-			wtCot: false,
-			tag: "",
-			image: "",
-			link: "",
-			appName: "",
-			appCot1: "",
-			appCot2: "",
-		},
-		{
-			// 11
-			wtCot: false,
-			tag: "",
-			image: "",
-			link: "",
-			appName: "",
-			appCot1: "",
-			appCot2: "",
-		},
-		{
-			// 12
-			wtCot: false,
-			tag: "",
-			image: "",
-			link: "",
-			appName: "",
-			appCot1: "",
-			appCot2: "",
-		},
-		{
-			// 13
-			wtCot: false,
-			tag: "",
-			image: "",
-			link: "",
-			appName: "",
-			appCot1: "",
-			appCot2: "",
-		},
-		{
-			// 14
-			wtCot: false,
-			tag: "",
-			image: "",
-			link: "",
-			appName: "",
-			appCot1: "",
-			appCot2: "",
-		},
-		{
-			// 15
-			wtCot: false,
-			tag: "",
-			image: "",
-			link: "",
-			appName: "",
-			appCot1: "",
-			appCot2: "",
-		},
-		{
-			// 16
-			wtCot: false,
-			tag: "",
-			image: "",
-			link: "",
-			appName: "",
-			appCot1: "",
-			appCot2: "",
-		},
-	];
-
-	generateBlocks(blockCount, blockItems);
-	observeBlocks();
-
-	function generateBlocks(blockCount, blockItems) {
+	function generateBlocks(blockItems) {
 		var blocksArea = $("#block-container");
+		blocksArea.empty();
 
-		for (var i = 0; i < blockCount; i++) {
-			var blockData = blockItems[i];
-
-			var image = blockData.image;
-			var link = blockData.link;
-			var comingsoon = blockData.wtCot;
-			var tagState = blockData.tag;
-			var appName = blockData.appName;
-			var appContent1 = blockData.appCot1;
-			var appContent2 = blockData.appCot2;
+		blockItems.forEach((blockData) => {
+			var { image, link, wtCot: comingsoon, tag, appName, appCot1: appContent1, appCot2: appContent2 } = blockData;
 
 			var block = $("<div>").addClass("block aspect-square overflow-hidden");
 			var content = $("<div>").addClass("content flex flex-col justify-end w-full h-full px-8 pb-8");
 
-			if (image !== "") {
-				// var img = $('<img>').attr('src', image)
-				//                     .addClass('w-full h-full object-cover')
-				//                     .on('error', function() { $(this).hide(); });
-				// content.append(img);
-				// 添加背景圖片的 CSS
+			if (image) {
 				content.css({
-					"background-image": 'url("' + image + '")',
+					"background-image": `url("${image}")`,
 					"background-position": "center",
 					"background-size": "cover",
 				});
@@ -247,12 +67,10 @@
 				content.append(gradientDiv);
 			}
 
-			if (link !== "") {
+			if (link) {
 				var a = $("<a>")
-					.attr("href", link)
+					.attr({ href: link, target: "_blank", rel: "noreferrer noopener" })
 					.addClass("w-full h-full")
-					.attr("target", "_blank")
-					.attr("rel", "noreferrer noopener")
 					.append(content);
 				block.append(a);
 			} else {
@@ -266,27 +84,27 @@
 				content.append(comingsoonDiv);
 			}
 
-			if (tagState !== "") {
+			if (tag) {
 				var tagStateDiv = $("<div>")
 					.addClass("app-tag custom-font-NotoSans text-xl font-medium")
-					.text(tagState)
-					.attr("data-type", `${tagState}`);
+					.text(tag)
+					.attr("data-type", tag);
 				content.append(tagStateDiv);
 			}
 
-			if (appName !== "") {
+			if (appName) {
 				var appNameDiv = $("<div>").addClass("app-name custom-font-Soukou text-4xl").text(appName);
 				content.append(appNameDiv);
 			}
 
-			if (appContent1 !== "") {
+			if (appContent1) {
 				var appContent1Div = $("<div>")
 					.addClass("app-contentA custom-font-NotoSans text-lg font-normal")
 					.text(appContent1);
 				content.append(appContent1Div);
 			}
 
-			if (appContent2 !== "") {
+			if (appContent2) {
 				var appContent2Div = $("<div>")
 					.addClass("app-contentB custom-font-NotoSans text-xl font-bold")
 					.text(appContent2);
@@ -294,7 +112,7 @@
 			}
 
 			blocksArea.append(block);
-		}
+		});
 	}
 	function observeBlocks() {
 		var observer = new IntersectionObserver(function (entries) {
