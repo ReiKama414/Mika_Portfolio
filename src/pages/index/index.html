@@ -1,394 +1,442 @@
 <div class="lg:container lg:mx-auto lg:px-16 xl:px-20 2xl:px-24 overflow-hidden custom-container">
-    <!-- <h1>首頁內容</h1> -->
-    <div class="flex justify-between wapper_container_hand" style="min-height: 45rem;">
-        <div id="lottie-container-hand" class="self-start flex-1 pt-12"></div>
-        <div class="text-5xl xl:text-6xl custom-font-Fahkwang self-end pb-24 lg:pb-36" style="letter-spacing: 0.34em; color: #606060;">
-            <h3 class="pb-4"> Hi, there👇</h3>
-            <h3> It’s </h3>
-        </div>
-    </div>
-    <div class="flex items-center justify-between h-screen" style="min-height: 40rem;">
-        <div id="lottie-container-p" class="w-3/5"></div>
-        <div class="inline-flex flex-col items-center px-16 w-2/5" style="letter-spacing: 0.01em; color: #606060;">
-            <div id="lottie-container-mika_characters" class="relative"></div>
-            <h3 class="text-xl custom-font-Fahkwang">A UI/UX designer focused on balancing between aesthetics and usability </h3>
-            <div class="self-end me-3">
-                <a href="https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=357-862&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=258%3A313&t=OIWsVLEdpaYOwflD-1" target="_blank" class="url-inner move-horizontal flex items-center pt-4">
-                    Learn more
-                    <img src="src/assets/icons/icon _arrow down circle_.png" class="w-14 lg:w-16 ps-1" alt="Arrow" />
-                </a>
-            </div>
-        </div>
-    </div>
-    <div id="block-container" class="grid grid-cols-2 gap-x-10 gap-y-14 mt-30 px-4 lg:px:6 xl:px-16 2xl:px-28"></div>
+	<!-- <h1>首頁內容</h1> -->
+	<div class="flex justify-between wapper_container_hand" style="min-height: 45rem">
+		<div id="lottie-container-hand" class="self-start flex-1 pt-12"></div>
+		<div
+			class="text-5xl xl:text-6xl custom-font-Fahkwang self-end pb-24 lg:pb-36"
+			style="letter-spacing: 0.34em; color: #606060">
+			<h3 class="pb-4">Hi, there👇</h3>
+			<h3>It’s</h3>
+		</div>
+	</div>
+	<div class="flex items-center justify-between h-screen" style="min-height: 40rem">
+		<div id="lottie-container-p" class="w-3/5"></div>
+		<div class="inline-flex flex-col items-center px-16 w-2/5" style="letter-spacing: 0.01em; color: #606060">
+			<div id="lottie-container-mika_characters" class="relative"></div>
+			<h3 class="text-xl custom-font-Fahkwang">
+				A UI/UX designer focused on balancing between aesthetics and usability
+			</h3>
+			<div class="self-end me-3">
+				<a
+					href="https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=357-862&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=258%3A313&t=OIWsVLEdpaYOwflD-1"
+					target="_blank"
+					class="url-inner move-horizontal flex items-center pt-4">
+					Learn more
+					<img src="src/assets/icons/icon _arrow down circle_.png" class="w-14 lg:w-16 ps-1" alt="Arrow" />
+				</a>
+			</div>
+		</div>
+	</div>
+	<div id="block-container" class="grid grid-cols-2 gap-x-10 gap-y-14 mt-30 px-4 lg:px:6 xl:px-16 2xl:px-28"></div>
 </div>
 
 <script>
-    var baseUrl_inner = window.location.pathname.startsWith('/Mika_Portfolio') ? '/Mika_Portfolio' : '';
-    // var innerLink = document.querySelector('.url-inner');
-    // innerLink.href = baseUrl_inner + '/about';
+	var baseUrl_inner = window.location.pathname.startsWith("/Mika_Portfolio") ? "/Mika_Portfolio" : "";
+	// var innerLink = document.querySelector('.url-inner');
+	// innerLink.href = baseUrl_inner + '/about';
 
-    // 方塊數量 (目前可以到 16)
-    var blockCount = 6;
+	fetch("https://rkm414-site.vercel.app/api/mikaPortfolio")
+		.then((response) => response.json())
+		.then((data) => {
+			console.log("Fetched Data:", data);
+		})
+		.catch((error) => {
+			console.error("Error fetching data:", error);
+		});
 
-    // 圖片和連結的陣列
-    var blockItems = [
-        {   // 1
-            wtCot: false,
-            tag: 'APP',
-            image: "src/assets/images/example_image_1.png",
-            link: "https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=227-834&scaling=min-zoom&page-id=0%3A1&t=V0DXkW9CoSn9fzDc-1",
-            appName: "濟福寺.景德祠APP",
-            appCot1: "創造廟宇文化新體驗-",
-            appCot2: "重新規劃設計",
-        },
-        {   // 2
-            wtCot: false,
-            tag: 'APP',
-            image: "src/assets/images/example_image_2.png",
-            link: "https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=258-313&scaling=min-zoom&page-id=0%3A1&t=rRPFuYlFjIDYvwHJ-1",
-            appName: "濟福寺.景德祠APP",
-            appCot1: "創造廟宇文化新體驗-",
-            appCot2: "針對功能優化、創新做設計研究",
-        },
-        {   // 3
-            wtCot: false,
-            tag: 'APP',
-            image: "src/assets/images/example_image_3.png",
-            link: "https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=263-1728&scaling=min-zoom&page-id=0%3A1&t=sBJH3iBowPjirRBs-1",
-            appName: "濟福寺.景德祠APP",
-            appCot1: "創造廟宇文化新體驗-",
-            appCot2: "數位發財金",
-        },
-        {   // 4
-            wtCot: false,
-            tag: 'WEB',
-            image: "src/assets/images/example_image_4.png",
-            link: `${baseUrl_inner}/kinghoksu`,
-            appName: "濟福寺.景德祠APP",
-            appCot1: "預備上線-",
-            appCot2: "AＰＰ產品頁面",
-        },
-        {   // 5
-            wtCot: true,
-            tag: 'WEB',
-            image: "src/assets/images/example_image_5.png",
-            link: "",
-            appName: "廟宇後台管理系統",
-            appCot1: "",
-            appCot2: "濟福寺景德祠",
-        },
-        {   // 6
-            wtCot: true,
-            tag: "WEB",
-            image: "src/assets/images/example_image_6.png",
-            link: "",
-            appName: "Matres HRM",
-            appCot1: "",
-            appCot2: "新易人資管理系統",
-        },
-        {   // 7
-            wtCot: false,
-            tag: "",
-            image: "",
-            link: "",
-            appName: "",
-            appCot1: "",
-            appCot2: "",
-        },
-        {   // 8
-            wtCot: false,
-            tag: "",
-            image: "",
-            link: "",
-            appName: "",
-            appCot1: "",
-            appCot2: "",
-        },
-        {   // 9
-            wtCot: false,
-            tag: "",
-            image: "",
-            link: "",
-            appName: "",
-            appCot1: "",
-            appCot2: "",
-        },
-        {   // 10
-            wtCot: false,
-            tag: "",
-            image: "",
-            link: "",
-            appName: "",
-            appCot1: "",
-            appCot2: "",
-        },
-        {   // 11
-            wtCot: false,
-            tag: "",
-            image: "",
-            link: "",
-            appName: "",
-            appCot1: "",
-            appCot2: "",
-        },
-        {   // 12
-            wtCot: false,
-            tag: "",
-            image: "",
-            link: "",
-            appName: "",
-            appCot1: "",
-            appCot2: "",
-        },
-        {   // 13
-            wtCot: false,
-            tag: "",
-            image: "",
-            link: "",
-            appName: "",
-            appCot1: "",
-            appCot2: "",
-        },
-        {   // 14
-            wtCot: false,
-            tag: "",
-            image: "",
-            link: "",
-            appName: "",
-            appCot1: "",
-            appCot2: "",
-        },
-        {   // 15
-            wtCot: false,
-            tag: "",
-            image: "",
-            link: "",
-            appName: "",
-            appCot1: "",
-            appCot2: "",
-        },
-        {   // 16
-            wtCot: false,
-            tag: "",
-            image: "",
-            link: "",
-            appName: "",
-            appCot1: "",
-            appCot2: "",
-        },
-    ];
+	// 方塊數量 (目前可以到 16)
+	var blockCount = 6;
 
-    generateBlocks(blockCount, blockItems);
-    observeBlocks();
+	// 圖片和連結的陣列
+	var blockItems = [
+		{
+			// 1
+			wtCot: false,
+			tag: "APP",
+			image: "src/assets/images/example_image_1.png",
+			link: "https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=227-834&scaling=min-zoom&page-id=0%3A1&t=V0DXkW9CoSn9fzDc-1",
+			appName: "濟福寺.景德祠APP",
+			appCot1: "創造廟宇文化新體驗-",
+			appCot2: "重新規劃設計",
+		},
+		{
+			// 2
+			wtCot: false,
+			tag: "APP",
+			image: "src/assets/images/example_image_2.png",
+			link: "https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=258-313&scaling=min-zoom&page-id=0%3A1&t=rRPFuYlFjIDYvwHJ-1",
+			appName: "濟福寺.景德祠APP",
+			appCot1: "創造廟宇文化新體驗-",
+			appCot2: "針對功能優化、創新做設計研究",
+		},
+		{
+			// 3
+			wtCot: false,
+			tag: "APP",
+			image: "src/assets/images/example_image_3.png",
+			link: "https://www.figma.com/proto/Fo4cly2zPdzUduChCvv8x7/%EF%BC%ADika's-Profolio?type=design&node-id=263-1728&scaling=min-zoom&page-id=0%3A1&t=sBJH3iBowPjirRBs-1",
+			appName: "濟福寺.景德祠APP",
+			appCot1: "創造廟宇文化新體驗-",
+			appCot2: "數位發財金",
+		},
+		{
+			// 4
+			wtCot: false,
+			tag: "WEB",
+			image: "src/assets/images/example_image_4.png",
+			link: `${baseUrl_inner}/kinghoksu`,
+			appName: "濟福寺.景德祠APP",
+			appCot1: "預備上線-",
+			appCot2: "AＰＰ產品頁面",
+		},
+		{
+			// 5
+			wtCot: true,
+			tag: "WEB",
+			image: "src/assets/images/example_image_5.png",
+			link: "",
+			appName: "廟宇後台管理系統",
+			appCot1: "",
+			appCot2: "濟福寺景德祠",
+		},
+		{
+			// 6
+			wtCot: true,
+			tag: "WEB",
+			image: "src/assets/images/example_image_6.png",
+			link: "",
+			appName: "Matres HRM",
+			appCot1: "",
+			appCot2: "新易人資管理系統",
+		},
+		{
+			// 7
+			wtCot: false,
+			tag: "",
+			image: "",
+			link: "",
+			appName: "",
+			appCot1: "",
+			appCot2: "",
+		},
+		{
+			// 8
+			wtCot: false,
+			tag: "",
+			image: "",
+			link: "",
+			appName: "",
+			appCot1: "",
+			appCot2: "",
+		},
+		{
+			// 9
+			wtCot: false,
+			tag: "",
+			image: "",
+			link: "",
+			appName: "",
+			appCot1: "",
+			appCot2: "",
+		},
+		{
+			// 10
+			wtCot: false,
+			tag: "",
+			image: "",
+			link: "",
+			appName: "",
+			appCot1: "",
+			appCot2: "",
+		},
+		{
+			// 11
+			wtCot: false,
+			tag: "",
+			image: "",
+			link: "",
+			appName: "",
+			appCot1: "",
+			appCot2: "",
+		},
+		{
+			// 12
+			wtCot: false,
+			tag: "",
+			image: "",
+			link: "",
+			appName: "",
+			appCot1: "",
+			appCot2: "",
+		},
+		{
+			// 13
+			wtCot: false,
+			tag: "",
+			image: "",
+			link: "",
+			appName: "",
+			appCot1: "",
+			appCot2: "",
+		},
+		{
+			// 14
+			wtCot: false,
+			tag: "",
+			image: "",
+			link: "",
+			appName: "",
+			appCot1: "",
+			appCot2: "",
+		},
+		{
+			// 15
+			wtCot: false,
+			tag: "",
+			image: "",
+			link: "",
+			appName: "",
+			appCot1: "",
+			appCot2: "",
+		},
+		{
+			// 16
+			wtCot: false,
+			tag: "",
+			image: "",
+			link: "",
+			appName: "",
+			appCot1: "",
+			appCot2: "",
+		},
+	];
 
-    function generateBlocks(blockCount, blockItems) {
-        var blocksArea = $('#block-container');
+	generateBlocks(blockCount, blockItems);
+	observeBlocks();
 
-        for (var i = 0; i < blockCount; i++) {
-            var blockData = blockItems[i];
+	function generateBlocks(blockCount, blockItems) {
+		var blocksArea = $("#block-container");
 
-            var image = blockData.image;
-            var link = blockData.link;
-            var comingsoon = blockData.wtCot;
-            var tagState = blockData.tag;
-            var appName = blockData.appName;
-            var appContent1 = blockData.appCot1;
-            var appContent2 = blockData.appCot2;
+		for (var i = 0; i < blockCount; i++) {
+			var blockData = blockItems[i];
 
-            var block = $('<div>').addClass('block aspect-square overflow-hidden');
-            var content = $('<div>').addClass('content flex flex-col justify-end w-full h-full px-8 pb-8');
+			var image = blockData.image;
+			var link = blockData.link;
+			var comingsoon = blockData.wtCot;
+			var tagState = blockData.tag;
+			var appName = blockData.appName;
+			var appContent1 = blockData.appCot1;
+			var appContent2 = blockData.appCot2;
 
-            if (image !== "") {
-                // var img = $('<img>').attr('src', image)
-                //                     .addClass('w-full h-full object-cover')
-                //                     .on('error', function() { $(this).hide(); });
-                // content.append(img);
-                // 添加背景圖片的 CSS
-                content.css({
-                    'background-image': 'url("' + image + '")',
-                    'background-position': 'center',
-                    'background-size': 'cover',
-                });
+			var block = $("<div>").addClass("block aspect-square overflow-hidden");
+			var content = $("<div>").addClass("content flex flex-col justify-end w-full h-full px-8 pb-8");
 
-                var gradientDiv = $('<div>').addClass('gradient-div');
-                content.append(gradientDiv);
-            }
+			if (image !== "") {
+				// var img = $('<img>').attr('src', image)
+				//                     .addClass('w-full h-full object-cover')
+				//                     .on('error', function() { $(this).hide(); });
+				// content.append(img);
+				// 添加背景圖片的 CSS
+				content.css({
+					"background-image": 'url("' + image + '")',
+					"background-position": "center",
+					"background-size": "cover",
+				});
 
-            if (link !== "") {
-                var a = $('<a>').attr('href', link)
-                                .addClass('w-full h-full')
-                                .attr('target', '_blank')
-                                .attr('rel', 'noreferrer noopener')
-                                .append(content);
-                block.append(a);
-            } else {
-                block.append(content);
-            }
+				var gradientDiv = $("<div>").addClass("gradient-div");
+				content.append(gradientDiv);
+			}
 
-            if (comingsoon) {
-                var comingsoonDiv = $('<div>')
-                    .addClass('app-comingsoon custom-font-NotoSans text-xl font-medium px-8')
-                    .text('準備中•即將上線');
-                content.append(comingsoonDiv);
-            }
+			if (link !== "") {
+				var a = $("<a>")
+					.attr("href", link)
+					.addClass("w-full h-full")
+					.attr("target", "_blank")
+					.attr("rel", "noreferrer noopener")
+					.append(content);
+				block.append(a);
+			} else {
+				block.append(content);
+			}
 
-            if (tagState !== "") {
-                var tagStateDiv = $('<div>')
-                    .addClass('app-tag custom-font-NotoSans text-xl font-medium')
-                    .text(tagState)
-                    .attr('data-type', `${tagState}`);
-                content.append(tagStateDiv);
-            }
+			if (comingsoon) {
+				var comingsoonDiv = $("<div>")
+					.addClass("app-comingsoon custom-font-NotoSans text-xl font-medium px-8")
+					.text("準備中•即將上線");
+				content.append(comingsoonDiv);
+			}
 
-            if (appName !== "") {
-                var appNameDiv = $('<div>')
-                    .addClass('app-name custom-font-Soukou text-4xl')
-                    .text(appName);
-                    content.append(appNameDiv);
-            }
+			if (tagState !== "") {
+				var tagStateDiv = $("<div>")
+					.addClass("app-tag custom-font-NotoSans text-xl font-medium")
+					.text(tagState)
+					.attr("data-type", `${tagState}`);
+				content.append(tagStateDiv);
+			}
 
-            if (appContent1 !== "") {
-                var appContent1Div = $('<div>')
-                    .addClass('app-contentA custom-font-NotoSans text-lg font-normal')
-                    .text(appContent1);
-                content.append(appContent1Div);
-            }
+			if (appName !== "") {
+				var appNameDiv = $("<div>").addClass("app-name custom-font-Soukou text-4xl").text(appName);
+				content.append(appNameDiv);
+			}
 
-            if (appContent2 !== "") {
-                var appContent2Div = $('<div>')
-                    .addClass('app-contentB custom-font-NotoSans text-xl font-bold')
-                    .text(appContent2);
-                content.append(appContent2Div);
-            }
+			if (appContent1 !== "") {
+				var appContent1Div = $("<div>")
+					.addClass("app-contentA custom-font-NotoSans text-lg font-normal")
+					.text(appContent1);
+				content.append(appContent1Div);
+			}
 
-            blocksArea.append(block);
-        }
-    }
-    function observeBlocks() {
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                var block = entry.target;
-                block.classList.add('block-float-up');
-                observer.unobserve(block);
-                }
-            });
-        });
+			if (appContent2 !== "") {
+				var appContent2Div = $("<div>")
+					.addClass("app-contentB custom-font-NotoSans text-xl font-bold")
+					.text(appContent2);
+				content.append(appContent2Div);
+			}
 
-        var blocks = document.querySelectorAll('.block');
-            blocks.forEach(function(block) {
-            observer.observe(block);
-        });
-    }
+			blocksArea.append(block);
+		}
+	}
+	function observeBlocks() {
+		var observer = new IntersectionObserver(function (entries) {
+			entries.forEach(function (entry) {
+				if (entry.isIntersecting) {
+					var block = entry.target;
+					block.classList.add("block-float-up");
+					observer.unobserve(block);
+				}
+			});
+		});
 
-    var lottieContainer_hand = document.getElementById("lottie-container-hand");
-    lottie.loadAnimation({
-        container: lottieContainer_hand,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: 'src/assets/images/json/hand2.json'
-        // path: "https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/63872dd803666f1e3415cc91_hand2.json"
-    });
+		var blocks = document.querySelectorAll(".block");
+		blocks.forEach(function (block) {
+			observer.observe(block);
+		});
+	}
 
-    var lottieContainer_p = document.getElementById('lottie-container-p');
-    var lottieContainer_mika_characters = document.getElementById('lottie-container-mika_characters');
+	var lottieContainer_hand = document.getElementById("lottie-container-hand");
+	lottie.loadAnimation({
+		container: lottieContainer_hand,
+		renderer: "svg",
+		loop: true,
+		autoplay: true,
+		path: "src/assets/images/json/hand2.json",
+		// path: "https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/63872dd803666f1e3415cc91_hand2.json"
+	});
 
-    var animation_p = lottie.loadAnimation({
-        container: lottieContainer_p,
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        path: 'src/assets/images/json/sit.json'
-        // path: 'https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/63846e13ee7073da028730b6_sit.json'
-    });
+	var lottieContainer_p = document.getElementById("lottie-container-p");
+	var lottieContainer_mika_characters = document.getElementById("lottie-container-mika_characters");
 
-    var animation_mika_characters = lottie.loadAnimation({
-        container: lottieContainer_mika_characters,
-        renderer: 'svg',
-        loop: false,
-        loop: false,
-        path: 'src/assets/images/json/mika_s.json'
-        // path: 'https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/6384684aee7073c54386d6bf_mika2.json'
-    });
+	var animation_p = lottie.loadAnimation({
+		container: lottieContainer_p,
+		renderer: "svg",
+		loop: false,
+		autoplay: false,
+		path: "src/assets/images/json/sit.json",
+		// path: 'https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/63846e13ee7073da028730b6_sit.json'
+	});
 
-    // 設置動畫播放進度的函數
-    function setAnimationProgress(anim, progress) {
-        anim.goToAndStop(anim.getDuration(true) * progress, true);
-    }
+	var animation_mika_characters = lottie.loadAnimation({
+		container: lottieContainer_mika_characters,
+		renderer: "svg",
+		loop: false,
+		loop: false,
+		path: "src/assets/images/json/mika_s.json",
+		// path: 'https://uploads-ssl.webflow.com/637d811b57fdde36a2c0ad03/6384684aee7073c54386d6bf_mika2.json'
+	});
 
-    // 計算滑動方向和到中點距離的函數
-    function calculateScrollValues(anim, containerDiv) {
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        var windowHeight = window.innerHeight;
-        var containerOffsetTop = containerDiv.offsetTop;
-        var containerHeight = containerDiv.offsetHeight;
-        var scrollDistance = scrollTop + windowHeight / 2 - (containerOffsetTop + containerHeight / 2);
-        var scrollDirection = scrollDistance > 0 ? 'down' : 'up';
-        var scrollProgress = Math.abs(scrollDistance) / (windowHeight / 2);
-        // console.log(containerOffsetTop, containerOffsetTop, containerHeight, scrollDistance);
-        // console.log(scrollDirection, scrollProgress);
-        
-        // 根據滑動方向和進度控制動畫播放
-        if (scrollDirection === 'down') {
-            setAnimationProgress(anim, 0.99);
-        } else {
-            if (scrollProgress >= 1) {
-                setAnimationProgress(anim, 0.01);
-            } else {
-                setAnimationProgress(anim, 1 - scrollProgress);
-            }
-        }
-        
-        // if (containerDiv === lottieContainer_p) {
-        //     if (scrollDistance <= 0) {
-        //         containerDiv.style.transform = `translateY(${window.pageYOffset + windowHeight / 2 - (containerOffsetTop + containerHeight / 2.5)}px)`;
-        //     } else {
-        //         containerDiv.style.transform = 'translateY(0%)';
-        //     }
-        // }
-    }
-    
-    window.addEventListener('scroll', () => {
-        calculateScrollValues(animation_p, lottieContainer_p);
-        calculateScrollValues(animation_mika_characters, lottieContainer_mika_characters);
-    });
+	// 設置動畫播放進度的函數
+	function setAnimationProgress(anim, progress) {
+		anim.goToAndStop(anim.getDuration(true) * progress, true);
+	}
 
-    animation_p.play();
-    animation_mika_characters.play();
+	// 計算滑動方向和到中點距離的函數
+	function calculateScrollValues(anim, containerDiv) {
+		var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		var windowHeight = window.innerHeight;
+		var containerOffsetTop = containerDiv.offsetTop;
+		var containerHeight = containerDiv.offsetHeight;
+		var scrollDistance = scrollTop + windowHeight / 2 - (containerOffsetTop + containerHeight / 2);
+		var scrollDirection = scrollDistance > 0 ? "down" : "up";
+		var scrollProgress = Math.abs(scrollDistance) / (windowHeight / 2);
+		// console.log(containerOffsetTop, containerOffsetTop, containerHeight, scrollDistance);
+		// console.log(scrollDirection, scrollProgress);
 
-    var limits = 15.0;
+		// 根據滑動方向和進度控制動畫播放
+		if (scrollDirection === "down") {
+			setAnimationProgress(anim, 0.99);
+		} else {
+			if (scrollProgress >= 1) {
+				setAnimationProgress(anim, 0.01);
+			} else {
+				setAnimationProgress(anim, 1 - scrollProgress);
+			}
+		}
 
-    $('#block-container').on('mousemove', '.block', function (e) {
-        var rect = e.target.getBoundingClientRect();
-        var x = e.clientX - rect.left;
-        var y = e.clientY - rect.top;
-        var offsetX = x / rect.width;
-        var offsetY = y / rect.height;
+		// if (containerDiv === lottieContainer_p) {
+		//     if (scrollDistance <= 0) {
+		//         containerDiv.style.transform = `translateY(${window.pageYOffset + windowHeight / 2 - (containerOffsetTop + containerHeight / 2.5)}px)`;
+		//     } else {
+		//         containerDiv.style.transform = 'translateY(0%)';
+		//     }
+		// }
+	}
 
-        var rotateY = (offsetX) * (limits * 2) - limits;
-        var rotateX = (offsetY) * (limits * 2) - limits;
+	window.addEventListener("scroll", () => {
+		calculateScrollValues(animation_p, lottieContainer_p);
+		calculateScrollValues(animation_mika_characters, lottieContainer_mika_characters);
+	});
 
-        var shadowOffsetX = (offsetX) * 32 - 16;
-        var shadowOffsetY = (offsetY) * 32 - 16;
+	animation_p.play();
+	animation_mika_characters.play();
 
-        $(this).css({
-            "transition": "transform .15s",
-            "box-shadow":
-            (1 / 6) * -shadowOffsetX + "px " + (1 / 6) * -shadowOffsetY + "px 3px rgba(0, 0, 0, 0.051), " +
-            (2 / 6) * -shadowOffsetX + "px " + (2 / 6) * -shadowOffsetY + "px 7.2px rgba(0, 0, 0, 0.073), " +
-            (3 / 6) * -shadowOffsetX + "px " + (3 / 6) * -shadowOffsetY + "px 13.6px rgba(0, 0, 0, 0.09), " +
-            (4 / 6) * -shadowOffsetX + "px " + (4 / 6) * -shadowOffsetY + "px 24.3px rgba(0, 0, 0, 0.107), " +
-            (5 / 6) * -shadowOffsetX + "px " + (5 / 6) * -shadowOffsetY + "px 45.5px rgba(0, 0, 0, 0.129), " +
-            -shadowOffsetX + "px " + -shadowOffsetY + "px 109px rgba(0, 0, 0, 0.18)",
-            transform: "perspective(2000px) rotateX(" + -rotateX + "deg) rotateY(" + rotateY + "deg)"
-        });
-    });
+	var limits = 15.0;
 
-    $('#block-container').on('mouseleave', '.block', function (e) {
-        // $(".block").css({"box-shadow": "0px 0px 3px rgba(0, 0, 0, 0.051), 0px 0px 7.2px rgba(0, 0, 0, 0.073), 0px 0px 13.6px rgba(0, 0, 0, 0.09), 0px 0px 24.3px rgba(0, 0, 0, 0.107), 0px 0px 45.5px rgba(0, 0, 0, 0.129)", "transform": "scale(1.0)"});
-        $(".block").css({"box-shadow": "2px 2px 4px 0px #0B1A2C40", "transform": "scale(1.0)"});
-    });
+	$("#block-container").on("mousemove", ".block", function (e) {
+		var rect = e.target.getBoundingClientRect();
+		var x = e.clientX - rect.left;
+		var y = e.clientY - rect.top;
+		var offsetX = x / rect.width;
+		var offsetY = y / rect.height;
 
+		var rotateY = offsetX * (limits * 2) - limits;
+		var rotateX = offsetY * (limits * 2) - limits;
+
+		var shadowOffsetX = offsetX * 32 - 16;
+		var shadowOffsetY = offsetY * 32 - 16;
+
+		$(this).css({
+			transition: "transform .15s",
+			"box-shadow":
+				(1 / 6) * -shadowOffsetX +
+				"px " +
+				(1 / 6) * -shadowOffsetY +
+				"px 3px rgba(0, 0, 0, 0.051), " +
+				(2 / 6) * -shadowOffsetX +
+				"px " +
+				(2 / 6) * -shadowOffsetY +
+				"px 7.2px rgba(0, 0, 0, 0.073), " +
+				(3 / 6) * -shadowOffsetX +
+				"px " +
+				(3 / 6) * -shadowOffsetY +
+				"px 13.6px rgba(0, 0, 0, 0.09), " +
+				(4 / 6) * -shadowOffsetX +
+				"px " +
+				(4 / 6) * -shadowOffsetY +
+				"px 24.3px rgba(0, 0, 0, 0.107), " +
+				(5 / 6) * -shadowOffsetX +
+				"px " +
+				(5 / 6) * -shadowOffsetY +
+				"px 45.5px rgba(0, 0, 0, 0.129), " +
+				-shadowOffsetX +
+				"px " +
+				-shadowOffsetY +
+				"px 109px rgba(0, 0, 0, 0.18)",
+			transform: "perspective(2000px) rotateX(" + -rotateX + "deg) rotateY(" + rotateY + "deg)",
+		});
+	});
+
+	$("#block-container").on("mouseleave", ".block", function (e) {
+		// $(".block").css({"box-shadow": "0px 0px 3px rgba(0, 0, 0, 0.051), 0px 0px 7.2px rgba(0, 0, 0, 0.073), 0px 0px 13.6px rgba(0, 0, 0, 0.09), 0px 0px 24.3px rgba(0, 0, 0, 0.107), 0px 0px 45.5px rgba(0, 0, 0, 0.129)", "transform": "scale(1.0)"});
+		$(".block").css({ "box-shadow": "2px 2px 4px 0px #0B1A2C40", transform: "scale(1.0)" });
+	});
 </script>
