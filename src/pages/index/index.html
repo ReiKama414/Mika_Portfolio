@@ -38,8 +38,8 @@
 	fetch("https://rkm414-site.vercel.app/api/mikaPortfolio")
 		.then((response) => response.json())
 		.then((data) => {
-			console.log("Fetched Data:", data);
-			generateBlocks(data.data);
+			const filteredData = data.data.filter((item) => item.status !== false);
+			generateBlocks(filteredData);
 			observeBlocks();
 		})
 		.catch((error) => {
